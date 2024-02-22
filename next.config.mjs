@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  // assetPrefix: '/aliogli/'
+  assetPrefix: '/aliogli/'
 };
 
 export default nextConfig;
