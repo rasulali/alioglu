@@ -15,16 +15,16 @@ const Home = () => {
     let difference = +new Date(`03/08/${year}`) - +new Date();
 
     let timeLeft = {
-      days: 0,
-      hours: 0,
-      minutes: 0,
+      days: '00',
+      hours: '00',
+      minutes: '00',
     };
 
     if (difference > 0) {
       timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
+        days: JSON.stringify(Math.floor(difference / (1000 * 60 * 60 * 24))),
+        hours: JSON.stringify(Math.floor((difference / (1000 * 60 * 60)) % 24)),
+        minutes: JSON.stringify(Math.floor((difference / 1000 / 60) % 60)),
       };
     }
     return timeLeft;
