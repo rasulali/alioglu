@@ -10,8 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         offRed: '#EB5757',
-        offYellow: '#F2C94C',
-        emerald: '#004a3a'
+        brandColor: '#292D3A',
       }
     },
   },
