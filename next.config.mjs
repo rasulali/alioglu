@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  imagesPublicPath: "/wallisconsultancy/_next/static/images/",
+  imagesPublicPath: "/alioglu/_next/static/media/",
   basepath: "/alioglu",
   assetPrefix: "/alioglu/",
   images: {
