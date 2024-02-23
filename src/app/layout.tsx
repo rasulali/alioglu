@@ -16,7 +16,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Ali Oglu - Tikinti və Dizayn",
-  description: "Tezliklə xidmətinizdə",
+  description: "Xəyalları Dizayn, Gələcəyi inşa edirik!",
 };
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="az">
       <Head>
         <link rel="icon" href="./favicon.ico" sizes="any" />
       </Head>

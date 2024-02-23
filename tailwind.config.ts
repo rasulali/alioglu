@@ -9,7 +9,6 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        offRed: '#EB5757',
         brandColor: '#292D3A',
       }
     },
