@@ -105,8 +105,8 @@ const Home = () => {
           className="border-2 border-offYellow/80 aspect-square m-6">
           <Image
             className="object-cover h-full w-full pointer-events-none"
-            src={squarePhoto}
-            alt="Beatiful interior design"
+            src={`/alioglu/${squarePhoto}`} alt="Beatiful interior design"
+            priority
           />
         </motion.div>
       </motion.div>
@@ -137,8 +137,9 @@ const Home = () => {
 
           <Image
             className="object-cover h-full w-full rounded-b-[9px]"
-            src={rectPhoto}
-            alt="Beatiful interior design"
+            src={`/alioglu/${rectPhoto}`}
+            alt="Beatiful interior design second"
+            priority
           />
         </motion.div>
       </motion.div>
