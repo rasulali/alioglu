@@ -1,10 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  basepath: '/aliogli',
-  images: {
-    unoptimized: true,
-  },
+  output: "export",
+  basepath: "/alioglu",
+  assetPrefix: "/alioglu/",
 };
 
 export default nextConfig;
