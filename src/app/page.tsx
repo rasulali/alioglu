@@ -3,11 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXTwitter, faInstagram, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons"
 import { useEffect, useState, useRef } from 'react'
 import Image from 'next/image'
-import rectPhoto from '../../public/1.jpg'
-import squarePhoto from '../../public/2.jpg'
 import { motion } from 'framer-motion'
 import Logo from "@/components/logo"
-import { prefix } from "./prefix"
 
 
 const Home = () => {
@@ -106,7 +103,8 @@ const Home = () => {
           className="border-2 border-offYellow/80 aspect-square m-6">
           <Image
             className="object-cover h-full w-full pointer-events-none"
-            src={`${prefix}/${squarePhoto}`} alt="Beatiful interior design"
+            src="../../public/2.jpg"
+            alt="Beatiful interior design"
             priority
           />
         </motion.div>
@@ -138,8 +136,8 @@ const Home = () => {
 
           <Image
             className="object-cover h-full w-full rounded-b-[9px]"
-            src={`/${prefix}/${rectPhoto}`}
-            alt="Beatiful interior design second"
+            src="../../public/2.jpg"
+            alt="Beatiful interior design"
             priority
           />
         </motion.div>
