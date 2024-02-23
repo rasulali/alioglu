@@ -2,7 +2,9 @@
 const nextConfig = {
   output: 'export',
   basepath: '/aliogli',
-  assetPrefix: '/aliogli/'
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
