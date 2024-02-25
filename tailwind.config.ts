@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from 'tailwindcss/plugin'
 
 const config: Config = {
   content: [
@@ -17,6 +18,37 @@ const config: Config = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function({ matchUtilities, theme }: any) {
+      matchUtilities(
+        {
+          'animate-duration': (value: number) => ({
+            animationDuration: value,
+          }),
+        },
+        { values: theme('transitionDuration') }
+      )
+    }),
+    plugin(function({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'animate-delay': (value) => ({
+            animationDelay: value,
+          }),
+        },
+        { values: theme('transitionDelay') }
+      )
+    }),
+    plugin(function({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'animate-ease': (value) => ({
+            animationTimingFunction: value,
+          }),
+        },
+        { values: theme('transitionTimingFunction') }
+      )
+    }),
+  ],
 };
 export default config;
