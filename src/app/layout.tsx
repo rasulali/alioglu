@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
-import Head from "next/head";
 import "./globals.css";
-import { Poppins, Sacramento } from 'next/font/google'
+import { Poppins } from 'next/font/google'
+import { Suspense, lazy } from "react";
+import Loading from "./loading";
+const Home = lazy(async () => {
+  return Promise.all([
+    import("@/app/page"),
+    new Promise(resolve => setTimeout(resolve, 2500))
+  ])
+    .then(([moduleExports]) => moduleExports);
+});
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -10,27 +18,20 @@ const poppins = Poppins({
   variable: '--font-poppins',
 })
 
-const sacramento = Sacramento({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: '400',
-  variable: '--font-sacramento',
-})
-
 
 export const metadata: Metadata = {
-  title: "Ali Oglu - Tikinti və Dizayn",
+  title: "Alioglu - Tikinti və Dizayn",
   description: "Xəyalları Dizayn, Gələcəyi İnşa Edirik!",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+const RootLayout = () => {
   return (
     <html lang="az">
-      <body className={`${poppins.variable} ${sacramento.variable}`}>{children}</body>
+      <body className={`${poppins.variable}`}>
+        {/* <Suspense fallback={<Loading />}>{<Home />}</Suspense> */}
+        <Home />
+      </body>
     </html>
   );
 }
+export default RootLayout;

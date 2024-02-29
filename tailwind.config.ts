@@ -11,10 +11,28 @@ const config: Config = {
     extend: {
       colors: {
         brandColor: '#292D3A',
+        grayA: '#303030',
+      },
+      animation: {
+        rotateY: 'rotateY 2s linear infinite',
+        appear: 'appear 2s ease-in-out forwards',
+      },
+      keyframes: {
+        rotateY: {
+          from: {
+            transform: 'rotateY(0deg)'
+          },
+          to: {
+            transform: 'rotateY(360deg)'
+          }
+        },
+        appear: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
       },
       fontFamily: {
-        sans: ['var(--font-poppins)'],
-        handwriting: ['var(--font-sacramento)'],
+        poppins: ['var(--font-poppins)'],
       }
     },
   },
