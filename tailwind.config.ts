@@ -12,9 +12,11 @@ const config: Config = {
       colors: {
         brandColor: '#292D3A',
         grayA: '#303030',
+        accentColor: '#41372e',
       },
       animation: {
         rotateY: 'rotateY 2s linear infinite',
+        rotateYEnds: 'rotateY 2s forwards ',
         appear: 'appear 2s ease-in-out forwards',
       },
       keyframes: {

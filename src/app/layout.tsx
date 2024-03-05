@@ -24,14 +24,19 @@ export const metadata: Metadata = {
   description: "Xəyalları Dizayn, Gələcəyi İnşa Edirik!",
 };
 
-const RootLayout = () => {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="az">
+    <html>
       <body className={`${poppins.variable}`}>
-        {/* <Suspense fallback={<Loading />}>{<Home />}</Suspense> */}
-        <Home />
+        {children}
+        {/* <Suspense fallback={<Loading />}> */}
+        {/*   <Home /> */}
+        {/* </Suspense> */}
       </body>
     </html>
   );
 }
-export default RootLayout;
