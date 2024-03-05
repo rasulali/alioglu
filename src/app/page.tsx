@@ -11,6 +11,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useRef, useEffect, useState } from "react"
 import Heading from "@/components/heading"
+import Loading from "./loading"
 
 const Home = () => {
 
@@ -66,30 +67,31 @@ const Home = () => {
 
   return (
     <main>
-      <Contact />
+      {/* <Contact /> */}
       {/* First Section */}
-      <section className="w-full h-screen bg-gray-950">
-        <Navbar
-          isVideoVisible={videoInview} />
+      <section className="w-full h-screen bg-grayA">
+        <Navbar isVideoVisible={videoInview} />
+
         <video
           ref={videoRef}
           autoPlay muted playsInline loop
-          className="h-screen w-screen object-cover"
+          className="w-full h-full object-cover"
         >
           <source src="/background.mp4" type="video/mp4" />
         </video>
       </section>
       {/* Second Section */}
-      <section className="min-h-screen px-16 pt-16 bg-grayA">
+      <section className="min-h-screen p-4 sm:p-8 lg:p-16 bg-grayA">
         {/* Projects Text */}
         <motion.div
           ref={textRef}
           variants={textVariants}
           initial="hidden"
+          className="lg:mb-16 mb-4 sm:mb-8"
           animate={textControls}>
           <Link
             className="flex items-center justify-center relative
-           mb-16 w-fit"
+            w-fit"
             href="/portfolio">
             <motion.div
               onHoverStart={handleMouseEnter}
@@ -97,7 +99,7 @@ const Home = () => {
               className="absolute w-[102%] h-[112%] z-20"
             />
             <h1
-              className={`text-9xl font-poppins transition-colors z-10
+              className={`text-4xl sm:text-5xl lg:text-9xl font-poppins transition-colors z-10
             duration-100 delay-75
              ${isTextHover ? "text-grayA" : "text-zinc-100"}`}>
               Lahiyələrimiz
@@ -107,9 +109,9 @@ const Home = () => {
               variants={arrowVariants}
               initial="hidden"
               animate={textControls}
-              className="pt-4 pl-4 z-10"
+              className="lg:pt-4 pl-4 z-10"
             ><ArrowLongRightIcon
-                className={`w-32 duration-75 delay-0
+                className={`lg:w-32 sm:w-16 w-12 duration-75 delay-0
               ${isTextHover ? "text-grayA" : "text-zinc-100"}`} />
             </motion.span>
             <motion.div
@@ -123,10 +125,9 @@ const Home = () => {
         </motion.div>
 
         {/* Cards Section */}
-        <div className="text-zinc-100 grid grid-rows-3 grid-cols-2
-        gap-y-16
-        place-items-center
-        pb-16">
+        <div className="max-w-[calc((832px+96px)*3+128px)] mx-auto flex flex-col lg:flex-row lg:flex-wrap
+        items-center justify-center gap-y-8 sm:gap-y-12 lg:gap-x-10 xl:gap-x-16 lg:gap-y-24"
+        >
           <Card delay={0} tag="Hotel" src="/placeholder.png" />
           <Card delay={0.05} tag="Restoran" src="/placeholder.png" />
           <Card delay={0.1} tag="İaişə Obyektləri" src="/placeholder.png" />
@@ -137,7 +138,7 @@ const Home = () => {
 
       </section>
       {/* Third Section */}
-      <section className="bg-grayA p-16">
+      <section className="bg-grayA lg:p-16 sm:p-8 p-4">
         {/* Partners */}
 
         {/* Who are we */}
@@ -148,22 +149,23 @@ const Home = () => {
         </div>
         {/* Where are we */}
 
-        <span className="pointer-events-none">
-          <Heading text="Biz Hardayıq?" />
-        </span>
+        <div className="h-screen">
+          <span className="pointer-events-none">
+            <Heading text="Biz Hardayıq?" />
+          </span>
+        </div>
         {/* Location */}
-        <div className="bg-grayA my-16">
-          <div className="relative">
+        <div className="bg-grayA lg:my-16 sm:my-8 my-4">
+          <div className="relative lg:pt-64 sm:pt-32 pt-20">
             <h1
-              className="flex flex-col gap-2 absolute top-1/4
-              text-nowrap text-5xl right-0
-              font-semibold font-poppins text-zinc-100"
+              className="flex flex-col gap-2 absolute top-0 left-0
+              text-nowrap lg:text-8xl sm:text-5xl text-3xl font-semibold font-poppins text-zinc-100"
             >
               <span
-                className="border-l-8 border-red-400 pl-2 leading-[1.1]">
+                className="lg:border-l-[16px] border-l-8 border-red-400 pl-2 leading-[1.1]">
                 <span>İçəri Şəhər,</span>
                 <span className="flex">Bakı
-                  <MapPinIcon className="w-10 text-red-400" />
+                  <MapPinIcon className="lg:w-20 w-10 text-red-400" />
                 </span>
               </span>
             </h1>

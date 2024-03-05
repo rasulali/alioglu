@@ -12,10 +12,6 @@ const Heading: React.FC<HeadingProps> = ({ text }) => {
     visible: { opacity: 1, x: 0, transition: { duration: 0.5, } },
   }
 
-  const arrowVariants = {
-    hidden: { opacity: 0, x: -128 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.1, } },
-  }
   const textControls = useAnimation()
 
   useEffect(() => {
@@ -31,7 +27,7 @@ const Heading: React.FC<HeadingProps> = ({ text }) => {
       animate={textControls}
       className="flex items-center justify-center relative w-fit">
       <h1
-        className="text-9xl font-poppins text-zinc-100">
+        className="lg:text-9xl sm:text-5xl text-4xl font-poppins text-zinc-100">
         {text}
       </h1>
     </motion.div>

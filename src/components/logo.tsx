@@ -1,7 +1,7 @@
-function Logo() {
+const Logo = () => {
   return (
     <svg
-      className="w-32 fill-zinc-100"
+      className="w-[80px] lg:w-[120px] aspect-square fill-zinc-100"
       viewBox="0 0 1790 1607"
       fillRule="evenodd" clipRule="evenodd"
     >

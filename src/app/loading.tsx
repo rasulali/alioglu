@@ -1,16 +1,16 @@
 const Loading = () => {
   return (
     <div className="h-screen flex bg-grayA items-center overflow-hidden justify-center">
-      <div className="relative mb-96">
+      <div className="relative lg:mb-96 sm:mb-32 mb-16">
         <svg
-          className="w-[700px] animate-rotateY duration-100 fill-zinc-100"
+          className="w-[300px] sm:w-[500px] lg:w-[700px] animate-rotateY duration-100 fill-zinc-100"
           viewBox="0 0 2000 2000" fill="none">
           <path
             fillRule="evenodd" clipRule="evenodd" d="M814.599 1006.8L740.624 894.476L676.828 991.345L625.983 1068.55L378.389 1444.49L342 1499.74H909.965L873.576 1444.49L845.872 1402.42L748.642 1254.79L726.326 1288.67L652.373 1400.96H694.451L747.365 1320.62L801.241 1402.42L828.945 1444.49H665.785H623.707H526.338L775.341 1075.04L999.804 1415.86L1055.05 1499.74H1658.85L1622.46 1444.49L1074.4 612.322L1000.42 500L927.716 610.4L888.79 669.504L849.865 728.607L834.529 751.894L810.939 787.711L884.914 900.033L1081.51 1198.54L1179.63 1347.53H1226.81L1105.1 1162.72L908.503 864.216L923.84 840.929L962.765 781.825L1001.69 722.722L1477.04 1444.49H1321.34H1102.86L814.599 1006.8Z" />
         </svg>
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
           <svg viewBox="0 0 2000 300"
-            className="fill-zinc-100 w-[1000px]"
+            className="fill-zinc-100 w-[300px] sm:w-[500px]  lg:w-[1000px]"
           >
             <g id="A"
               className="opacity-0 animate-appear animate-delay-100"
