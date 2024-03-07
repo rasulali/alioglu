@@ -80,7 +80,8 @@ const Home = () => {
           autoPlay muted playsInline loop
           className="w-full h-full object-cover"
         >
-          <source src="/background.mp4" type="video/mp4" />
+          <source src="https://github.com/rasulali/alioglu/assets/82474455/45ee81de-ba20-4948-8d37-c7a2598305f8"
+            type="video/mp4" />
         </video>
       </section>
       {/* Second Section */}
