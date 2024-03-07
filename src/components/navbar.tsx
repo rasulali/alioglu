@@ -1,4 +1,3 @@
-'use client'
 import { useState } from "react";
 import Link from "next/link";
 import { Bars3Icon } from '@heroicons/react/24/outline'
@@ -19,7 +18,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
       gap-8
       ">
         <Link
-          href="/services" className="text-md sm:text-xl font-poppins text-zinc-100 uppercase
+          href="/services" className="text-md sm:text-lg font-poppins text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           ">
@@ -100,7 +99,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
           className="absolute w-full h-full" />
         {/* escape div */}
         <div className={`bg-grayA ${isVideoVisible && 'bg-grayA/50 backdrop-blur-lg'}
-        transition-colors duration-500 border-2 border-r-0 border-neutral-500
+        transition-colors duration-500
         w-[calc(100vw-80px-32px)] h-[calc(100%-80px-32px)] mt-[calc(80px+32px)]`}>
           <Menu />
         </div>

@@ -1,12 +1,11 @@
 {
   "name": "alioglu",
-  "version": "0.1.0",
+  "version": "1.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "npx serve@latest out"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
