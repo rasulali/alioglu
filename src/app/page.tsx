@@ -1,20 +1,23 @@
 'use client'
 
 import Card from "@/components/card"
-import Contact from "@/components/contactBall"
+import Contact, { number } from "@/components/contactBall"
 import AzeMap from "@/components/map"
 import Navbar from "@/components/navbar"
 import { ArrowLongRightIcon, DevicePhoneMobileIcon, PhoneIcon, MapPinIcon as MapPinIconOutline } from '@heroicons/react/24/outline'
 import { MapPinIcon } from '@heroicons/react/24/solid'
-import { faWhatsapp, faXTwitter, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faWhatsapp, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faArrowUpRightFromSquare as faLink } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { AtSymbolIcon } from '@heroicons/react/20/solid'
 import { motion, useAnimation, useInView, useScroll, useMotionValueEvent } from 'framer-motion'
-import Image from "next/image"
+{/* import Image from "next/image" */ }
 import Link from "next/link"
-import { useRef, useEffect, useState } from "react"
+import Router, { useRouter } from "next/router";
+import { useRef, useEffect, useState, Suspense } from "react"
 import Heading from "@/components/heading"
+import Loading from "./loading"
+import { usePathname } from "next/navigation"
 
 const Home = () => {
 
@@ -26,7 +29,7 @@ const Home = () => {
     setTextHover(false)
   }
 
-  const videoRef = useRef(null)
+  const videoRef = useRef<HTMLVideoElement>(null);
   const videoInview = useInView(videoRef, { once: false })
 
   const textRef = useRef(null)
@@ -62,25 +65,24 @@ const Home = () => {
 
 
   const { scrollYProgress } = useScroll();
-  const [scrollY, setScrollY] = useState(0)
+  const [_, setScrollY] = useState(0)
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     setScrollY(latest)
   })
 
-
   return (
     <main>
-      {/* <Contact /> */}
+      <Contact />
       {/* First Section */}
       <section className="w-full h-screen bg-grayA">
         <Navbar isVideoVisible={videoInview} />
 
         <video
           ref={videoRef}
-          autoPlay muted playsInline loop
+          autoPlay muted playsInline loop preload="auto"
           className="w-full h-full object-cover"
         >
-          <source src="https://github.com/rasulali/alioglu/assets/82474455/45ee81de-ba20-4948-8d37-c7a2598305f8"
+          <source src='https://github.com/rasulali/alioglu/assets/82474455/45ee81de-ba20-4948-8d37-c7a2598305f8'
             type="video/mp4" />
         </video>
       </section>
@@ -151,16 +153,6 @@ const Home = () => {
           <span className="pointer-events-none">
             <Heading text="Biz Kimik?" />
           </span>
-          <div className="py-8 px-1 w-2/3">
-            <span className="text-4xl text-zinc-100">
-              <p>
-                Ölkəmizdə və Dünyada onlarla proyekt ərsəyə gətirmiş,
-              </p>
-              <p>
-                Xəyalları reallığa çevirmişik.
-              </p>
-            </span>
-          </div>
         </div>
         {/* Location */}
         <div className="bg-grayA lg:my-16 sm:my-8 my-4">
@@ -202,7 +194,8 @@ const Home = () => {
               </h1>
               <Link target="_blank" href="https://www.google.com/maps/dir/?api=1&">
                 <FontAwesomeIcon icon={faLink}
-                  className="lg:hidden text-xs sm:text-base pl-2 text-zinc-100"
+                  className="lg:hidden text-xs sm:text-base pl-2
+                  text-zinc-100 hover:text-zinc-300"
                 />
               </Link>
             </span>
@@ -228,14 +221,33 @@ const Home = () => {
                 012 212 12 12
               </h2>
             </span>
+            <span className="flex h-4 sm:h-6 text-sm sm:text-lg text-zinc-300 pl-0">
+              <AtSymbolIcon className="w-4 sm:w-6 -translate-x-[1px]" />
+              <h2 className="pl-1"
+              >
+                alioglu.design@gmail.com
+              </h2>
+            </span>
             <Link href="https://www.instagram.com/alioglu.group/" target="_blank"
-              className="flex h-4 sm:h-6 items-center text-sm sm:text-lg text-zinc-300">
+              className="flex h-4 sm:h-6 items-center text-sm sm:text-lg
+              text-zinc-300 hover:text-zinc-100">
               <FontAwesomeIcon icon={faInstagram}
                 className="text-base sm:text-xl w-4 sm:w-6 -translate-x-[1px]"
               />
               <h2 className="pl-1"
               >
                 aligolu.group
+              </h2>
+            </Link>
+            <Link href={`https://api.whatsapp.com/send?phone=${number}`} target="_blank"
+              className="flex h-4 sm:h-6 items-center text-sm sm:text-lg
+              text-zinc-300 hover:text-zinc-100">
+              <FontAwesomeIcon icon={faWhatsapp}
+                className="text-base sm:text-xl w-4 sm:w-6 -translate-x-[1px]"
+              />
+              <h2 className="pl-1"
+              >
+                {number}
               </h2>
             </Link>
           </div>

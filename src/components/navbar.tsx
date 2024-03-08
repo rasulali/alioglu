@@ -1,3 +1,4 @@
+'use client'
 import { useState } from "react";
 import Link from "next/link";
 import { Bars3Icon } from '@heroicons/react/24/outline'
@@ -25,14 +26,14 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
           Xidmətlərimiz
         </Link>
         <Link
-          href="/academy" className="text-md sm:text-xl font-poppins text-zinc-100 uppercase
+          href="/academy" className="text-md sm:text-lg font-poppins text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           ">
           Akademiya
         </Link>
         <Link
-          href="/portfolio" className="text-md sm:text-xl font-poppins text-zinc-100 uppercase
+          href="/portfolio" className="text-md sm:text-lg font-poppins text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           ">
@@ -46,21 +47,21 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
         `} />
         {/* reServe space for logo on wide screens */}
         <Link
-          href="/media_blog" className="text-md sm:text-xl font-poppins text-zinc-100 uppercase
+          href="/media_blog" className="text-md sm:text-lg font-poppins text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           ">
           Mediya və Bloq
         </Link>
         <Link
-          href="/about" className="text-md sm:text-xl font-poppins text-zinc-100 uppercase
+          href="/about" className="text-md sm:text-lg font-poppins text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           ">
           Haqqımızda
         </Link>
         <Link
-          href="/contact" className="text-md sm:text-xl font-poppins text-zinc-100 uppercase
+          href="/contact" className="text-md sm:text-lg font-poppins text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           ">

@@ -1,15 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Poppins } from 'next/font/google'
-import { Suspense, lazy } from "react";
+import dynamic from 'next/dynamic'
 import Loading from "./loading";
-const Home = lazy(async () => {
-  return Promise.all([
-    import("@/app/page"),
-    new Promise(resolve => setTimeout(resolve, 2500))
-  ])
-    .then(([moduleExports]) => moduleExports);
-});
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -18,25 +11,32 @@ const poppins = Poppins({
   variable: '--font-poppins',
 })
 
+const Home = dynamic(
+  async () => {
+    return Promise.all([
+      import("@/app/page"),
+      new Promise(resolve => setTimeout(resolve, 2500))
+    ])
+      .then(([moduleExports]) => moduleExports);
+  },
+  {
+    loading: () => <Loading />
+  }
+)
 
 export const metadata: Metadata = {
   title: "Alioglu - Tikinti və Dizayn",
   description: "Xəyalları Dizayn, Gələcəyi İnşa Edirik!",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const RootLayout = () => {
   return (
     <html>
       <body className={`${poppins.variable}`}>
-        {children}
-        {/* <Suspense fallback={<Loading />}> */}
-        {/*   <Home /> */}
-        {/* </Suspense> */}
+        <Home />
       </body>
     </html>
   );
 }
+
+export default RootLayout
