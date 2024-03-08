@@ -13,11 +13,8 @@ import { AtSymbolIcon } from '@heroicons/react/20/solid'
 import { motion, useAnimation, useInView, useScroll, useMotionValueEvent } from 'framer-motion'
 {/* import Image from "next/image" */ }
 import Link from "next/link"
-import Router, { useRouter } from "next/router";
 import { useRef, useEffect, useState, Suspense } from "react"
 import Heading from "@/components/heading"
-import Loading from "./loading"
-import { usePathname } from "next/navigation"
 
 const Home = () => {
 
@@ -84,7 +81,7 @@ const Home = () => {
           autoPlay muted playsInline loop preload="auto"
           className="w-full h-full object-cover"
         >
-          <source src={externalVideoUrl}
+          <source src='/background.mp4'
             type="video/mp4" />
         </video>
       </section>
@@ -98,8 +95,7 @@ const Home = () => {
           className="lg:mb-16 mb-4 sm:mb-8"
           animate={textControls}>
           <Link
-            className="flex items-center justify-center relative
-            w-fit"
+            className="flex items-center justify-center relative w-fit"
             href="/portfolio">
             <motion.div
               onHoverStart={handleMouseEnter}
@@ -136,26 +132,26 @@ const Home = () => {
         <div className="max-w-[calc((832px+96px)*3+128px)] lg:py-8 mx-auto flex flex-col lg:flex-row lg:flex-wrap
         items-center justify-center gap-y-8 sm:gap-y-12 lg:gap-x-10 xl:gap-x-16 lg:gap-y-24"
         >
-          <Link href="/portfolio#Hotel">
+          <a href="/portfolio#hotel">
             <Card delay={0} tag="Otel" src="/placeholder.png" />
-          </Link>
+          </a>
 
-          <Link href="/portfolio#Restaurants">
+          <a href="/portfolio#restaurants">
             <Card delay={0.05} tag="Restoran" src="/placeholder.png" />
-          </Link>
+          </a>
 
-          <Link href="/portfolio#Objects">
+          <a href="/portfolio#objects">
             <Card delay={0.1} tag="İaişə Obyektləri" src="/placeholder.png" />
-          </Link>
-          <Link href="/portfolio#Interior">
+          </a>
+          <a href="/portfolio#interior">
             <Card delay={0.15} tag="İnteryer" src="/placeholder.png" />
-          </Link>
-          <Link href="/portfolio#Exterior">
+          </a>
+          <a href="/portfolio#exterior">
             <Card delay={0.2} tag="Eksteryer" src="/placeholder.png" />
-          </Link>
-          <Link href="/portfolio#Construction">
+          </a>
+          <a href="/portfolio#construction">
             <Card delay={0.25} tag="Təmir/Tikinti" src="/placeholder.png" />
-          </Link>
+          </a>
         </div>
 
       </section>
