@@ -30,7 +30,7 @@ const Card: React.FC<CardProps> = ({ delay, tag, src }) => {
       initial="hidden"
       whileHover={{ scale: 1.03 }}
       className="bg-gray-100 relative lg:rounded-xl sm:rounded-lg rounded-md aspect-[4/3]
-      w-[90%] max-w-[832px] lg:w-[832px] lg:h-[624px]"
+      w-[90vw] max-w-[832px] lg:w-[832px] lg:h-[624px]"
       animate={cardControls}>
       <Image
         src={src} alt="Lahiyə Fotosu" width={0} height={0} />

@@ -70,6 +70,8 @@ const Home = () => {
     setScrollY(latest)
   })
 
+  const externalVideoUrl = 'https://github.com/rasulali/alioglu/assets/82474455/45ee81de-ba20-4948-8d37-c7a2598305f8'
+
   return (
     <main>
       <Contact />
@@ -82,7 +84,7 @@ const Home = () => {
           autoPlay muted playsInline loop preload="auto"
           className="w-full h-full object-cover"
         >
-          <source src='https://github.com/rasulali/alioglu/assets/82474455/45ee81de-ba20-4948-8d37-c7a2598305f8'
+          <source src='/background.mp4'
             type="video/mp4" />
         </video>
       </section>
@@ -131,15 +133,29 @@ const Home = () => {
         </motion.div>
 
         {/* Cards Section */}
-        <div className="max-w-[calc((832px+96px)*3+128px)] mx-auto flex flex-col lg:flex-row lg:flex-wrap
+        <div className="max-w-[calc((832px+96px)*3+128px)] lg:py-8 mx-auto flex flex-col lg:flex-row lg:flex-wrap
         items-center justify-center gap-y-8 sm:gap-y-12 lg:gap-x-10 xl:gap-x-16 lg:gap-y-24"
         >
-          <Card delay={0} tag="Hotel" src="/placeholder.png" />
-          <Card delay={0.05} tag="Restoran" src="/placeholder.png" />
-          <Card delay={0.1} tag="İaişə Obyektləri" src="/placeholder.png" />
-          <Card delay={0.15} tag="İnteryer" src="/placeholder.png" />
-          <Card delay={0.2} tag="Eksteryer" src="/placeholder.png" />
-          <Card delay={0.25} tag="Təmir/Tikinti" src="/placeholder.png" />
+          <Link href="/portfolio#Hotel">
+            <Card delay={0} tag="Otel" src="/placeholder.png" />
+          </Link>
+
+          <Link href="/portfolio#Restaurants">
+            <Card delay={0.05} tag="Restoran" src="/placeholder.png" />
+          </Link>
+
+          <Link href="/portfolio#Objects">
+            <Card delay={0.1} tag="İaişə Obyektləri" src="/placeholder.png" />
+          </Link>
+          <Link href="/portfolio#Interior">
+            <Card delay={0.15} tag="İnteryer" src="/placeholder.png" />
+          </Link>
+          <Link href="/portfolio#Exterior">
+            <Card delay={0.2} tag="Eksteryer" src="/placeholder.png" />
+          </Link>
+          <Link href="/portfolio#Construction">
+            <Card delay={0.25} tag="Təmir/Tikinti" src="/placeholder.png" />
+          </Link>
         </div>
 
       </section>
@@ -151,7 +167,7 @@ const Home = () => {
         {/* Xəyalları Dizayn, Gələcəyi İnşa edirik! */}
         <div className="font-poppins h-screen">
           <span className="pointer-events-none">
-            <Heading text="Biz Kimik?" />
+            <Heading direction="x" variant="h1" text="Biz Kimik?" />
           </span>
         </div>
         {/* Location */}
