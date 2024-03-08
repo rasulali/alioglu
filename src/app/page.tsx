@@ -84,7 +84,7 @@ const Home = () => {
           autoPlay muted playsInline loop preload="auto"
           className="w-full h-full object-cover"
         >
-          <source src='/background.mp4'
+          <source src={externalVideoUrl}
             type="video/mp4" />
         </video>
       </section>
