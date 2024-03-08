@@ -13,7 +13,7 @@ const poppins = Poppins({
 
 const Home = dynamic(
   async () => {
-    return Promise.all([
+    return await Promise.all([
       import("@/app/page"),
       new Promise(resolve => setTimeout(resolve, 2500))
     ])
@@ -29,14 +29,16 @@ export const metadata: Metadata = {
   description: "Xəyalları Dizayn, Gələcəyi İnşa Edirik!",
 };
 
-const RootLayout = () => {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html>
       <body className={`${poppins.variable}`}>
-        <Home />
+        {children}
       </body>
     </html>
   );
 }
-
-export default RootLayout
