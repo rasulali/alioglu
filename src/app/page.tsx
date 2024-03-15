@@ -1,20 +1,17 @@
 'use client'
 
 import Card from "@/components/card"
-import Contact, { number } from "@/components/contactBall"
+import Contact from "@/components/contactBall"
 import AzeMap from "@/components/map"
 import Navbar from "@/components/navbar"
-import { ArrowLongRightIcon, DevicePhoneMobileIcon, PhoneIcon, MapPinIcon as MapPinIconOutline } from '@heroicons/react/24/outline'
+import { ArrowLongRightIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 import { MapPinIcon } from '@heroicons/react/24/solid'
-import { faWhatsapp, faInstagram } from '@fortawesome/free-brands-svg-icons'
-import { faArrowUpRightFromSquare as faLink } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { AtSymbolIcon } from '@heroicons/react/20/solid'
 import { motion, useAnimation, useInView, useScroll, useMotionValueEvent } from 'framer-motion'
-{/* import Image from "next/image" */ }
 import Link from "next/link"
-import { useRef, useEffect, useState, Suspense } from "react"
+import { useRef, useEffect, useState } from "react"
 import Heading from "@/components/heading"
+import LiveDiv from "@/components/liveDiv"
+import placeholder from '../../public/placeholder.jpg'
 
 const Home = () => {
 
@@ -67,8 +64,6 @@ const Home = () => {
     setScrollY(latest)
   })
 
-  const externalVideoUrl = 'https://github.com/rasulali/alioglu/assets/82474455/45ee81de-ba20-4948-8d37-c7a2598305f8'
-
   return (
     <main>
       <Contact />
@@ -84,6 +79,15 @@ const Home = () => {
           <source src='/background.mp4'
             type="video/mp4" />
         </video>
+        <span
+          className="absolute flex items-center justify-center
+          bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2
+          "
+        >
+          <ChevronDownIcon
+            className="opacity-0 lg:w-12 text-zinc-100/60 animate-down"
+          />
+        </span>
       </section>
       {/* Second Section */}
       <section className="min-h-screen p-4 sm:p-8 lg:p-16 bg-grayA">
@@ -103,7 +107,7 @@ const Home = () => {
               className="absolute w-[102%] h-[112%] z-20"
             />
             <h1
-              className={`text-4xl sm:text-5xl lg:text-9xl font-poppins transition-colors z-10
+              className={`text-4xl sm:text-5xl lg:text-9xl transition-colors z-10
             duration-100 delay-75
              ${isTextHover ? "text-grayA" : "text-zinc-100"}`}>
               Lahiyələrimiz
@@ -132,26 +136,12 @@ const Home = () => {
         <div className="max-w-[calc((832px+96px)*3+128px)] lg:py-8 mx-auto flex flex-col lg:flex-row lg:flex-wrap
         items-center justify-center gap-y-8 sm:gap-y-12 lg:gap-x-10 xl:gap-x-16 lg:gap-y-24"
         >
-          <a href="/portfolio#hotel">
-            <Card delay={0} tag="Otel" src="/placeholder.png" />
-          </a>
-
-          <a href="/portfolio#restaurants">
-            <Card delay={0.05} tag="Restoran" src="/placeholder.png" />
-          </a>
-
-          <a href="/portfolio#objects">
-            <Card delay={0.1} tag="İaişə Obyektləri" src="/placeholder.png" />
-          </a>
-          <a href="/portfolio#interior">
-            <Card delay={0.15} tag="İnteryer" src="/placeholder.png" />
-          </a>
-          <a href="/portfolio#exterior">
-            <Card delay={0.2} tag="Eksteryer" src="/placeholder.png" />
-          </a>
-          <a href="/portfolio#construction">
-            <Card delay={0.25} tag="Təmir/Tikinti" src="/placeholder.png" />
-          </a>
+          <Card delay={0.15} tag="İnteryer" src={placeholder} href="/portfolio#interior" />
+          <Card delay={0.2} tag="Eksteryer" src={placeholder} href="/portfolio#exterior" />
+          <Card delay={0.05} tag="Restoran" src={placeholder} href="/portfolio#restaurants" />
+          <Card delay={0} tag="Otel" src={placeholder} href="/portfolio#hotel" />
+          <Card delay={0.1} tag="Obyektlər" src={placeholder} href="/portfolio#objects" />
+          <Card delay={0.25} tag="Təmir/Tikinti" src={placeholder} href="/portfolio#construction" />
         </div>
 
       </section>
@@ -161,18 +151,23 @@ const Home = () => {
 
         {/* Who are we */}
         {/* Xəyalları Dizayn, Gələcəyi İnşa edirik! */}
-        <div className="font-poppins h-screen">
-          <span className="pointer-events-none">
-            <Heading direction="x" variant="h1" text="Biz Kimik?" />
-          </span>
-        </div>
+        <span className="pointer-events-none">
+          <Heading animate={{ from: -50, to: 0, dir: 'x' }} variant="h1" text="Biz Kimik?" />
+        </span>
+        <LiveDiv animate={{ from: 20, to: 0, dir: 'x' }}>
+          <div className="w-1/2">
+            <p className="text-zinc-100 lg:text-4xl">
+              Our construction company, with expertise spanning borders, excels in delivering top-notch projects domestically and internationally. With a proven track record, we bring excellence in construction wherever we go.
+            </p>
+          </div>
+        </LiveDiv>
         {/* Location */}
         <div className="bg-grayA lg:my-16 sm:my-8 my-4">
           <div className="relative">
             <h1
               className="flex flex-col gap-2 absolute lg:top-64 lg:right-8
               sm:-top-20 -top-12
-              text-nowrap sm:text-5xl text-xl font-semibold font-poppins text-zinc-100"
+              text-nowrap sm:text-5xl text-xl font-semibold text-zinc-100"
             >
               <span
                 className="sm:border-l-8 border-l-4 border-red-400 sm:pl-2 pl-1
@@ -189,81 +184,6 @@ const Home = () => {
         </div>
 
         {/* footer wrapper */}
-        <div className="font-poppins w-full pb-8 flex flex-col lg:flex-row
-        lg:justify-center gap-8 lg:gap-4">
-          {/* Location */}
-          <div className="lg:w-1/2 border-l-2 lg:border-0 border-zinc-400 pl-4 py-2" >
-            <h1 className="text-zinc-100 pb-1 text-lg sm:text-2xl lg:text-right
-            font-semibold"
-            >
-              Ünvan
-            </h1>
-            <span className="lg:w-fit lg:float-end flex items-center text-sm sm:text-lg text-zinc-300 pl-0">
-              <MapPinIconOutline className="w-4 sm:w-6 -translate-y-px" />
-              <h1 className="pl-1"
-              >
-                23 Leopold və Mstislav Rostropoviçlər, Bakı
-              </h1>
-              <Link target="_blank" href="https://www.google.com/maps/dir/?api=1&">
-                <FontAwesomeIcon icon={faLink}
-                  className="lg:hidden text-xs sm:text-base pl-2
-                  text-zinc-100 hover:text-zinc-300"
-                />
-              </Link>
-            </span>
-          </div>
-          {/* Contact */}
-          <div className="lg:w-1/2 flex flex-col gap-2 border-l-2 border-zinc-400 pl-4 py-2" >
-            <h1 className="text-zinc-100 pb-1 text-lg sm:text-2xl font-semibold"
-            >
-              Əlaqə
-            </h1>
-            <span className="flex h-4 sm:h-6 text-sm sm:text-lg text-zinc-300 pl-0">
-              <DevicePhoneMobileIcon className="w-4 sm:w-6 -translate-x-[3px]" />
-              <h2 className="pl-1"
-              >
-                055 555 55 55
-              </h2>
-            </span>
-            <span className="flex h-4 sm:h-6 text-sm sm:text-lg text-zinc-300 pl-0">
-              <PhoneIcon className="w-4 sm:w-6 -translate-x-[1px]
-              sm:translate-x-0" />
-              <h2 className="pl-1"
-              >
-                012 212 12 12
-              </h2>
-            </span>
-            <span className="flex h-4 sm:h-6 text-sm sm:text-lg text-zinc-300 pl-0">
-              <AtSymbolIcon className="w-4 sm:w-6 -translate-x-[1px]" />
-              <h2 className="pl-1"
-              >
-                alioglu.design@gmail.com
-              </h2>
-            </span>
-            <Link href="https://www.instagram.com/alioglu.group/" target="_blank"
-              className="flex h-4 sm:h-6 items-center text-sm sm:text-lg
-              text-zinc-300 hover:text-zinc-100">
-              <FontAwesomeIcon icon={faInstagram}
-                className="text-base sm:text-xl w-4 sm:w-6 -translate-x-[1px]"
-              />
-              <h2 className="pl-1"
-              >
-                aligolu.group
-              </h2>
-            </Link>
-            <Link href={`https://api.whatsapp.com/send?phone=${number}`} target="_blank"
-              className="flex h-4 sm:h-6 items-center text-sm sm:text-lg
-              text-zinc-300 hover:text-zinc-100">
-              <FontAwesomeIcon icon={faWhatsapp}
-                className="text-base sm:text-xl w-4 sm:w-6 -translate-x-[1px]"
-              />
-              <h2 className="pl-1"
-              >
-                {number}
-              </h2>
-            </Link>
-          </div>
-        </div>
         <p className="absolute text-xs sm:text-sm text-neutral-500
         bottom-4 left-8 lg:left-4">
           Built by

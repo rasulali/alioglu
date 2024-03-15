@@ -12,12 +12,14 @@ const config: Config = {
       colors: {
         brandColor: '#292D3A',
         grayA: '#303030',
+        grayALight: '#4A4A4A',
         accentColor: '#41372e',
       },
       animation: {
         rotateY: 'rotateY 2s linear infinite',
         rotateYEnds: 'rotateY 2s forwards ',
         appear: 'appear 2s ease-in-out forwards',
+        down: 'down 2s linear 3s infinite'
       },
       keyframes: {
         rotateY: {
@@ -29,13 +31,26 @@ const config: Config = {
           }
         },
         appear: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+          from: { opacity: '0' },
+          to: { opacity: '1' },
         },
+        down: {
+          '0%': {
+            transform: 'translate3d(0px, 0px, 0px)',
+            opacity: '0'
+          },
+          '33%': {
+            opacity: '1'
+          },
+          '66%': {
+            opacity: '1'
+          },
+          '100%': {
+            transform: 'translate3d(0px, 30px, 0px)',
+            opacity: '0'
+          },
+        }
       },
-      fontFamily: {
-        poppins: ['var(--font-poppins)'],
-      }
     },
   },
   plugins: [

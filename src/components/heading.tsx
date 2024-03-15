@@ -2,20 +2,25 @@ import { motion, useAnimation, useInView } from 'framer-motion'
 import { useRef, useEffect } from "react"
 interface HeadingProps {
   text: string
-  direction: string
   variant: string
+  animate: {
+    dir: 'x' | 'y'
+    from: number
+    to: number
+    delay?: number
+  }
 }
-const Heading: React.FC<HeadingProps> = ({ text, direction, variant }) => {
+const Heading: React.FC<HeadingProps> = ({ text, animate, variant }) => {
   const textRef = useRef(null)
   const textInView = useInView(textRef, { once: true })
 
-  const textVariantsX = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.5, } },
+  const textVariantX = {
+    hidden: { opacity: 0, x: animate.from },
+    visible: { opacity: 1, x: animate.to, transition: { duration: 0.5, delay: animate.delay } },
   }
-  const textVariantsY = {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, } },
+  const textVariantY = {
+    hidden: { opacity: 0, y: animate.from },
+    visible: { opacity: 1, y: animate.to, transition: { duration: 0.5, delay: animate.delay } },
   }
 
   const textControls = useAnimation()
@@ -29,19 +34,19 @@ const Heading: React.FC<HeadingProps> = ({ text, direction, variant }) => {
     <motion.div
       ref={textRef}
       variants={
-        direction == 'x' ? textVariantsX : textVariantsY
+        animate.dir == 'x' ? textVariantX : textVariantY
       }
       initial="hidden"
       animate={textControls}
       className="flex items-center justify-center relative w-fit">
       {variant === 'h1' ?
         <h1
-          className="lg:text-9xl sm:text-5xl text-4xl font-poppins text-zinc-100">
+          className="lg:text-9xl sm:text-5xl text-4xl text-zinc-100">
           {text}
         </h1>
         :
         <h2
-          className="lg:text-7xl sm:text-3xl text-2xl font-poppins text-zinc-100">
+          className="lg:text-7xl sm:text-3xl text-2xl text-zinc-100">
           {text}
         </h2>
       }

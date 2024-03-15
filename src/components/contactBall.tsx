@@ -8,7 +8,8 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useState } from 'react'
 
-export const number = 994554149228
+export const number: string = '994554149228'
+
 const Contact = () => {
   const [menuState, setMenuState] = useState(false)
   const handleMouseEnter = () => {

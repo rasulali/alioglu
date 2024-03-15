@@ -19,21 +19,21 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
       gap-8
       ">
         <Link
-          href="/services" className="text-md sm:text-lg font-poppins text-zinc-100 uppercase
+          href="/services" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           ">
           Xidmətlərimiz
         </Link>
         <Link
-          href="/academy" className="text-md sm:text-lg font-poppins text-zinc-100 uppercase
+          href="/academy" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           ">
           Akademiya
         </Link>
         <Link
-          href="/portfolio" className="text-md sm:text-lg font-poppins text-zinc-100 uppercase
+          href="/portfolio" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           ">
@@ -41,27 +41,27 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
         </Link>
         {/* reServe space for logo on wide screens */}
         <div className={`hidden relative lg:block w-[136px] mx-8 mt-28
-        transform translate-y-1/2 -translate-x-[5px] bg-grayA
+        translate-y-1/2 -translate-x-[5px] bg-grayA
         ${isVideoVisible && 'bg-grayA/50 backdrop-blur-lg'}
         transition-colors duration-500 h-5 -z-10 rounded-b-lg
         `} />
         {/* reServe space for logo on wide screens */}
         <Link
-          href="/media_blog" className="text-md sm:text-lg font-poppins text-zinc-100 uppercase
+          href="/media_blog" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           ">
           Mediya və Bloq
         </Link>
         <Link
-          href="/about" className="text-md sm:text-lg font-poppins text-zinc-100 uppercase
+          href="/about" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           ">
           Haqqımızda
         </Link>
         <Link
-          href="/contact" className="text-md sm:text-lg font-poppins text-zinc-100 uppercase
+          href="/contact" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           ">
@@ -75,7 +75,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
     <div className="fixed w-screen z-50">
       <nav className={`flex items-center z-50 w-full h-28 py-4 px-4 bg-grayA
      ${isVideoVisible && 'bg-grayA/50 backdrop-blur-lg'} transition-colors duration-500`}>
-        <span className="mr-auto lg:absolute lg:transform lg:left-1/2
+        <span className="mr-auto lg:absolute lg:lg:left-1/2
         lg:-translate-x-1/2 lg:top-[calc(50%+16px)] lg:-translate-y-1/2">
           <Link href="/">
             <Logo />
@@ -92,7 +92,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
       {/* mobile menu */}
       <div
         className={`lg:hidden absolute top-0 right-0 h-screen flex justify-end
-      w-screen transform transition-transform duration-100
+      w-screen transition-transform duration-100
       ${!menuState ? "translate-x-full" : ""}`}>
         {/* escape div */}
         <div
