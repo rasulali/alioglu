@@ -37,14 +37,14 @@ const Card: React.FC<CardProps> = ({ delay, tag, src, href = "" }) => {
         whileHover={{ scale: 1.03 }}
         className="relative"
         animate={cardControls}>
-        <div className="bg-gray-300 lg:rounded-xl sm:rounded-lg rounded-md overflow-hidden">
+        <div className="lg:rounded-xl sm:rounded-lg rounded-md overflow-hidden">
           <Image
             className="object-cover aspect-[4/3]
       w-[90vw] max-w-[832px] lg:w-[832px] lg:h-[624px]"
             src={src} alt="Lahiyə Fotosu" width={0} height={0} />
         </div>
         <div
-          className="absolute lg:w-1/2 w-full lg:h-32 h-1/5 bg-accentColor/50 backdrop-blur-lg
+          className="absolute lg:w-1/2 w-full lg:h-32 h-1/5 bg-accentColor/50 backdrop-blur
             left-0 bottom-0 lg:-translate-x-8 lg:translate-y-1/2 flex items-center
             lg:justify-start justify-center lg:rounded-xl sm:rounded-b-lg rounded-b-md
             ">

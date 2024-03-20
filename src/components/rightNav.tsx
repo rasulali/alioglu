@@ -9,7 +9,7 @@ const RightNav = () => {
         -translate-y-1/2 flex flex-col items-center
         bg-grayA px-4 py-4 sm:bg-transparent sm:p-0
         lg:text-2xl sm:text-xl text-lg transition duration-100
-        ${isDrawerOpen && 'translate-x-full'}
+        ${!isDrawerOpen && 'translate-x-full'}
         sm:translate-x-0`}
     >
       <div
@@ -26,6 +26,7 @@ const RightNav = () => {
         className="pb-4 flex items-center justify-center"
       >
         <a href="#interior"
+          onClick={() => { setDrawer(false) }}
           style={{ writingMode: 'vertical-lr' }}
           className="text-center text-zinc-100 lg:hover:text-neutral-500
             rotate-180 duration-500"
@@ -38,6 +39,7 @@ const RightNav = () => {
         className="py-4 flex items-center justify-center"
       >
         <a href="#exterior"
+          onClick={() => { setDrawer(false) }}
           style={{ writingMode: 'vertical-lr' }}
           className="text-center text-zinc-100 lg:hover:text-neutral-500
             rotate-180 duration-500"
@@ -50,6 +52,7 @@ const RightNav = () => {
         className="py-4 flex items-center justify-center"
       >
         <a href="#restaurants"
+          onClick={() => { setDrawer(false) }}
           style={{ writingMode: 'vertical-lr' }}
           className="text-center text-zinc-100 lg:hover:text-neutral-500
             rotate-180 duration-500"
@@ -62,6 +65,7 @@ const RightNav = () => {
         className="py-4 flex items-center justify-center"
       >
         <a href="#hotel"
+          onClick={() => { setDrawer(false) }}
           style={{ writingMode: 'vertical-lr' }}
           className="text-center text-zinc-100 lg:hover:text-neutral-500
             rotate-180 duration-500"
@@ -74,6 +78,7 @@ const RightNav = () => {
         className="py-4 flex items-center justify-center"
       >
         <a href="#objects"
+          onClick={() => { setDrawer(false) }}
           style={{ writingMode: 'vertical-lr' }}
           className="text-center text-zinc-100 lg:hover:text-neutral-500
             rotate-180 duration-500"
@@ -86,6 +91,7 @@ const RightNav = () => {
         className="pt-4 flex items-center justify-center"
       >
         <a href="#construction"
+          onClick={() => { setDrawer(false) }}
           style={{ writingMode: 'vertical-lr' }}
           className="text-center text-zinc-100 lg:hover:text-neutral-500
             rotate-180 duration-500"

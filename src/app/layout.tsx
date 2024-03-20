@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Poppins } from 'next/font/google'
+import '@fontsource/poppins'
 import Footer from "@/components/footer";
-
-const poppins = Poppins({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-})
 
 export const metadata: Metadata = {
   title: "Alioglu - Tikinti və Dizayn",
@@ -21,7 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body className={`${poppins.className}`}>
+      <body
+        style={{
+          fontFamily: 'Poppins, sans-serif',
+        }}
+        className="bg-grayA"
+      >
         {children}
         <Footer />
       </body>

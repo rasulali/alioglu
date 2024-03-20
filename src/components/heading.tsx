@@ -31,26 +31,28 @@ const Heading: React.FC<HeadingProps> = ({ text, animate, variant }) => {
     }
   }, [textInView])
   return (
-    <motion.div
-      ref={textRef}
-      variants={
-        animate.dir == 'x' ? textVariantX : textVariantY
-      }
-      initial="hidden"
-      animate={textControls}
-      className="flex items-center justify-center relative w-fit">
-      {variant === 'h1' ?
-        <h1
-          className="lg:text-9xl sm:text-5xl text-4xl text-zinc-100">
-          {text}
-        </h1>
-        :
-        <h2
-          className="lg:text-7xl sm:text-3xl text-2xl text-zinc-100">
-          {text}
-        </h2>
-      }
-    </motion.div>
+    <div>
+      <motion.div
+        ref={textRef}
+        variants={
+          animate.dir == 'x' ? textVariantX : textVariantY
+        }
+        initial="hidden"
+        animate={textControls}
+        className="flex items-center justify-center relative w-fit">
+        {variant === 'h1' ?
+          <h1
+            className="lg:text-9xl sm:text-5xl text-4xl text-zinc-100 text-nowrap">
+            {text}
+          </h1>
+          :
+          <h2
+            className="lg:text-7xl sm:text-3xl text-2xl text-zinc-100 text-nowrap">
+            {text}
+          </h2>
+        }
+      </motion.div>
+    </div>
   )
 }
 export default Heading

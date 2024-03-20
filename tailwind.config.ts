@@ -19,7 +19,9 @@ const config: Config = {
         rotateY: 'rotateY 2s linear infinite',
         rotateYEnds: 'rotateY 2s forwards ',
         appear: 'appear 2s ease-in-out forwards',
-        down: 'down 2s linear 3s infinite'
+        down: 'down 2s linear 3s infinite',
+        right: 'right 2s linear 2s infinite',
+        left: 'left 2s linear 2s infinite',
       },
       keyframes: {
         rotateY: {
@@ -49,7 +51,39 @@ const config: Config = {
             transform: 'translate3d(0px, 30px, 0px)',
             opacity: '0'
           },
-        }
+        },
+        right: {
+          '0%': {
+            transform: 'translate3d(0px, 0px, 0px)',
+            opacity: '0'
+          },
+          '33%': {
+            opacity: '1'
+          },
+          '66%': {
+            opacity: '1'
+          },
+          '100%': {
+            transform: 'translate3d(15px, 0px, 0px)',
+            opacity: '0'
+          },
+        },
+        left: {
+          '0%': {
+            transform: 'translate3d(0px, 0px, 0px)',
+            opacity: '0'
+          },
+          '33%': {
+            opacity: '1'
+          },
+          '66%': {
+            opacity: '1'
+          },
+          '100%': {
+            transform: 'translate3d(-15px, 0px, 0px)',
+            opacity: '0'
+          },
+        },
       },
     },
   },

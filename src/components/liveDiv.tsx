@@ -4,9 +4,10 @@ import { useRef, useEffect } from "react"
 interface LiveDivProps {
   children: React.ReactNode,
   animate: {
-    dir: 'x' | 'y',
+    dir: 'x' | 'y' | 'z',
     from: number,
     to: number
+    delay?: number
   }
 }
 
@@ -16,11 +17,15 @@ const LiveDiv: React.FC<LiveDivProps> = ({ children, animate }) => {
 
   const variantX = {
     hidden: { opacity: 0, x: animate.from },
-    visible: { opacity: 1, x: animate.to, transition: { duration: 0.5, } },
+    visible: { opacity: 1, x: animate.to, transition: { duration: 0.5, delay: animate.delay } },
   }
   const variantY = {
     hidden: { opacity: 0, y: animate.from },
-    visible: { opacity: 1, y: animate.to, transition: { duration: 0.5, } },
+    visible: { opacity: 1, y: animate.to, transition: { duration: 0.5, delay: animate.delay } },
+  }
+  const variantZ = {
+    hidden: { opacity: 0, scale: animate.from },
+    visible: { opacity: 1, scale: animate.to, transition: { duration: 0.5, delay: animate.delay } },
   }
 
   const divControls = useAnimation()
@@ -32,16 +37,30 @@ const LiveDiv: React.FC<LiveDivProps> = ({ children, animate }) => {
   }, [inView])
   return (
 
-    <motion.div
-      ref={ref}
-      variants={
-        animate.dir == 'x' ? variantX : variantY
-      }
-      initial="hidden"
-      animate={divControls}
-      className="">
-      {children}
-    </motion.div>
+    <div className="w-full h-full">
+      <motion.div
+        className="w-full h-full"
+        ref={ref}
+        variants={
+          (() => {
+            switch (animate.dir) {
+              case 'x':
+                return variantX;
+              case 'y':
+                return variantY;
+              case 'z':
+                return variantZ;
+              default:
+                return {};
+            }
+          })()
+        }
+        initial="hidden"
+        animate={divControls}
+      >
+        {children}
+      </motion.div>
+    </div>
   )
 }
 export default LiveDiv

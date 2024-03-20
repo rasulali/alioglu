@@ -6,12 +6,17 @@ import AzeMap from "@/components/map"
 import Navbar from "@/components/navbar"
 import { ArrowLongRightIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 import { MapPinIcon } from '@heroicons/react/24/solid'
-import { motion, useAnimation, useInView, useScroll, useMotionValueEvent } from 'framer-motion'
+import { motion, useAnimation, useInView } from 'framer-motion'
 import Link from "next/link"
 import { useRef, useEffect, useState } from "react"
 import Heading from "@/components/heading"
 import LiveDiv from "@/components/liveDiv"
-import placeholder from '../../public/placeholder.jpg'
+import hotel from '@/../public/cardImages/hotel.jpg'
+import restaurant from '@/../public/cardImages/restourant.jpg'
+import interior from '@/../public/cardImages/interior.jpg'
+import exterior from '@/../public/cardImages/exterior.jpg'
+import object from '@/../public/cardImages/object.jpg'
+import construction from '@/../public/cardImages/construction.jpg'
 
 const Home = () => {
 
@@ -58,12 +63,6 @@ const Home = () => {
   }, [textInView2])
 
 
-  const { scrollYProgress } = useScroll();
-  const [_, setScrollY] = useState(0)
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    setScrollY(latest)
-  })
-
   return (
     <main>
       <Contact />
@@ -79,15 +78,15 @@ const Home = () => {
           <source src='/background.mp4'
             type="video/mp4" />
         </video>
-        <span
+        {videoInview && <span
           className="absolute flex items-center justify-center
           bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2
-          "
-        >
+          ">
           <ChevronDownIcon
             className="opacity-0 lg:w-12 text-zinc-100/60 animate-down"
           />
         </span>
+        }
       </section>
       {/* Second Section */}
       <section className="min-h-screen p-4 sm:p-8 lg:p-16 bg-grayA">
@@ -136,12 +135,12 @@ const Home = () => {
         <div className="max-w-[calc((832px+96px)*3+128px)] lg:py-8 mx-auto flex flex-col lg:flex-row lg:flex-wrap
         items-center justify-center gap-y-8 sm:gap-y-12 lg:gap-x-10 xl:gap-x-16 lg:gap-y-24"
         >
-          <Card delay={0.15} tag="İnteryer" src={placeholder} href="/portfolio#interior" />
-          <Card delay={0.2} tag="Eksteryer" src={placeholder} href="/portfolio#exterior" />
-          <Card delay={0.05} tag="Restoran" src={placeholder} href="/portfolio#restaurants" />
-          <Card delay={0} tag="Otel" src={placeholder} href="/portfolio#hotel" />
-          <Card delay={0.1} tag="Obyektlər" src={placeholder} href="/portfolio#objects" />
-          <Card delay={0.25} tag="Təmir/Tikinti" src={placeholder} href="/portfolio#construction" />
+          <Card delay={0.15} tag="İnteryer" src={interior} href="/portfolio#interior" />
+          <Card delay={0.2} tag="Eksteryer" src={exterior} href="/portfolio#exterior" />
+          <Card delay={0.05} tag="Restoranlar" src={restaurant} href="/portfolio#restaurants" />
+          <Card delay={0} tag="Otellər" src={hotel} href="/portfolio#hotel" />
+          <Card delay={0.1} tag="İaişə Obyektlər" src={object} href="/portfolio#objects" />
+          <Card delay={0.25} tag="Təmir/Tikinti" src={construction} href="/portfolio#construction" />
         </div>
 
       </section>
@@ -162,6 +161,7 @@ const Home = () => {
           </div>
         </LiveDiv>
         {/* Location */}
+
         <div className="bg-grayA lg:my-16 sm:my-8 my-4">
           <div className="relative">
             <h1
@@ -183,17 +183,6 @@ const Home = () => {
           </div>
         </div>
 
-        {/* footer wrapper */}
-        <p className="absolute text-xs sm:text-sm text-neutral-500
-        bottom-4 left-8 lg:left-4">
-          Built by
-          <Link
-            target="_blank"
-            href="https://github.com/rasulali/"
-            className="underline text-neutral-400 pl-1">
-            Rasul Ali
-          </Link>
-        </p>
       </section>
     </main >
   )
