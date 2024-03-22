@@ -139,7 +139,7 @@ const Home = () => {
           <Card delay={0.2} tag="Eksteryer" src={exterior} href="/portfolio#exterior" />
           <Card delay={0.05} tag="Restoranlar" src={restaurant} href="/portfolio#restaurants" />
           <Card delay={0} tag="Otellər" src={hotel} href="/portfolio#hotel" />
-          <Card delay={0.1} tag="İaişə Obyektlər" src={object} href="/portfolio#objects" />
+          <Card delay={0.1} tag="İaişə Obyektləri" src={object} href="/portfolio#objects" />
           <Card delay={0.25} tag="Təmir/Tikinti" src={construction} href="/portfolio#construction" />
         </div>
 
@@ -153,29 +153,29 @@ const Home = () => {
         <span className="pointer-events-none">
           <Heading animate={{ from: -50, to: 0, dir: 'x' }} variant="h1" text="Biz Kimik?" />
         </span>
-        <LiveDiv animate={{ from: 20, to: 0, dir: 'x' }}>
-          <div className="w-1/2">
-            <p className="text-zinc-100 lg:text-4xl">
-              Our construction company, with expertise spanning borders, excels in delivering top-notch projects domestically and internationally. With a proven track record, we bring excellence in construction wherever we go.
-            </p>
-          </div>
+        <LiveDiv animate={{ from: -50, to: 0, dir: 'y' }}>
+          <p
+            className="text-zinc-100 lg:text-4xl lg:w-1/2 mx-auto text-center "
+          >
+            TODO
+          </p>
         </LiveDiv>
         {/* Location */}
 
-        <div className="bg-grayA lg:my-16 sm:my-8 my-4">
+        <div className="bg-grayA sm:my-40 my-16">
           <div className="relative">
             <h1
-              className="flex flex-col gap-2 absolute lg:top-64 lg:right-8
-              sm:-top-20 -top-12
-              text-nowrap sm:text-5xl text-xl font-semibold text-zinc-100"
+              className="flex flex-col gap-2 text-nowrap
+              top-0 left-0
+              lg:text-5xl sm:text-3xl text-xl font-semibold text-zinc-100"
             >
               <span
                 className="sm:border-l-8 border-l-4 border-red-400 sm:pl-2 pl-1
                 pt-1
                 leading-[1.2]">
-                <span>İçəri Şəhər,</span>
+                <span>İçəri Şəhər</span>
                 <span className="flex">Bakı
-                  <MapPinIcon className="sm:w-10 w-5 text-red-400" />
+                  <MapPinIcon className="pl-1 sm:w-8 w-5 text-red-400" />
                 </span>
               </span>
             </h1>

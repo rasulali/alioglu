@@ -47,7 +47,7 @@ const Heading: React.FC<HeadingProps> = ({ text, animate, variant }) => {
           </h1>
           :
           <h2
-            className="lg:text-7xl sm:text-3xl text-2xl text-zinc-100 text-nowrap">
+            className="lg:text-7xl sm:text-3xl text-xl text-zinc-100 text-nowrap">
             {text}
           </h2>
         }

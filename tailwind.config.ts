@@ -19,7 +19,7 @@ const config: Config = {
         rotateY: 'rotateY 2s linear infinite',
         rotateYEnds: 'rotateY 2s forwards ',
         appear: 'appear 2s ease-in-out forwards',
-        down: 'down 2s linear 3s infinite',
+        down: 'down 2s linear 2s infinite',
         right: 'right 2s linear 2s infinite',
         left: 'left 2s linear 2s infinite',
       },

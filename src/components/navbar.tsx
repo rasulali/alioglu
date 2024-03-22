@@ -60,13 +60,17 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
           ">
           Haqqımızda
         </Link>
-        <Link
-          href="/contact" className="text-md sm:text-lg text-zinc-100 uppercase
+        <h1
+          onClick={() => {
+
+            document.getElementById('footer')?.scrollIntoView({ behavior: 'smooth' })
+          }}
+          className="text-md sm:text-lg text-zinc-100 uppercase cursor-pointer
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           ">
           Əlaqə
-        </Link>
+        </h1>
       </div>
     )
   }

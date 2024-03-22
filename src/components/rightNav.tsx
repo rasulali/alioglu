@@ -25,79 +25,98 @@ const RightNav = () => {
       <div
         className="pb-4 flex items-center justify-center"
       >
-        <a href="#interior"
-          onClick={() => { setDrawer(false) }}
+        <h1
+          onClick={() => {
+
+            document.getElementById('interior')?.scrollIntoView({ behavior: 'smooth' })
+            setDrawer(false)
+          }}
           style={{ writingMode: 'vertical-lr' }}
           className="text-center text-zinc-100 lg:hover:text-neutral-500
-            rotate-180 duration-500"
+            rotate-180 duration-500 cursor-pointer"
         >İnteryer
-        </a>
+        </h1>
       </div>
       <div className="w-1 aspect-square rounded-full bg-zinc-100" />
 
       <div
         className="py-4 flex items-center justify-center"
       >
-        <a href="#exterior"
-          onClick={() => { setDrawer(false) }}
+        <h1
+          onClick={() => {
+            document.getElementById('exterior')?.scrollIntoView({ behavior: 'smooth' })
+            setDrawer(false)
+          }}
           style={{ writingMode: 'vertical-lr' }}
           className="text-center text-zinc-100 lg:hover:text-neutral-500
-            rotate-180 duration-500"
+            rotate-180 duration-500 cursor-pointer"
         >Eksteryer
-        </a>
+        </h1>
       </div>
       <div className="w-1 aspect-square rounded-full bg-zinc-100" />
 
       <div
         className="py-4 flex items-center justify-center"
       >
-        <a href="#restaurants"
-          onClick={() => { setDrawer(false) }}
+        <h1
+          onClick={() => {
+            document.getElementById('restaurants')?.scrollIntoView({ behavior: 'smooth' })
+            setDrawer(false)
+          }}
           style={{ writingMode: 'vertical-lr' }}
           className="text-center text-zinc-100 lg:hover:text-neutral-500
-            rotate-180 duration-500"
+            rotate-180 duration-500 cursor-pointer"
         >Restoran
-        </a>
+        </h1>
       </div>
       <div className="w-1 aspect-square rounded-full bg-zinc-100" />
 
       <div
         className="py-4 flex items-center justify-center"
       >
-        <a href="#hotel"
-          onClick={() => { setDrawer(false) }}
+        <h1
+          onClick={() => {
+            document.getElementById('hotel')?.scrollIntoView({ behavior: 'smooth' })
+            setDrawer(false)
+          }}
           style={{ writingMode: 'vertical-lr' }}
           className="text-center text-zinc-100 lg:hover:text-neutral-500
-            rotate-180 duration-500"
+            rotate-180 duration-500 cursor-pointer"
         >Otel
-        </a>
+        </h1>
       </div>
       <div className="w-1 aspect-square rounded-full bg-zinc-100" />
 
       <div
         className="py-4 flex items-center justify-center"
       >
-        <a href="#objects"
-          onClick={() => { setDrawer(false) }}
+        <h1
+          onClick={() => {
+            document.getElementById('objects')?.scrollIntoView({ behavior: 'smooth' })
+            setDrawer(false)
+          }}
           style={{ writingMode: 'vertical-lr' }}
           className="text-center text-zinc-100 lg:hover:text-neutral-500
-            rotate-180 duration-500"
+            rotate-180 duration-500 cursor-pointer"
         >Obyekt
-        </a>
+        </h1>
       </div>
       <div className="w-1 aspect-square rounded-full bg-zinc-100" />
 
       <div
         className="pt-4 flex items-center justify-center"
       >
-        <a href="#construction"
-          onClick={() => { setDrawer(false) }}
+        <h1
+          onClick={() => {
+            document.getElementById('construction')?.scrollIntoView({ behavior: 'smooth' })
+            setDrawer(false)
+          }}
           style={{ writingMode: 'vertical-lr' }}
           className="text-center text-zinc-100 lg:hover:text-neutral-500
-            rotate-180 duration-500"
+            rotate-180 duration-500 cursor-pointer"
         >
           Təmir/Tikiniti
-        </a>
+        </h1>
       </div>
 
     </div>

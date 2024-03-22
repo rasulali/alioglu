@@ -2,7 +2,6 @@
 import { motion, useAnimation, useInView } from 'framer-motion'
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRef, useEffect } from "react"
 
 interface CardProps {
@@ -35,7 +34,7 @@ const Card: React.FC<CardProps> = ({ delay, tag, src, href = "" }) => {
         variants={cardsVariants}
         initial="hidden"
         whileHover={{ scale: 1.03 }}
-        className="relative"
+        className="relative group"
         animate={cardControls}>
         <div className="lg:rounded-xl sm:rounded-lg rounded-md overflow-hidden">
           <Image
@@ -47,8 +46,13 @@ const Card: React.FC<CardProps> = ({ delay, tag, src, href = "" }) => {
           className="absolute lg:w-1/2 w-full lg:h-32 h-1/5 bg-accentColor/50 backdrop-blur
             left-0 bottom-0 lg:-translate-x-8 lg:translate-y-1/2 flex items-center
             lg:justify-start justify-center lg:rounded-xl sm:rounded-b-lg rounded-b-md
-            ">
-          <h1 className="lg:text-4xl sm:text-3xl text-2xl text-zinc-100 lg:pl-8">{tag}</h1>
+            group-hover:backdrop-blur-xl transition-all duration-200"
+        >
+          <h1
+            className="lg:text-4xl sm:text-3xl text-2xl text-zinc-100 lg:pl-8"
+          >
+            {tag}
+          </h1>
         </div>
       </motion.div>
     </a>
