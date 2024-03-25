@@ -6,7 +6,7 @@ interface BackNavProps {
 }
 const BackNav: React.FC<BackNavProps> = ({ href }) => {
   return (
-    <div className="w-fit lg:px-4 sm:px-2 px-1 lg:h-16 sm:h-12 h-8 flex items-center fixed
+    <div className="w-fit lg:px-6 sm:px-4 px-2 lg:h-16 sm:h-12 h-8 flex items-center fixed
       bg-grayALight z-50 top-2 left-2 overflow-hidden rounded-full"
     >
       <Link href={href} scroll={false}>

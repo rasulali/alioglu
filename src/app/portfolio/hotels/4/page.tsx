@@ -103,7 +103,7 @@ const Hotel = () => {
                 className="object-cover w-full h-full"
                 quality={100}
                 src={hero?.src}
-                alt="Lahiyə fotosu başlıq" />
+                alt="Layihə fotosu başlıq" />
             </LiveDiv>
           </div>
           <div

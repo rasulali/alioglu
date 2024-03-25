@@ -51,7 +51,7 @@ const Construction = () => {
       <div className="px-8 lg:pt-24 pt-12 lg:pb-12">
         <div className="w-full lg:mb-8 mb-2 flex items-end">
           <Heading animate={{ from: -20, to: 0, dir: 'x' }} variant="h2"
-            text="Lahiyə" />
+            text="Layihə" />
           <LiveDiv animate={{ from: -20, to: 0, dir: 'x', delay: 0.1 }}>
             <p className="lg:text-xl ml-auto w-fit text-neutral-400"></p>
           </LiveDiv>
@@ -108,9 +108,13 @@ const Construction = () => {
             poster: "/const_3_videos/1.jpg",
             sources: [
               {
+                src: "/const_3_videos/1.webm",
+                type: "video/webm",
+              },
+              {
                 src: "/const_3_videos/1.mp4",
                 type: "video/mp4",
-              },
+              }
             ],
           },
           {
@@ -120,9 +124,13 @@ const Construction = () => {
             poster: "/const_3_videos/2.jpg",
             sources: [
               {
+                src: "/const_3_videos/2.webm",
+                type: "video/webm",
+              },
+              {
                 src: "/const_3_videos/2.mp4",
                 type: "video/mp4",
-              },
+              }
             ],
           }
           ]}
@@ -141,7 +149,7 @@ const Construction = () => {
                 className="object-cover w-full h-full"
                 quality={100}
                 src={hero?.src}
-                alt="Lahiyə fotosu başlıq" />
+                alt="Layihə fotosu başlıq" />
             </LiveDiv>
           </div>
           <div
@@ -177,9 +185,12 @@ const Construction = () => {
                     setIndex(9)
                     setLightboxOpen(true)
                   }}
+                  disablePictureInPicture={true} disableRemotePlayback={true}
                   autoPlay muted playsInline loop preload="auto"
                   className="w-full h-full object-cover"
                 >
+                  <source src='/const_3_videos/1.webm'
+                    type="video/webm" />
                   <source src='/const_3_videos/1.mp4'
                     type="video/mp4" />
                 </video>
@@ -194,9 +205,12 @@ const Construction = () => {
                     setIndex(10)
                     setLightboxOpen(true)
                   }}
+                  disablePictureInPicture={true} disableRemotePlayback={true}
                   autoPlay muted playsInline loop preload="auto"
                   className="w-full h-full object-cover"
                 >
+                  <source src='/const_3_videos/2.webm'
+                    type="video/webm" />
                   <source src='/const_3_videos/2.mp4'
                     type="video/mp4" />
                 </video>

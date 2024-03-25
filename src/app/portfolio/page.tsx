@@ -95,7 +95,8 @@ import const1 from "./constructions/1/assets/hero.jpg"
 import const2 from "./constructions/2/assets/hero.jpg"
 import const3 from "./constructions/3/assets/hero.jpg"
 import const4 from "./constructions/4/assets/hero.jpg"
-
+import const5 from "./constructions/5/assets/hero.jpg"
+import const6 from "./constructions/6/assets/hero.jpg"
 //images
 
 const portfolio = () => {
@@ -124,124 +125,124 @@ const portfolio = () => {
 
             <div
               className="flex flex-wrap max-w-[calc(832px*3.5)] lg:gap-x-8
-              lg:gap-y-8 gap-y-4 mx-auto overflow-hidden"
+              lg:gap-y-8 gap-y-4 mx-auto overflow-hidden lg:p-4"
             >
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.1 }}
-                src={int1} name="Ağ Şəhər Lahiyəsi" text="240kv m²"
+                src={int1} name="Ağ Şəhər Layihəsi" text="240kv m²"
                 link="/portfolio/interiors/1" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.2 }}
-                src={int2} name="Lahiyə"
+                src={int2} name="Layihə"
                 link="/portfolio/interiors/2" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.3 }}
-                src={int3} name="Lahiyə"
+                src={int3} name="Layihə"
                 link="/portfolio/interiors/3" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.4 }}
-                src={int4} name="Lahiyə"
+                src={int4} name="Layihə"
                 link="/portfolio/interiors/4" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.5 }}
-                src={int5} name="Lahiyə"
+                src={int5} name="Layihə"
                 link="/portfolio/interiors/5" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.6 }}
-                src={int6} name="Lahiyə"
+                src={int6} name="Layihə"
                 link="/portfolio/interiors/6" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.1 }}
-                src={int7} name="Lahiyə"
+                src={int7} name="Layihə"
                 link="/portfolio/interiors/7" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.2 }}
-                src={int8} name="Lahiyə"
+                src={int8} name="Layihə"
                 link="/portfolio/interiors/8" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.3 }}
-                src={int9} name="Lahiyə"
+                src={int9} name="Layihə"
                 link="/portfolio/interiors/9" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.4 }}
-                src={int10} name="Lahiyə"
+                src={int10} name="Layihə"
                 link="/portfolio/interiors/10" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.5 }}
-                src={int11} name="Lahiyə"
+                src={int11} name="Layihə"
                 link="/portfolio/interiors/11" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.6 }}
-                src={int12} name="Lahiyə"
+                src={int12} name="Layihə"
                 link="/portfolio/interiors/12" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.1 }}
-                src={int13} name="Lahiyə"
+                src={int13} name="Layihə"
                 link="/portfolio/interiors/13" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.2 }}
-                src={int14} name="Lahiyə"
+                src={int14} name="Layihə"
                 link="/portfolio/interiors/14" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.3 }}
-                src={int15} name="Lahiyə"
+                src={int15} name="Layihə"
                 link="/portfolio/interiors/15" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.4 }}
-                src={int16} name="Lahiyə"
+                src={int16} name="Layihə"
                 link="/portfolio/interiors/16" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.5 }}
-                src={int17} name="Lahiyə"
+                src={int17} name="Layihə"
                 link="/portfolio/interiors/17" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.6 }}
-                src={int18} name="Lahiyə"
+                src={int18} name="Layihə"
                 link="/portfolio/interiors/18" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.1 }}
-                src={int19} name="Lahiyə"
+                src={int19} name="Layihə"
                 link="/portfolio/interiors/19" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.2 }}
-                src={int20} name="Lahiyə"
+                src={int20} name="Layihə"
                 link="/portfolio/interiors/20" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.3 }}
-                src={int21} name="Lahiyə"
+                src={int21} name="Layihə"
                 link="/portfolio/interiors/21" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.4 }}
-                src={int22} name="Lahiyə"
+                src={int22} name="Layihə"
                 link="/portfolio/interiors/22" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.5 }}
-                src={int23} name="Lahiyə"
+                src={int23} name="Layihə"
                 link="/portfolio/interiors/23" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.6 }}
-                src={int24} name="Lahiyə"
+                src={int24} name="Layihə"
                 link="/portfolio/interiors/24" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.1 }}
-                src={int25} name="Lahiyə"
+                src={int25} name="Layihə"
                 link="/portfolio/interiors/25" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.2 }}
-                src={int26} name="Lahiyə"
+                src={int26} name="Layihə"
                 link="/portfolio/interiors/26" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.3 }}
-                src={int27} name="Lahiyə"
+                src={int27} name="Layihə"
                 link="/portfolio/interiors/27" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.4 }}
-                src={int28} name="Lahiyə"
+                src={int28} name="Layihə"
                 link="/portfolio/interiors/28" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.5 }}
-                src={int29} name="Lahiyə"
+                src={int29} name="Layihə"
                 link="/portfolio/interiors/29" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.6 }}
-                src={int30} name="Lahiyə"
+                src={int30} name="Layihə"
                 link="/portfolio/interiors/30" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.1 }}
-                src={int31} name="Lahiyə"
+                src={int31} name="Layihə"
                 link="/portfolio/interiors/31" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.2 }}
-                src={int32} name="Lahiyə"
+                src={int32} name="Layihə"
                 link="/portfolio/interiors/32" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.3 }}
-                src={int33} name="Lahiyə"
+                src={int33} name="Layihə"
                 link="/portfolio/interiors/33" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.4 }}
-                src={int34} name="Lahiyə"
+                src={int34} name="Layihə"
                 link="/portfolio/interiors/34" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.5 }}
-                src={int35} name="Lahiyə"
+                src={int35} name="Layihə"
                 link="/portfolio/interiors/35" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.6 }}
-                src={int36} name="Lahiyə"
+                src={int36} name="Layihə"
                 link="/portfolio/interiors/36" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.1 }}
-                src={int37} name="Lahiyə"
+                src={int37} name="Layihə"
                 link="/portfolio/interiors/37" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.2 }}
-                src={int38} name="Lahiyə"
+                src={int38} name="Layihə"
                 link="/portfolio/interiors/38" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.3 }}
-                src={int39} name="Lahiyə"
+                src={int39} name="Layihə"
                 link="/portfolio/interiors/39" />
             </div>
 
@@ -258,49 +259,49 @@ const portfolio = () => {
             </div>
             <div
               className="flex flex-wrap max-w-[calc(832px*3.5)] lg:gap-x-8
-              lg:gap-y-12 gap-y-4 justify-center mx-auto overflow-hidden"
+              lg:gap-y-12 gap-y-4 justify-center mx-auto overflow-hidden lg:p-4"
             >
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.1 }}
-                src={ext1} name="Lahiyə"
+                src={ext1} name="Layihə"
                 link="/portfolio/exteriors/1" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.2 }}
-                src={ext2} name="Lahiyə"
+                src={ext2} name="Layihə"
                 link="/portfolio/exteriors/2" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.3 }}
-                src={ext3} name="Lahiyə"
+                src={ext3} name="Layihə"
                 link="/portfolio/exteriors/3" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.4 }}
-                src={ext4} name="Lahiyə"
+                src={ext4} name="Layihə"
                 link="/portfolio/exteriors/4" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.5 }}
-                src={ext5} name="Lahiyə"
+                src={ext5} name="Layihə"
                 link="/portfolio/exteriors/5" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.6 }}
-                src={ext6} name="Lahiyə"
+                src={ext6} name="Layihə"
                 link="/portfolio/exteriors/6" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.1 }}
-                src={ext7} name="Lahiyə"
+                src={ext7} name="Layihə"
                 link="/portfolio/exteriors/7" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.2 }}
-                src={ext8} name="Lahiyə"
+                src={ext8} name="Layihə"
                 link="/portfolio/exteriors/8" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.3 }}
-                src={ext9} name="Lahiyə"
+                src={ext9} name="Layihə"
                 link="/portfolio/exteriors/9" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.4 }}
-                src={ext10} name="Lahiyə"
+                src={ext10} name="Layihə"
                 link="/portfolio/exteriors/10" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.5 }}
-                src={ext11} name="Lahiyə"
+                src={ext11} name="Layihə"
                 link="/portfolio/exteriors/11" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.6 }}
-                src={ext12} name="Lahiyə"
+                src={ext12} name="Layihə"
                 link="/portfolio/exteriors/12" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.1 }}
-                src={ext13} name="Lahiyə"
+                src={ext13} name="Layihə"
                 link="/portfolio/exteriors/13" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.2 }}
-                src={ext14} name="Lahiyə"
+                src={ext14} name="Layihə"
                 link="/portfolio/exteriors/14" />
             </div>
           </div>
@@ -316,7 +317,7 @@ const portfolio = () => {
             </div>
             <div
               className="flex flex-wrap max-w-[calc(832px*3.5)] lg:gap-x-8
-              lg:gap-y-12 gap-y-4 justify-center mx-auto overflow-hidden"
+              lg:gap-y-12 gap-y-4 justify-center mx-auto overflow-hidden lg:p-4"
             >
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.1 }}
                 src={res1} name="Qara Qarayev" text="426 m²"
@@ -328,7 +329,7 @@ const portfolio = () => {
                 src={res3} name="Antep Lahmacun" text="120 m²"
                 link="/portfolio/restaurants/3" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.5 }}
-                src={res5} name="Lahiyə"
+                src={res5} name="Layihə"
                 link="/portfolio/restaurants/5" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.6 }}
                 src={res6} name="Arion Café" text="240 m²"
@@ -340,10 +341,10 @@ const portfolio = () => {
                 src={res8} name="Ocakbaşı Restoran"
                 link="/portfolio/restaurants/8" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.4 }}
-                src={res4} name="Lahiyə"
+                src={res4} name="Layihə"
                 link="/portfolio/restaurants/4" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.3 }}
-                src={res9} name="Lahiyə"
+                src={res9} name="Layihə"
                 link="/portfolio/restaurants/9" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.4 }}
                 src={res10} name="Şanlıurfa Restoran"
@@ -365,7 +366,7 @@ const portfolio = () => {
             </div>
             <div
               className="flex flex-wrap max-w-[calc(832px*3.5)] lg:gap-x-8
-              lg:gap-y-12 gap-y-4 justify-center mx-auto overflow-hidden"
+              lg:gap-y-12 gap-y-4 justify-center mx-auto overflow-hidden lg:p-4"
             >
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.2 }}
                 src={hot2} name="Knyazlı Otel" text="Qəbələ 3000 m²"
@@ -395,43 +396,43 @@ const portfolio = () => {
             </div>
             <div
               className="flex flex-wrap max-w-[calc(832px*3.5)] lg:gap-x-8
-              lg:gap-y-12 gap-y-4 justify-center mx-auto overflow-hidden"
+              lg:gap-y-12 gap-y-4 justify-center mx-auto overflow-hidden lg:p-4"
             >
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.1 }}
-                src={obj1} name="Lahiyə"
+                src={obj1} name="Layihə"
                 link="/portfolio/objects/1" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.2 }}
-                src={obj2} name="Lahiyə"
+                src={obj2} name="Layihə"
                 link="/portfolio/objects/2" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.3 }}
-                src={obj3} name="Lahiyə"
+                src={obj3} name="Layihə"
                 link="/portfolio/objects/3" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.4 }}
-                src={obj4} name="Lahiyə"
+                src={obj4} name="Layihə"
                 link="/portfolio/objects/4" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.5 }}
-                src={obj5} name="Lahiyə"
+                src={obj5} name="Layihə"
                 link="/portfolio/objects/5" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.6 }}
-                src={obj6} name="Lahiyə"
+                src={obj6} name="Layihə"
                 link="/portfolio/objects/6" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.1 }}
-                src={obj7} name="Lahiyə"
+                src={obj7} name="Layihə"
                 link="/portfolio/objects/7" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.2 }}
-                src={obj8} name="Lahiyə"
+                src={obj8} name="Layihə"
                 link="/portfolio/objects/8" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.3 }}
-                src={obj9} name="Lahiyə"
+                src={obj9} name="Layihə"
                 link="/portfolio/objects/9" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.4 }}
-                src={obj10} name="Lahiyə"
+                src={obj10} name="Layihə"
                 link="/portfolio/objects/10" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.5 }}
-                src={obj11} name="Lahiyə"
+                src={obj11} name="Layihə"
                 link="/portfolio/objects/11" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.6 }}
-                src={obj12} name="Lahiyə"
+                src={obj12} name="Layihə"
                 link="/portfolio/objects/12" />
             </div>
           </div>
@@ -448,20 +449,26 @@ const portfolio = () => {
             </div>
             <div
               className="flex flex-wrap max-w-[calc(832px*3.5)] lg:gap-x-8
-              lg:gap-y-12 gap-y-4 justify-center mx-auto overflow-hidden"
+              lg:gap-y-12 gap-y-4 justify-center mx-auto overflow-hidden lg:p-4"
             >
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.1 }}
-                src={const1} name="Lahiyə"
+                src={const1} name="Layihə"
                 link="/portfolio/constructions/1" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.2 }}
-                src={const2} name="Lahiyə"
+                src={const2} name="Layihə"
                 link="/portfolio/constructions/2" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.3 }}
-                src={const3} name="Lahiyə"
+                src={const3} name="Layihə"
                 link="/portfolio/constructions/3" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.4 }}
-                src={const4} name="Lahiyə"
+                src={const4} name="Layihə"
                 link="/portfolio/constructions/4" />
+              <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.5 }}
+                src={const5} name="Layihə"
+                link="/portfolio/constructions/5" />
+              <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.6 }}
+                src={const6} name="Layihə"
+                link="/portfolio/constructions/6" />
             </div>
           </div>
 

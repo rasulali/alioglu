@@ -33,14 +33,27 @@ const Card: React.FC<CardProps> = ({ delay, tag, src, href = "" }) => {
         ref={cardsRef}
         variants={cardsVariants}
         initial="hidden"
-        whileHover={{ scale: 1.03 }}
+        whileHover={{
+          scale: 1.02,
+          transition: {
+            duration: 0.1,
+            ease: "easeOut",
+          }
+        }}
+        whileTap={{
+          scale: 0.99,
+          transition: {
+            duration: 0.1,
+            ease: "easeIn",
+          }
+        }}
         className="relative group"
         animate={cardControls}>
         <div className="lg:rounded-xl sm:rounded-lg rounded-md overflow-hidden">
           <Image
             className="object-cover aspect-[4/3]
       w-[90vw] max-w-[832px] lg:w-[832px] lg:h-[624px]"
-            src={src} alt="Lahiyə Fotosu" width={0} height={0} />
+            src={src} alt="Layihə Fotosu" width={0} height={0} />
         </div>
         <div
           className="absolute lg:w-1/2 w-full lg:h-32 h-1/5 bg-accentColor/50 backdrop-blur

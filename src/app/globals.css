@@ -10,3 +10,10 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.textStroke {
+  @media (min-width: 1024px) {
+  -webkit-text-stroke: 2px #a3a3a3;
+  -webkit-text-fill-color: transparent;
+  }
+}

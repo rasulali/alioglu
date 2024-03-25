@@ -16,27 +16,27 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
     return (
       <div className="w-full flex flex-col lg:flex-row px-4 py-4
       lg:justify-evenly lg:h-full lg:items-center text-right lg:text-center
-      gap-8
+      gap-8 text-nowrap
       ">
         <Link
-          href="/services" className="text-md sm:text-lg text-zinc-100 uppercase
+          href="#" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
-          ">
+          w-fit lg:ml-0 ml-auto z-10">
           Xidmətlərimiz
         </Link>
         <Link
-          href="/academy" className="text-md sm:text-lg text-zinc-100 uppercase
+          href="#" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
-          ">
+          w-fit lg:ml-0 ml-auto z-10">
           Akademiya
         </Link>
         <Link
           href="/portfolio" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
-          ">
+          w-fit lg:ml-0 ml-auto z-10">
           Portfolio
         </Link>
         {/* reServe space for logo on wide screens */}
@@ -47,39 +47,39 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
         `} />
         {/* reServe space for logo on wide screens */}
         <Link
-          href="/media_blog" className="text-md sm:text-lg text-zinc-100 uppercase
+          href="#" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
-          ">
+          w-fit lg:ml-0 ml-auto z-10">
           Mediya və Bloq
         </Link>
         <Link
-          href="/about" className="text-md sm:text-lg text-zinc-100 uppercase
+          href="#" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
-          ">
+          w-fit lg:ml-0 ml-auto z-10">
           Haqqımızda
         </Link>
-        <h1
+        <a
+          href="/#footer"
           onClick={() => {
-
-            document.getElementById('footer')?.scrollIntoView({ behavior: 'smooth' })
+            setMenuState(false)
           }}
           className="text-md sm:text-lg text-zinc-100 uppercase cursor-pointer
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
-          ">
+          w-fit lg:ml-0 ml-auto z-10">
           Əlaqə
-        </h1>
+        </a>
       </div>
     )
   }
 
   return (
-    <div className="fixed w-screen z-50">
-      <nav className={`flex items-center z-50 w-full h-28 py-4 px-4 bg-grayA
+    <div className="fixed w-screen z-30">
+      <nav className={`flex items-center z-30 w-full h-28 py-4 px-4 bg-grayA
      ${isVideoVisible && 'bg-grayA/50 backdrop-blur-lg'} transition-colors duration-500`}>
-        <span className="mr-auto lg:absolute lg:lg:left-1/2
+        <span className="mr-auto lg:absolute lg:lg:left-1/2 z-10
         lg:-translate-x-1/2 lg:top-[calc(50%+16px)] lg:-translate-y-1/2">
           <Link href="/">
             <Logo />
@@ -90,7 +90,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
         </div>
         <Bars3Icon
           onClick={() => { setMenuState(!menuState) }}
-          className="lg:hidden h-12 w-12 ml-auto text-zinc-100" />
+          className="lg:hidden h-12 w-12 ml-auto text-zinc-100 z-10" />
       </nav>
 
       {/* mobile menu */}

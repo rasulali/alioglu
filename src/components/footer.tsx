@@ -30,7 +30,7 @@ const Footer = () => {
         </span>
         <span className="flex h-4 sm:h-6 text-sm sm:text-lg text-zinc-300 pl-0
         hover:text-neutral-400 transition-colors duration-200">
-          <Link target="_blank" href="https://api.whatsapp.com/send?phone=994502989999"
+          <Link target="_blank" href="https://wa.me/994502989999"
             className="flex"
           >
             <FontAwesomeIcon icon={faWhatsapp}
@@ -48,13 +48,13 @@ const Footer = () => {
                 <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" d="M.5 12.5v-11a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-3V8.76h.71a.61.61 0 0 0 .61-.61v-.77a.611.611 0 0 0-.61-.61h-.67v-.94c0-.84.38-.84.76-.84h.49a.55.55 0 0 0 .43-.18a.58.58 0 0 0 .18-.43v-.74a.618.618 0 0 0-.6-.64H9.65a2.32 2.32 0 0 0-2.39 2.6v1.17h-.64a.61.61 0 0 0-.62.61v.77a.61.61 0 0 0 .62.61h.64v4.74H1.5a1 1 0 0 1-1-1" />
               </svg>
             </span>
-            Alioglu
+            alioglu
           </Link>
         </span>
       </div>
 
       {/* Location */}
-      <div className="border-l-2 lg:border-0 border-zinc-400 px-4 py-2 lg:py-0
+      <div className="border-l-2 lg:border-0 border-zinc-400 px-4 py-2
       lg:border-x-4 lg:border-grayALight" >
         <h1 className="text-zinc-100 lg:mb-4 mb-2 text-lg sm:text-2xl
             font-semibold pl-0.5"
@@ -115,13 +115,13 @@ const Footer = () => {
         <span className="flex h-4 sm:h-6 text-sm sm:text-lg text-zinc-300
         hover:text-neutral-400 transition-colors duration-200">
           <AtSymbolIcon className="w-4 sm:w-6 mr-2" />
-          <Link href="mailto:alioglu.design@gmail.com"
+          <Link href="mailto:office@alioglu.az"
           >
-            alioglu.design@gmail.com
+            office@alioglu.az
           </Link>
         </span>
       </div>
-      <p className="absolute text-xs sm:text-sm text-neutral-500
+      <p className="absolute text-xs sm:text-sm text-neutral-500 lg:sm:pl-0 pl-2
         bottom-2 left-0 lg:left-1/2 transform lg:-translate-x-[calc(50%-1.5ch)]">
         Built by
         <Link

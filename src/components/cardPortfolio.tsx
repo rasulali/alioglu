@@ -1,6 +1,6 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image"
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from 'framer-motion'
 import Link from "next/link";
 
@@ -17,7 +17,7 @@ interface CardProps {
     delay?: number
   }
 }
-const Card: React.FC<CardProps> = ({ src, alt = "Lahiyə Fotosu", name, link, animate, text }) => {
+const Card: React.FC<CardProps> = ({ src, alt = "Layihə Fotosu", name, link, animate, text }) => {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true })
 
@@ -45,6 +45,20 @@ const Card: React.FC<CardProps> = ({ src, alt = "Lahiyə Fotosu", name, link, an
     <Link href={link}>
       <motion.div
         ref={ref}
+        whileHover={{
+          scale: 1.02,
+          transition: {
+            duration: 0.1,
+            ease: "easeOut",
+          }
+        }}
+        whileTap={{
+          scale: 0.99,
+          transition: {
+            duration: 0.1,
+            ease: "easeIn",
+          }
+        }}
         variants={
           (() => {
             switch (animate.dir) {

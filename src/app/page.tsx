@@ -1,12 +1,12 @@
 'use client'
 
 import Card from "@/components/card"
-import Contact from "@/components/contactBall"
+import Contact from "@/components/quickContact"
 import AzeMap from "@/components/map"
 import Navbar from "@/components/navbar"
 import { ArrowLongRightIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 import { MapPinIcon } from '@heroicons/react/24/solid'
-import { motion, useAnimation, useInView } from 'framer-motion'
+import { motion, useAnimation, useInView, useMotionValueEvent, useScroll } from 'framer-motion'
 import Link from "next/link"
 import { useRef, useEffect, useState } from "react"
 import Heading from "@/components/heading"
@@ -62,12 +62,18 @@ const Home = () => {
     }
   }, [textInView2])
 
+  const [scroll, setScroll] = useState(0)
+  const { scrollYProgress } = useScroll()
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    setScroll(latest)
+  })
 
   return (
-    <main>
-      <Contact />
+    <main className="relative">
       {/* First Section */}
       <section className="w-full h-screen bg-grayA">
+        <Contact scroll={scroll} />
         <Navbar isVideoVisible={videoInview} />
 
         <video
@@ -75,6 +81,8 @@ const Home = () => {
           autoPlay muted playsInline loop preload="auto"
           className="w-full h-full object-cover"
         >
+          <source src='/background.webm'
+            type="video/webm" />
           <source src='/background.mp4'
             type="video/mp4" />
         </video>
@@ -109,7 +117,7 @@ const Home = () => {
               className={`text-4xl sm:text-5xl lg:text-9xl transition-colors z-10
             duration-100 delay-75
              ${isTextHover ? "text-grayA" : "text-zinc-100"}`}>
-              Lahiyələrimiz
+              Layihələrimiz
             </h1>
             <motion.span
               ref={textRef}
@@ -149,19 +157,23 @@ const Home = () => {
         {/* Partners */}
 
         {/* Who are we */}
-        {/* Xəyalları Dizayn, Gələcəyi İnşa edirik! */}
-        <span className="pointer-events-none">
-          <Heading animate={{ from: -50, to: 0, dir: 'x' }} variant="h1" text="Biz Kimik?" />
-        </span>
-        <LiveDiv animate={{ from: -50, to: 0, dir: 'y' }}>
-          <p
-            className="text-zinc-100 lg:text-4xl lg:w-1/2 mx-auto text-center "
+        <div
+          className="hidden h-screen"
+        >
+          <span className="pointer-events-none">
+            <Heading animate={{ from: -50, to: 0, dir: 'x' }} variant="h1" text="Biz Kimik?" />
+          </span>
+          <div
+            className="w-1/2"
           >
-            TODO
-          </p>
-        </LiveDiv>
-        {/* Location */}
+            <svg fill="none" viewBox="0 0 812 412">
+              <path stroke="#000" strokeLinecap="round" strokeWidth="12" d="M6 6h794c3.314 0 6 1.34315 6 3v397" />
+            </svg>
+          </div>
+        </div>
 
+
+        {/* Location */}
         <div className="bg-grayA sm:my-40 my-16">
           <div className="relative">
             <h1

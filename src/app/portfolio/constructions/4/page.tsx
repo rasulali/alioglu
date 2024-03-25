@@ -109,9 +109,13 @@ const Construction = () => {
             poster: "/const_4_videos/1.jpg",
             sources: [
               {
+                src: "/const_4_videos/1.webm",
+                type: "video/webm",
+              },
+              {
                 src: "/const_4_videos/1.mp4",
                 type: "video/mp4",
-              },
+              }
             ],
           },
           ]}
@@ -130,7 +134,7 @@ const Construction = () => {
                 className="object-cover w-full h-full"
                 quality={100}
                 src={hero?.src}
-                alt="Lahiyə fotosu başlıq" />
+                alt="Layihə fotosu başlıq" />
             </LiveDiv>
           </div>
           <div
@@ -167,9 +171,12 @@ const Construction = () => {
                     setIndex(1)
                     setLightboxOpen(true)
                   }}
+                  disablePictureInPicture={true} disableRemotePlayback={true}
                   autoPlay muted playsInline loop preload="auto"
                   className="w-full h-full object-cover"
                 >
+                  <source src='/const_4_videos/1.webm'
+                    type="video/webm" />
                   <source src='/const_4_videos/1.mp4'
                     type="video/mp4" />
                 </video>
