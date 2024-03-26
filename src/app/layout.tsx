@@ -8,8 +8,6 @@ export const metadata: Metadata = {
   description: "Xəyalları Dizayn, Gələcəyi İnşa Edirik!",
 };
 
-export const runtime = 'edge'
-
 export default function RootLayout({
   children,
 }: {

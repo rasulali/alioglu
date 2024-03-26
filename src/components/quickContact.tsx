@@ -205,7 +205,7 @@ const Contact: React.FC<ContactProps> = ({ scroll }) => {
                     <h1
                       className="block text-zinc-100 text-xl lg:text-3xl"
                     >
-                      Vurghun Plasa
+                      Vurgun Residence, 2-ci mərtəbə
                     </h1>
                   </div>
                   <div className="lg:mt-8 mt-4">
@@ -218,7 +218,7 @@ const Contact: React.FC<ContactProps> = ({ scroll }) => {
                     <h1
                       className="block text-zinc-100 text-xl lg:text-3xl"
                     >
-                      23 Leopold və Mstislav Rostropoviçlər, Bakı
+                      23 Leopold və Mstislav Rostropoviçlər
                     </h1>
                   </div>
                 </div>

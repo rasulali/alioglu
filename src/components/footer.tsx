@@ -12,7 +12,7 @@ const Footer = () => {
         lg:justify-center gap-8 lg:gap-4 bg-grayA lg:pt-16 pt-12">
 
       {/* Social Media */}
-      <div className="flex flex-col gap-2 pl-4 py-2 lg:p-0
+      <div className="flex flex-col gap-2 pl-4 py-2 lg:p-0 lg:py-4
       border-l-2 lg:border-0 border-zinc-400" >
         <h1 className="text-zinc-100 mb-2 text-lg sm:text-2xl font-semibold text-nowrap"
         >
@@ -54,19 +54,30 @@ const Footer = () => {
       </div>
 
       {/* Location */}
-      <div className="border-l-2 lg:border-0 border-zinc-400 px-4 py-2
+      <div className="border-l-2 lg:border-0 border-zinc-400 px-4 lg:py-4
       lg:border-x-4 lg:border-grayALight" >
         <h1 className="text-zinc-100 lg:mb-4 mb-2 text-lg sm:text-2xl
             font-semibold pl-0.5"
         >
           Ünvan
         </h1>
-        <span className="flex items-center text-sm sm:text-lg
-         text-zinc-300 pl-0">
+        <div className="flex flex-col text-sm sm:text-lg
+         text-zinc-300">
+          <div className="flex flex-col items-start mb-2">
+            <h1 className="lg:text-xl font-semibold pl-1"
+            >
+              Baş Ofis
+            </h1>
+            <h1 className="flex text-neutral-300"
+            >
+              <MapPinIcon className="w-4 sm:w-6 mr-2" />
+              Vurgun Residence, 2-ci mərtəbə
+            </h1>
+          </div>
           <div className="flex flex-col items-start">
             <h1 className="lg:text-xl font-semibold pl-1"
             >
-              Bakı, Azərbaycan
+              Akademiya
             </h1>
             <h1 className="flex text-neutral-300"
             >
@@ -81,11 +92,12 @@ const Footer = () => {
               </Link>
             </h1>
           </div>
-        </span>
+
+        </div>
       </div>
 
       {/* Contact */}
-      <div className="flex flex-col gap-2 pl-4 py-2 lg:p-0
+      <div className="flex flex-col gap-2 pl-4 py-2 lg:p-0 lg:py-4
       border-l-2 lg:border-0 border-zinc-400" >
         <h1 className="text-zinc-100 lg:mb-3 mb-2 text-lg sm:text-2xl
         pl-0.5 font-semibold"

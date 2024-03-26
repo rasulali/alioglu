@@ -9,7 +9,7 @@ interface NavbarProps {
   isVideoVisible: boolean
 }
 
-const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
+const Navbar: React.FC<NavbarProps> = ({ isVideoVisible = true }) => {
   const [menuState, setMenuState] = useState(false)
 
   const Menu = () => {
