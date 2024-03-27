@@ -9,6 +9,11 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  images: {
+    loader: 'custom',
+    loaderFile: './imageLoader.js',
+  },
+}
 
 export default nextConfig
