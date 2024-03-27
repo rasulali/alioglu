@@ -4,8 +4,6 @@ import { ArrowUturnLeftIcon } from "@heroicons/react/16/solid";
 import Link from "next/link";
 import { motion } from 'framer-motion'
 
-export const runtime = 'edge'
-
 const NotFound = () => {
   return (
     <main
