@@ -8,8 +8,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@cloudflare/next-on-pages": "^1.11.0",
-    "@cloudflare/workers-types": "^4.20240320.1",
     "@fontsource/poppins": "^5.0.12",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
@@ -21,7 +19,6 @@
     "react": "^18",
     "react-dom": "^18",
     "sharp": "^0.33.2",
-    "wrangler": "^3.38.0",
     "yet-another-react-lightbox": "^3.17.1"
   },
   "devDependencies": {
