@@ -1,3 +1,4 @@
+export const runtime = 'edge'
 const Loading = () => {
   return (
     <div className="h-screen flex bg-grayA items-center overflow-hidden justify-center">
