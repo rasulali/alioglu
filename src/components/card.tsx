@@ -51,6 +51,7 @@ const Card: React.FC<CardProps> = ({ delay, tag, src, href = "" }) => {
         animate={cardControls}>
         <div className="lg:rounded-xl sm:rounded-lg rounded-md overflow-hidden">
           <Image
+            quality={70}
             className="object-cover aspect-[4/3]
       w-[90vw] max-w-[832px] lg:w-[832px] lg:h-[624px]"
             src={src} alt="Layihə Fotosu" width={0} height={0} />

@@ -13,7 +13,7 @@ const NotFound = () => {
       lg:translate-y-[calc(-50%+134px)]"
       >
         <h1
-          className="textStroke lg:text-7xl sm:text-3xl text-xl text-center font-bold
+          className="textStroke lg:text-7xl sm:text-3xl text-xl w-screen text-center font-bold
            text-neutral-400 text-nowrap"
         >
           404 | Səhifə tapılmadı

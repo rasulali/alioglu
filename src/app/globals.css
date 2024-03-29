@@ -2,12 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* For WebKit-based browsers like Chrome */
 ::-webkit-scrollbar {
-  display: none;
+   display:none;
 }
 
+
 * {
+  /* IE and Edge */
   -ms-overflow-style: none;
+  /* Firefox  */
   scrollbar-width: none;
 }
 

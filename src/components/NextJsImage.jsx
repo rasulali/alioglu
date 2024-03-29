@@ -6,6 +6,7 @@ import {
   useLightboxState,
 } from "yet-another-react-lightbox";
 
+
 function isNextJsImage(slide) {
   return (
     isImageSlide(slide) &&
@@ -14,7 +15,7 @@ function isNextJsImage(slide) {
   );
 }
 
-export default function NextJsImage({ slide, offset, rect }) {
+const NextJsImage = ({ slide, offset, rect }) => {
   const {
     on: { click },
     carousel: { imageFit },
@@ -41,8 +42,9 @@ export default function NextJsImage({ slide, offset, rect }) {
   return (
     <div style={{ position: "relative", width, height }}>
       <Image
+        quality={70}
         fill
-        alt=""
+        alt={slide.alt}
         src={slide}
         loading="eager"
         draggable={false}
@@ -59,3 +61,4 @@ export default function NextJsImage({ slide, offset, rect }) {
     </div>
   );
 }
+export default NextJsImage

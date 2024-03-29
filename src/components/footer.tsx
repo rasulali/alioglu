@@ -64,24 +64,24 @@ const Footer = () => {
         <div className="flex flex-col text-sm sm:text-lg
          text-zinc-300">
           <div className="flex flex-col items-start mb-2">
-            <h1 className="lg:text-xl font-semibold pl-1"
+            <h1 className="lg:text-xl font-semibold flex"
             >
               Baş Ofis
+              <MapPinIcon className="w-4 sm:w-6 ml-1" />
             </h1>
-            <h1 className="flex text-neutral-300"
+            <h1 className="text-neutral-300"
             >
-              <MapPinIcon className="w-4 sm:w-6 mr-2" />
               Vurgun Residence, 2-ci mərtəbə
             </h1>
           </div>
           <div className="flex flex-col items-start">
-            <h1 className="lg:text-xl font-semibold pl-1"
+            <h1 className="lg:text-xl font-semibold flex"
             >
               Akademiya
+              <MapPinIcon className="w-4 sm:w-6 ml-1" />
             </h1>
             <h1 className="flex text-neutral-300"
             >
-              <MapPinIcon className="w-4 sm:w-6 mr-2" />
               23 Leopold və Mstislav Rostropoviçlər
               <Link
                 className="hidden"

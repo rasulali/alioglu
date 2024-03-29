@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Bars3Icon } from '@heroicons/react/24/outline'
 
@@ -9,8 +9,17 @@ interface NavbarProps {
   isVideoVisible: boolean
 }
 
-const Navbar: React.FC<NavbarProps> = ({ isVideoVisible = true }) => {
+const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
   const [menuState, setMenuState] = useState(false)
+  const [transparent, setTransparent] = useState(true)
+  useEffect(() => {
+    if (isVideoVisible) {
+      setTransparent(true)
+    }
+    else {
+      setTransparent(false)
+    }
+  }, [isVideoVisible])
 
   const Menu = () => {
     return (
@@ -78,7 +87,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible = true }) => {
   return (
     <div className="fixed w-screen z-30">
       <nav className={`flex items-center z-30 w-full h-28 py-4 px-4 bg-grayA
-     ${isVideoVisible && 'bg-grayA/50 backdrop-blur-lg'} transition-colors duration-500`}>
+     ${transparent && 'bg-grayA/50 backdrop-blur-lg'} transition-colors duration-500`}>
         <span className="mr-auto lg:absolute lg:lg:left-1/2 z-10
         lg:-translate-x-1/2 lg:top-[calc(50%+16px)] lg:-translate-y-1/2">
           <Link href="/">
