@@ -78,7 +78,10 @@ const Card: React.FC<CardProps> = ({ src, alt = "Layihə Fotosu", name, link, an
         className="relative max-w-[832px] lg:w-[832px] w-auto aspect-[4/3] bg-neutral-500
       lg:rounded-xl sm:rounded-lg rounded-md overflow-hidden"
       >
-        <Image src={src} alt={alt} className="w-full h-full object-cover" />
+        <Image
+          quality={70}
+          width={1080} height={0}
+          src={src} alt={alt} className="w-full h-full object-cover" />
 
 
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t

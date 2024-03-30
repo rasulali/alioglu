@@ -35,9 +35,9 @@ interface InfoProps {
   description?: string
 }
 
-const Interior = ({ params }: { params: { id: number } }) => {
+const Object = ({ params }: { params: { id: number } }) => {
 
-  if (isNaN(params.id) || params.id < 1 || params.id > 39) {
+  if (isNaN(params.id) || params.id < 1 || params.id > 14) {
     notFound();
   }
 
@@ -65,7 +65,7 @@ const Interior = ({ params }: { params: { id: number } }) => {
     }
   }, [typeof window !== "undefined" && window.innerWidth]);
 
-  const [imagesLoaded, setImagesLoaded] = useState(false)
+  const [imagesLoaded, setImagesLoaded] = useState(true)
 
   useEffect(() => {
     (async () => {
@@ -102,7 +102,7 @@ const Interior = ({ params }: { params: { id: number } }) => {
   const deviceSizes = [640, 750, 828, 1080, 1200, 1920, 2048, 3840];
 
   function nextImageUrl(src: string, size: number) {
-    return `/_next/image?url=${encodeURIComponent(`/interiors/${params.id}/images/${src}`)}&w=${size}&q=70`;
+    return `/_next/image?url=${encodeURIComponent(`/objects/${params.id}/images/${src}`)}&w=${size}&q=70`;
   }
 
   interface Slide {
@@ -126,7 +126,6 @@ const Interior = ({ params }: { params: { id: number } }) => {
         })),
       alt: alt,
     }));
-
 
   return (
     <>
@@ -187,7 +186,7 @@ const Interior = ({ params }: { params: { id: number } }) => {
                     }}
                     className="object-cover w-full h-full"
                     quality={70}
-                    src={`/interiors/${params.id}/images/${imageArray[0]?.src}`}
+                    src={`/objects/${params.id}/images/${imageArray[0]?.src}`}
                     width={windowDimensions.width}
                     height={0}
                     priority
@@ -213,7 +212,7 @@ const Interior = ({ params }: { params: { id: number } }) => {
                           className="object-cover w-full h-full"
                           width={windowDimensions.width / 6}
                           height={0}
-                          src={`/interiors/${params.id}/images/${image.src}`}
+                          src={`/objects/${params.id}/images/${image.src}`}
                           alt={image.alt}
                           quality={70}
                         />
@@ -236,4 +235,4 @@ const Interior = ({ params }: { params: { id: number } }) => {
     </>
   )
 }
-export default Interior;
+export default Object;

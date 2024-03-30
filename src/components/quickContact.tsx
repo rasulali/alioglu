@@ -90,12 +90,13 @@ const Contact: React.FC<ContactProps> = ({ scroll }) => {
             }}
             className="fixed w-screen h-screen z-50 flex items-end"
           >
-            <div className="w-full h-screen lg:h-auto lg:w-1/2 lg:pb-12 lg:mx-auto bg-grayA flex flex-col">
+            <div className="w-full lg:h-auto lg:w-1/2 lg:pb-12 lg:mx-auto
+            justify-center py-4 lg:py-0 lg:justify-start bg-grayA flex flex-col ">
 
               {/* Heading and Close button */}
               <div
                 className="flex items-center justify-between px-6 lg:mt-12 lg:mb-6
-                 mt-4 mb-2 lg:px-12"
+                 mb-2 lg:px-12"
               >
                 <h1
                   className="text-4xl lg:text-7xl text-zinc-100"

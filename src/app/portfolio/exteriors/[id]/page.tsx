@@ -189,7 +189,7 @@ const Exterior = ({ params }: { params: { id: number } }) => {
                     src={`/exteriors/${params.id}/images/${imageArray[0]?.src}`}
                     width={windowDimensions.width}
                     height={0}
-                    priority={true}
+                    priority
                     alt="Layihə fotosu başlıq" />
                 </LiveDiv>
               </div>
@@ -202,13 +202,13 @@ const Exterior = ({ params }: { params: { id: number } }) => {
                   .map((image, index) => (
                     <div key={index}
                       className="lg:w-[calc(33.3333%-8px)] w-1/2 lg:h-1/2 lg:aspect-auto aspect-[4/3]">
-                      <LiveDiv animate={{ from: 0.9, to: 1, dir: 'z', delay: index * 0.05 }}>
+                      <LiveDiv animate={{ from: 0.9, to: 1, dir: 'z', delay: 0.1 }}>
                         <Image
                           onClick={() => {
                             setIndex(index + 1)
                             setLightboxOpen(true)
                           }}
-                          priority={true}
+                          priority
                           className="object-cover w-full h-full"
                           width={windowDimensions.width / 6}
                           height={0}

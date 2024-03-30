@@ -54,7 +54,7 @@ const Card: React.FC<CardProps> = ({ delay, tag, src, href = "" }) => {
             quality={70}
             className="object-cover aspect-[4/3]
       w-[90vw] max-w-[832px] lg:w-[832px] lg:h-[624px]"
-            src={src} alt="Layihə Fotosu" width={0} height={0} />
+            src={src} alt="Layihə Fotosu" width={1080} height={0} />
         </div>
         <div
           className="absolute lg:w-1/2 w-full lg:h-32 h-1/5 bg-accentColor/50 backdrop-blur
