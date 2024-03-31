@@ -75,7 +75,7 @@ const Card: React.FC<CardProps> = ({ src, alt = "Layihə Fotosu", name, link, an
         }
         initial="hidden"
         animate={divControls}
-        className="relative max-w-[832px] lg:w-[832px] w-auto aspect-[4/3] bg-neutral-500
+        className="relative lg:max-w-[832px] lg:w-[832px] w-auto aspect-[4/3] bg-neutral-500
       lg:rounded-xl sm:rounded-lg rounded-md overflow-hidden"
       >
         <Image

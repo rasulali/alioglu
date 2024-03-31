@@ -1,6 +1,15 @@
+'use client'
 import { ChevronLeftIcon } from '@heroicons/react/24/solid'
 import { useState } from 'react'
-const RightNav = () => {
+interface Props {
+  intInView: boolean
+  extInView: boolean
+  restInView: boolean
+  hotelInView: boolean
+  objInView: boolean
+  consInView: boolean
+}
+const RightNav: React.FC<Props> = ({ intInView, extInView, restInView, hotelInView, objInView, consInView }) => {
   const [isDrawerOpen, setDrawer] = useState(false)
 
   return (
@@ -32,8 +41,8 @@ const RightNav = () => {
             setDrawer(false)
           }}
           style={{ writingMode: 'vertical-lr' }}
-          className="text-center text-zinc-100 lg:hover:text-neutral-500
-            rotate-180 duration-500 cursor-pointer"
+          className={`text-center lg:hover:text-neutral-500
+            rotate-180 duration-500 cursor-pointer ${intInView ? 'text-neutral-500' : 'text-zinc-100'}`}
         >İnteryer
         </h1>
       </div>
@@ -48,8 +57,8 @@ const RightNav = () => {
             setDrawer(false)
           }}
           style={{ writingMode: 'vertical-lr' }}
-          className="text-center text-zinc-100 lg:hover:text-neutral-500
-            rotate-180 duration-500 cursor-pointer"
+          className={`text-center lg:hover:text-neutral-500
+            rotate-180 duration-500 cursor-pointer ${extInView ? 'text-neutral-500' : 'text-zinc-100'}`}
         >Eksteryer
         </h1>
       </div>
@@ -64,8 +73,8 @@ const RightNav = () => {
             setDrawer(false)
           }}
           style={{ writingMode: 'vertical-lr' }}
-          className="text-center text-zinc-100 lg:hover:text-neutral-500
-            rotate-180 duration-500 cursor-pointer"
+          className={`text-center lg:hover:text-neutral-500
+            rotate-180 duration-500 cursor-pointer ${restInView ? 'text-neutral-500' : 'text-zinc-100'}`}
         >Restoran
         </h1>
       </div>
@@ -80,8 +89,8 @@ const RightNav = () => {
             setDrawer(false)
           }}
           style={{ writingMode: 'vertical-lr' }}
-          className="text-center text-zinc-100 lg:hover:text-neutral-500
-            rotate-180 duration-500 cursor-pointer"
+          className={`text-center lg:hover:text-neutral-500
+            rotate-180 duration-500 cursor-pointer ${hotelInView ? 'text-neutral-500' : 'text-zinc-100'}`}
         >Otel
         </h1>
       </div>
@@ -96,8 +105,8 @@ const RightNav = () => {
             setDrawer(false)
           }}
           style={{ writingMode: 'vertical-lr' }}
-          className="text-center text-zinc-100 lg:hover:text-neutral-500
-            rotate-180 duration-500 cursor-pointer"
+          className={`text-center lg:hover:text-neutral-500
+            rotate-180 duration-500 cursor-pointer ${objInView ? 'text-neutral-500' : 'text-zinc-100'}`}
         >Obyekt
         </h1>
       </div>
@@ -112,8 +121,8 @@ const RightNav = () => {
             setDrawer(false)
           }}
           style={{ writingMode: 'vertical-lr' }}
-          className="text-center text-zinc-100 lg:hover:text-neutral-500
-            rotate-180 duration-500 cursor-pointer"
+          className={`text-center lg:hover:text-neutral-500
+            rotate-180 duration-500 cursor-pointer ${consInView ? 'text-neutral-500' : 'text-zinc-100'}`}
         >
           Təmir/Tikiniti
         </h1>

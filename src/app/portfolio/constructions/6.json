@@ -1,0 +1,25 @@
+{
+  "images": [
+    {
+      "src": "hero.jpg",
+      "alt": "hero image"
+    },
+    {
+      "src": "1.jpg",
+      "alt": "image 1"
+    }
+  ],
+  "videos": [
+    {
+      "cover": "1.jpg",
+      "src": {
+        "mp4": "1.mp4",
+        "webm": "1.webm"
+      }
+    }
+  ],
+  "info": {
+    "name": "Layihə",
+    "description": ""
+  }
+}

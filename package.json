@@ -1,6 +1,6 @@
 {
   "name": "alioglu",
-  "version": "1.4 beta v2",
+  "version": "1.4",
   "private": true,
   "scripts": {
     "dev": "next dev",

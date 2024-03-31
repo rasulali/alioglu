@@ -32,21 +32,21 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           w-fit lg:ml-0 ml-auto z-10">
-          Xidmətlərimiz
+          XİDMƏTLƏRİMİZ
         </Link>
         <Link
           href="#" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           w-fit lg:ml-0 ml-auto z-10">
-          Akademiya
+          AKADEMİYA
         </Link>
         <Link
           href="/portfolio" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           w-fit lg:ml-0 ml-auto z-10">
-          Portfolio
+          PORTFOLİO
         </Link>
         {/* reServe space for logo on wide screens */}
         <div className={`hidden relative lg:block w-[136px] mx-8 mt-28
@@ -60,14 +60,14 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           w-fit lg:ml-0 ml-auto z-10">
-          Mediya və Bloq
+          MEDİYA VƏ BLOQ
         </Link>
         <Link
           href="#" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           w-fit lg:ml-0 ml-auto z-10">
-          Haqqımızda
+          HAQQIMIZDA
         </Link>
         <a
           href="/#footer"

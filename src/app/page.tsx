@@ -29,7 +29,7 @@ const Home = () => {
   }
 
   const videoRef = useRef<HTMLVideoElement>(null);
-  const videoInview = useInView(videoRef, { once: false })
+  const videoInView = useInView(videoRef, { once: false })
 
   const textRef = useRef(null)
   const textInView = useInView(textRef, { once: true })
@@ -74,7 +74,7 @@ const Home = () => {
       {/* First Section */}
       <section className="w-full h-screen bg-grayA">
         <Contact scroll={scroll} />
-        <Navbar isVideoVisible={videoInview} />
+        <Navbar isVideoVisible={videoInView} />
 
         <video
           ref={videoRef}
@@ -86,7 +86,7 @@ const Home = () => {
           <source src='/background.mp4'
             type="video/mp4" />
         </video>
-        {videoInview && <span
+        {videoInView && <span
           className="absolute flex items-center justify-center
           bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2
           ">

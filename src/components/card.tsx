@@ -49,11 +49,11 @@ const Card: React.FC<CardProps> = ({ delay, tag, src, href = "" }) => {
         }}
         className="relative group"
         animate={cardControls}>
-        <div className="lg:rounded-xl sm:rounded-lg rounded-md overflow-hidden">
+        <div className="lg:rounded-xl sm:rounded-lg rounded-md overflow-hidden
+          aspect-[4/3] w-[90vw] lg:max-w-[832px] lg:w-[832px]">
           <Image
             quality={70}
-            className="object-cover aspect-[4/3]
-      w-[90vw] max-w-[832px] lg:w-[832px] lg:h-[624px]"
+            className="object-cover w-full h-full"
             src={src} alt="Layihə Fotosu" width={1080} height={0} />
         </div>
         <div

@@ -30,7 +30,7 @@ const AzeMap = () => {
       </g>
       {/* pin */}
       <g className="fill-red-400 stroke-red-400">
-        <circle cx="1770" cy="688" r="1" />
+        <circle cx="1770" cy="688" r="1" ></circle>
         <motion.circle
           initial={{ strokeWidth: 5 }}
           animate={{ r: 5, strokeWidth: 0 }}

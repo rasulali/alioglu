@@ -19,6 +19,8 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import NextJsImage from '@/components/NextJsImage'
 import NextJsThumbnail from '@/components/NextJsThumbnail'
 
+import Video from "yet-another-react-lightbox/plugins/video";
+
 import Image from "next/image"
 import Heading from "@/components/heading"
 import { useRef, useState, useEffect } from "react"
@@ -29,18 +31,26 @@ interface ImageProps {
   src: string
   alt: string
 }
+interface VideoProps {
+  cover: string
+  src: {
+    mp4: string,
+    webm: string
+  }
+}
 interface InfoProps {
   name: string
   description?: string
 }
 
-const Interior = ({ params }: { params: { id: number } }) => {
+const Construction = ({ params }: { params: { id: number } }) => {
 
-  if (isNaN(params.id) || params.id < 1 || params.id > 39) {
+  if (isNaN(params.id) || params.id < 1 || params.id > 6) {
     notFound();
   }
-
+  const [hasVideos, setHasVideos] = useState(false)
   const [imageArray, setImageArray] = useState<ImageProps[]>([]);
+  const [videoArray, setVideoArray] = useState<VideoProps[]>([]);
   const [info, setInfo] = useState<InfoProps>({
     name: 'Layihə',
     description: '',
@@ -68,10 +78,13 @@ const Interior = ({ params }: { params: { id: number } }) => {
     (async () => {
       const res = await import(`../${params.id}.json`);
       setImageArray(res.images);
+      if (res.videos) {
+        setHasVideos(true)
+        setVideoArray(res.videos);
+      }
       setInfo(res.info)
     })();
   }, []);
-
 
   const imageContainer = useRef(null);
   const [imageScroll, setImageScroll] = useState({ x: 0, y: 0 })
@@ -87,7 +100,7 @@ const Interior = ({ params }: { params: { id: number } }) => {
   const deviceSizes = [640, 750, 828, 1080, 1200, 1920, 2048, 3840];
 
   function nextImageUrl(src: string, size: number) {
-    return `/_next/image?url=${encodeURIComponent(`/interiors/${params.id}/images/${src}`)}&w=${size}&q=70`;
+    return `/_next/image?url=${encodeURIComponent(`/constructions/${params.id}/images/${src}`)}&w=${size}&q=70`;
   }
 
   interface Slide {
@@ -96,6 +109,14 @@ const Interior = ({ params }: { params: { id: number } }) => {
     height?: number;
     alt: string
   }
+  interface VideoSlide {
+    cover: string
+    src: {
+      mp4: string
+      webm: string
+    }
+  }
+
   const slides = imageArray.map(({ src, width = windowDimensions.width,
     height = windowDimensions.height, alt }: Slide) => ({
       width,
@@ -110,8 +131,20 @@ const Interior = ({ params }: { params: { id: number } }) => {
           height: Math.round((height / width) * size),
         })),
       alt: alt,
-    }));
+    }))
 
+  const videos = () => {
+    if (!hasVideos) return []
+    return videoArray.map(({ cover, src, }: VideoSlide) => ({
+      type: "video",
+      preload: "auto",
+      poster: `/constructions/${params.id}/videos/${cover}`,
+      sources: [
+        `/constructions/${params.id}/videos/${src.webm}`,
+        `/constructions/${params.id}/videos/${src.mp4}`,
+      ],
+    }))
+  }
 
   return (
     <main className="bg-grayA">
@@ -124,7 +157,7 @@ const Interior = ({ params }: { params: { id: number } }) => {
           </LiveDiv>
         </div>
         <Lightbox
-          plugins={[Counter, Fullscreen, Thumbnails, Zoom]}
+          plugins={[Counter, Fullscreen, Thumbnails, Zoom, Video]}
           thumbnails={
             {
               ref: thumbnailsRef,
@@ -136,6 +169,18 @@ const Interior = ({ params }: { params: { id: number } }) => {
               gap: 0,
               imageFit: "cover",
               vignette: false,
+            }
+          }
+          video={
+            {
+              autoPlay: true,
+              controls: false,
+              preload: 'auto',
+              loop: true,
+              muted: true,
+              playsInline: true,
+              disablePictureInPicture: true,
+              disableRemotePlayback: true,
             }
           }
           zoom={{
@@ -154,7 +199,10 @@ const Interior = ({ params }: { params: { id: number } }) => {
           open={lightboxOpen}
           index={index}
           close={() => setLightboxOpen(false)}
-          slides={slides}
+          slides={[
+            ...slides,
+            ...videos() as any
+          ]}
           render={{
             slide: NextJsImage,
             thumbnail: NextJsThumbnail as any
@@ -170,7 +218,7 @@ const Interior = ({ params }: { params: { id: number } }) => {
                 }}
                 className="object-cover w-full h-full"
                 quality={70}
-                src={`/interiors/${params.id}/images/${imageArray[0]?.src}`}
+                src={`/constructions/${params.id}/images/${imageArray[0]?.src}`}
                 width={windowDimensions.width}
                 height={0}
                 priority
@@ -197,10 +245,34 @@ const Interior = ({ params }: { params: { id: number } }) => {
                       className="object-cover w-full h-full"
                       width={windowDimensions.width / 6}
                       height={0}
-                      src={`/interiors/${params.id}/images/${image.src}`}
+                      src={`/constructions/${params.id}/images/${image.src}`}
                       alt={image.alt}
                       quality={70}
                     />
+                  </LiveDiv>
+                </div>
+              ))
+            }
+            {hasVideos && videoArray
+              .map((video, index) => (
+                <div key={index + imageArray.length}
+                  className="lg:w-[calc(33.3333%-8px)] lg:aspect-auto lg:h-1/2
+                      lg:overflow-auto overflow-y-hidden w-1/2 aspect-[4/3]">
+                  <LiveDiv animate={{ from: 0.9, to: 1, dir: 'z', delay: 0.1 }}>
+                    <video
+                      onClick={() => {
+                        setIndex(index + imageArray.length)
+                        setLightboxOpen(true)
+                      }}
+                      disablePictureInPicture={true} disableRemotePlayback={true}
+                      autoPlay muted playsInline loop preload="auto"
+                      className="w-full h-full object-cover"
+                    >
+                      <source src={`/constructions/${params.id}/videos/${video.src.webm}`}
+                        type="video/webm" />
+                      <source src={`/constructions/${params.id}/videos/${video.src.mp4}`}
+                        type="video/mp4" />
+                    </video>
                   </LiveDiv>
                 </div>
               ))
@@ -218,4 +290,4 @@ const Interior = ({ params }: { params: { id: number } }) => {
     </main>
   )
 }
-export default Interior;
+export default Construction;

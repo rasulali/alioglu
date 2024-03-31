@@ -46,7 +46,7 @@ const NextJsImage = ({ slide, offset, rect }) => {
         fill
         alt={slide.alt}
         src={slide}
-        loading="eager"
+        loading="lazy"
         draggable={false}
         placeholder={slide.blurDataURL ? "blur" : undefined}
         style={{

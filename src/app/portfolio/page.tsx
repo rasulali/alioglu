@@ -5,19 +5,59 @@ import RightNav from "@/components/rightNav";
 import Card from "@/components/cardPortfolio"
 import BackNav from "@/components/backNav";
 
-import const1 from "./constructions/1/assets/hero.jpg"
-import const2 from "./constructions/2/assets/hero.jpg"
-import const3 from "./constructions/3/assets/hero.jpg"
-import const4 from "./constructions/4/assets/hero.jpg"
-import const5 from "./constructions/5/assets/hero.jpg"
-import const6 from "./constructions/6/assets/hero.jpg"
+import { useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const portfolio = () => {
+
+  const [inView, setInView] = useState({
+    int: false,
+    ext: false,
+    rest: false,
+    hotel: false,
+    obj: false,
+    cons: false
+  })
+
+  const intRef = useRef(null)
+  const intInView = useInView(intRef, { margin: '-50% 0% -50% 0%' });
+
+  const extRef = useRef(null)
+  const extInView = useInView(extRef, { margin: '-50% 0% -50% 0%' });
+
+  const restRef = useRef(null)
+  const restInView = useInView(restRef, { margin: '-50% 0% -50% 0%' });
+
+  const hotelRef = useRef(null)
+  const hotelInView = useInView(hotelRef, { margin: '-50% 0% -50% 0%' });
+
+  const objRef = useRef(null)
+  const objInView = useInView(objRef, { margin: '-50% 0% -50% 0%' });
+
+  const consRef = useRef(null)
+  const consInView = useInView(consRef, { margin: '-50% 0% -50% 0%' });
+
+
+
+  useEffect(() => {
+    setInView({
+      int: intInView,
+      ext: extInView,
+      rest: restInView,
+      hotel: hotelInView,
+      obj: objInView,
+      cons: consInView
+    })
+  }, [intInView, extInView, restInView, hotelInView, objInView, consInView])
 
   return (
     <main
       className="w-screen relative bg-grayA">
-      <RightNav />
+      {/* sening sections in view state as props to right navigation */}
+      <RightNav intInView={inView.int} extInView={inView.ext} restInView={inView.rest}
+        hotelInView={inView.hotel} objInView={inView.obj} consInView={inView.cons} />
+      {/* sening sections in view state as props to right navigation */}
+
       <BackNav href="/" />
       <section
         className="w-full min-h-screen py-16 lg:px-16 sm:px-8 px-4">
@@ -27,6 +67,7 @@ const portfolio = () => {
           </span>
 
           <div id="interior"
+            ref={intRef}
             className="min-h-screen w-full lg:pt-24 sm:pt-16 pt-12"
           >
 
@@ -38,7 +79,7 @@ const portfolio = () => {
 
             <div
               className="flex flex-wrap max-w-[calc(832px*3.5)] lg:gap-x-8
-              lg:gap-y-8 gap-y-4 mx-auto overflow-hidden lg:p-4"
+              lg:gap-y-8 gap-y-4 mx-auto justify-center overflow-hidden lg:p-4"
             >
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.1 }}
                 src="/interiors/1/images/hero.jpg" name="Ağ Şəhər Layihəsi" text="240kv m²"
@@ -162,6 +203,7 @@ const portfolio = () => {
           </div>
 
           <div id="exterior"
+            ref={extRef}
             className="min-h-screen w-full lg:pt-24 sm:pt-16 pt-12 lg:pl-8 pl-4"
           >
             <div
@@ -220,6 +262,7 @@ const portfolio = () => {
           </div>
 
           <div id="restaurants"
+            ref={restRef}
             className="min-h-screen w-full lg:pt-24 sm:pt-16 pt-12 lg:pl-8 pl-4"
           >
             <div
@@ -269,6 +312,7 @@ const portfolio = () => {
           </div>
 
           <div id="hotel"
+            ref={hotelRef}
             className="min-h-screen w-full lg:pt-24 sm:pt-16 pt-12 lg:pl-8 pl-4"
           >
             <div
@@ -299,6 +343,7 @@ const portfolio = () => {
 
 
           <div id="objects"
+            ref={objRef}
             className="min-h-screen w-full lg:pt-24 sm:pt-16 pt-12 lg:pl-8 pl-4"
           >
             <div
@@ -352,6 +397,7 @@ const portfolio = () => {
 
 
           <div id="construction"
+            ref={consRef}
             className="min-h-screen w-full lg:pt-24 sm:pt-16 pt-12 lg:pl-8 pl-4"
           >
             <div
@@ -365,22 +411,22 @@ const portfolio = () => {
               lg:gap-y-12 gap-y-4 justify-center mx-auto overflow-hidden lg:p-4"
             >
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.1 }}
-                src={const1} name="Layihə"
+                src="/constructions/1/images/hero.jpg" name="Layihə"
                 link="/portfolio/constructions/1" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.2 }}
-                src={const2} name="Layihə"
+                src="/constructions/2/images/hero.jpg" name="Layihə"
                 link="/portfolio/constructions/2" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.3 }}
-                src={const3} name="Layihə"
+                src="/constructions/3/images/hero.jpg" name="Layihə"
                 link="/portfolio/constructions/3" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.4 }}
-                src={const4} name="Layihə"
+                src="/constructions/4/images/hero.jpg" name="Layihə"
                 link="/portfolio/constructions/4" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.5 }}
-                src={const5} name="Layihə"
+                src="/constructions/5/images/hero.jpg" name="Layihə"
                 link="/portfolio/constructions/5" />
               <Card animate={{ from: 50, to: 0, dir: 'x', delay: 0.6 }}
-                src={const6} name="Layihə"
+                src="/constructions/6/images/hero.jpg" name="Layihə"
                 link="/portfolio/constructions/6" />
             </div>
           </div>
