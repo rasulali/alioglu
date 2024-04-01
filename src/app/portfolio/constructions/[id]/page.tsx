@@ -134,17 +134,17 @@ const Construction = ({ params }: { params: { id: number } }) => {
     }))
 
   const videos = () => {
-    if (!hasVideos) return []
-    return videoArray.map(({ cover, src, }: VideoSlide) => ({
+    if (!hasVideos) return [];
+    return videoArray.map(({ cover, src }: VideoSlide) => ({
       type: "video",
       preload: "auto",
       poster: `/constructions/${params.id}/videos/${cover}`,
       sources: [
-        `/constructions/${params.id}/videos/${src.webm}`,
-        `/constructions/${params.id}/videos/${src.mp4}`,
+        { src: `/constructions/${params.id}/videos/${src.webm}`, type: 'video/webm' },
+        { src: `/constructions/${params.id}/videos/${src.mp4}`, type: 'video/mp4' }
       ],
-    }))
-  }
+    }));
+  };
 
   return (
     <main className="bg-grayA">
