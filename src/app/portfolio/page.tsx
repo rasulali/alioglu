@@ -7,6 +7,7 @@ import BackNav from "@/components/backNav";
 
 import { useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import Footer from "@/components/footer";
 
 const portfolio = () => {
 
@@ -60,16 +61,18 @@ const portfolio = () => {
 
       <BackNav href="/" />
       <section
-        className="w-full min-h-screen py-16 lg:px-16 sm:px-8 px-4">
+        className="w-full lg:pt-24 pt-12 lg:px-16 sm:px-8 px-4">
         <div className="w-full relative">
           <span className="w-full flex justify-center">
             <Heading animate={{ from: -50, to: 0, dir: 'y' }} variant="h1" text="Portfolio" />
           </span>
 
-          <div id="interior"
+          <div
             ref={intRef}
-            className="min-h-screen w-full lg:pt-24 sm:pt-16 pt-12"
           >
+            <div
+              id="interior"
+              className="lg:h-24 sm:h-16 h-12" />
 
             <div className="lg:mb-8 mb-4">
               <Heading
@@ -202,10 +205,12 @@ const portfolio = () => {
 
           </div>
 
-          <div id="exterior"
+          <div
             ref={extRef}
-            className="min-h-screen w-full lg:pt-24 sm:pt-16 pt-12 lg:pl-8 pl-4"
           >
+            <div
+              id="exterior"
+              className="lg:h-24 sm:h-16 h-12" />
             <div
               className="lg:mb-24 sm:mb-16 mb-12 lg:ml-8 ml-4"
             >
@@ -261,10 +266,13 @@ const portfolio = () => {
             </div>
           </div>
 
-          <div id="restaurants"
+          <div
             ref={restRef}
-            className="min-h-screen w-full lg:pt-24 sm:pt-16 pt-12 lg:pl-8 pl-4"
           >
+            <div
+              id="restaurants"
+              className="lg:h-24 sm:h-16 h-12" />
+
             <div
               className="lg:mb-24 sm:mb-16 mb-12 lg:ml-8 ml-4"
             >
@@ -311,10 +319,12 @@ const portfolio = () => {
             </div>
           </div>
 
-          <div id="hotel"
+          <div
             ref={hotelRef}
-            className="min-h-screen w-full lg:pt-24 sm:pt-16 pt-12 lg:pl-8 pl-4"
           >
+            <div
+              id="hotel"
+              className="lg:h-24 sm:h-16 h-12" />
             <div
               className="lg:mb-24 sm:mb-16 mb-12 lg:ml-8 ml-4"
             >
@@ -342,10 +352,13 @@ const portfolio = () => {
           </div>
 
 
-          <div id="objects"
+          <div
             ref={objRef}
-            className="min-h-screen w-full lg:pt-24 sm:pt-16 pt-12 lg:pl-8 pl-4"
           >
+            <div
+              id="objects"
+              className="lg:h-24 sm:h-16 h-12" />
+
             <div
               className="lg:mb-24 sm:mb-16 mb-12 lg:ml-8 ml-4"
             >
@@ -396,10 +409,13 @@ const portfolio = () => {
           </div>
 
 
-          <div id="construction"
+          <div
             ref={consRef}
-            className="min-h-screen w-full lg:pt-24 sm:pt-16 pt-12 lg:pl-8 pl-4"
           >
+            <div
+              id="construction"
+              className="lg:h-24 sm:h-16 h-12" />
+
             <div
               className="lg:mb-24 sm:mb-16 mb-12 lg:ml-8 ml-4"
             >
@@ -432,6 +448,7 @@ const portfolio = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </main>
   )
 }

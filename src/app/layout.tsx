@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import '@fontsource/poppins'
-import Footer from "@/components/footer";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
@@ -23,7 +22,6 @@ export default function RootLayout({
         className="bg-grayA"
       >
         {children}
-        <Footer />
         <SpeedInsights />
       </body>
     </html>

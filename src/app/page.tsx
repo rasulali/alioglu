@@ -17,9 +17,10 @@ import interior from '@/../public/cardImages/interior.jpg'
 import exterior from '@/../public/cardImages/exterior.jpg'
 import object from '@/../public/cardImages/object.jpg'
 import construction from '@/../public/cardImages/construction.jpg'
+import Footer from "@/components/footer"
+import Loading from "./loading"
 
 const Home = () => {
-
   const [isTextHover, setTextHover] = useState(false)
   const handleMouseEnter = () => {
     setTextHover(true)
@@ -51,31 +52,18 @@ const Home = () => {
     }
   }, [textInView])
 
-  const textRef2 = useRef(null)
-  const textInView2 = useInView(textRef2, { once: true })
-
-  const textControls2 = useAnimation()
-
-  useEffect(() => {
-    if (textInView2) {
-      textControls2.start("visible")
-    }
-  }, [textInView2])
-
   const [scroll, setScroll] = useState(0)
   const { scrollYProgress } = useScroll()
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     setScroll(latest)
   })
-
   return (
     <main className="relative">
       {/* First Section */}
       <section className="w-full h-screen bg-grayA">
         <Contact scroll={scroll} />
         <Navbar isVideoVisible={videoInView} />
-
         <video
           ref={videoRef}
           autoPlay muted playsInline loop preload="auto"
@@ -115,8 +103,8 @@ const Home = () => {
             />
             <h1
               className={`text-4xl sm:text-5xl lg:text-9xl transition-colors z-10
-            duration-100 delay-75
-             ${isTextHover ? "text-grayA" : "text-zinc-100"}`}>
+                  duration-100 delay-75
+                  ${isTextHover ? "text-grayA" : "text-zinc-100"}`}>
               Layihələrimiz
             </h1>
             <motion.span
@@ -194,8 +182,8 @@ const Home = () => {
             <AzeMap />
           </div>
         </div>
-
       </section>
+      <Footer />
     </main >
   )
 }

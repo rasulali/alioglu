@@ -24,6 +24,7 @@ import Heading from "@/components/heading"
 import { useRef, useState, useEffect } from "react"
 import { useScroll } from "@react-hooks-library/core";
 import { notFound } from "next/navigation";
+import Footer from "@/components/footer";
 
 interface ImageProps {
   src: string
@@ -40,7 +41,9 @@ const Interior = ({ params }: { params: { id: number } }) => {
     notFound();
   }
 
-  const [imageArray, setImageArray] = useState<ImageProps[]>([]);
+  const [imageArray, setImageArray] = useState<ImageProps[]>([
+    { src: '', alt: '' },
+  ]);
   const [info, setInfo] = useState<InfoProps>({
     name: 'Layihə',
     description: '',
@@ -112,7 +115,6 @@ const Interior = ({ params }: { params: { id: number } }) => {
       alt: alt,
     }));
 
-
   return (
     <main className="bg-grayA">
       <div className="px-8 lg:pt-24 pt-12 lg:pb-12">
@@ -170,11 +172,11 @@ const Interior = ({ params }: { params: { id: number } }) => {
                 }}
                 className="object-cover w-full h-full"
                 quality={70}
-                src={`/interiors/${params.id}/images/${imageArray[0]?.src}`}
-                width={windowDimensions.width}
+                src={`/interiors/${params.id}/images/hero.jpg`}
+                width={windowDimensions.width / 2}
                 height={0}
                 priority
-                alt={imageArray[0]?.alt} />
+                alt={imageArray[0].alt} />
             </LiveDiv>
           </div>
           <div
@@ -195,7 +197,7 @@ const Interior = ({ params }: { params: { id: number } }) => {
                       }}
                       priority
                       className="object-cover w-full h-full"
-                      width={windowDimensions.width / 6}
+                      width={windowDimensions.width / 3}
                       height={0}
                       src={`/interiors/${params.id}/images/${image.src}`}
                       alt={image.alt}
@@ -215,6 +217,7 @@ const Interior = ({ params }: { params: { id: number } }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   )
 }

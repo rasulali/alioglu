@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Bars3Icon } from '@heroicons/react/24/outline'
 
@@ -11,15 +11,6 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
   const [menuState, setMenuState] = useState(false)
-  const [transparent, setTransparent] = useState(true)
-  useEffect(() => {
-    if (isVideoVisible) {
-      setTransparent(true)
-    }
-    else {
-      setTransparent(false)
-    }
-  }, [isVideoVisible])
 
   const Menu = () => {
     return (
@@ -50,8 +41,8 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
         </Link>
         {/* reServe space for logo on wide screens */}
         <div className={`hidden relative lg:block w-[136px] mx-8 mt-28
-        translate-y-1/2 -translate-x-[5px] bg-grayA
-        ${isVideoVisible && 'bg-grayA/50 backdrop-blur-lg'}
+        translate-y-1/2 -translate-x-[5px]
+        ${isVideoVisible ? 'bg-grayA/50 backdrop-blur-lg' : 'bg-grayA'}
         transition-colors duration-500 h-5 -z-10 rounded-b-lg
         `} />
         {/* reServe space for logo on wide screens */}
@@ -86,8 +77,8 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
 
   return (
     <div className="fixed w-screen z-30">
-      <nav className={`flex items-center z-30 w-full h-28 py-4 px-4 bg-grayA
-     ${transparent && 'bg-grayA/50 backdrop-blur-lg'} transition-colors duration-500`}>
+      <nav className={`flex items-center z-30 w-full h-28 py-4 px-4
+     ${isVideoVisible ? 'bg-grayA/50 backdrop-blur-lg' : 'bg-grayA'} transition-colors duration-500`}>
         <span className="mr-auto lg:absolute lg:lg:left-1/2 z-10
         lg:-translate-x-1/2 lg:top-[calc(50%+16px)] lg:-translate-y-1/2">
           <Link href="/">

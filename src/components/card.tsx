@@ -2,6 +2,7 @@
 import { motion, useAnimation, useInView } from 'framer-motion'
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRef, useEffect } from "react"
 
 interface CardProps {

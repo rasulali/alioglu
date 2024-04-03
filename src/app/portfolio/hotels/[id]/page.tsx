@@ -24,6 +24,7 @@ import Heading from "@/components/heading"
 import { useRef, useState, useEffect } from "react"
 import { useScroll } from "@react-hooks-library/core";
 import { notFound } from "next/navigation";
+import Footer from "@/components/footer";
 
 interface ImageProps {
   src: string
@@ -40,7 +41,9 @@ const Hotel = ({ params }: { params: { id: number } }) => {
     notFound();
   }
 
-  const [imageArray, setImageArray] = useState<ImageProps[]>([]);
+  const [imageArray, setImageArray] = useState<ImageProps[]>([
+    { src: '', alt: '' },
+  ]);
   const [info, setInfo] = useState<InfoProps>({
     name: 'Layihə',
     description: '',
@@ -170,11 +173,11 @@ const Hotel = ({ params }: { params: { id: number } }) => {
                 }}
                 className="object-cover w-full h-full"
                 quality={70}
-                src={`/hotels/${params.id}/images/${imageArray[0]?.src}`}
-                width={windowDimensions.width}
+                src={`/hotels/${params.id}/images/hero.jpg`}
+                width={windowDimensions.width / 2}
                 height={0}
                 priority
-                alt={imageArray[0]?.alt} />
+                alt={imageArray[0].alt} />
             </LiveDiv>
           </div>
           <div
@@ -195,7 +198,7 @@ const Hotel = ({ params }: { params: { id: number } }) => {
                       }}
                       priority
                       className="object-cover w-full h-full"
-                      width={windowDimensions.width / 6}
+                      width={windowDimensions.width / 3}
                       height={0}
                       src={`/hotels/${params.id}/images/${image.src}`}
                       alt={image.alt}
@@ -215,6 +218,7 @@ const Hotel = ({ params }: { params: { id: number } }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   )
 }

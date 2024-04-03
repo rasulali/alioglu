@@ -42,12 +42,12 @@ const RightNav: React.FC<Props> = ({ intInView, extInView, restInView, hotelInVi
           }}
           style={{ writingMode: 'vertical-lr' }}
           className={`text-center text-neutral-500 lg:hover:text-zinc-100 group
-            rotate-180 transition-colors duration-300 cursor-pointer ${intInView && 'text-zinc-100'}`}
+            rotate-180 transition-colors duration-500 cursor-pointer ${intInView && 'text-zinc-100'}`}
         >İnteryer
         </h1>
       </div>
-      <div className={`w-1 aspect-square rounded-full bg-neutral-500 transition-colors
-      duration-300 ${(intInView || extInView) && 'bg-zinc-100'}`} />
+      <div className={`w-1 aspect-square rounded-full transition-colors
+      duration-500 ${(intInView || extInView) && 'bg-zinc-100'}`} />
 
       <div
         className="py-4 flex items-center justify-center"
@@ -59,12 +59,12 @@ const RightNav: React.FC<Props> = ({ intInView, extInView, restInView, hotelInVi
           }}
           style={{ writingMode: 'vertical-lr' }}
           className={`text-center text-neutral-500 lg:hover:text-zinc-100
-            rotate-180 transition-colors duration-300 cursor-pointer ${extInView && 'text-zinc-100'}`}
+            rotate-180 transition-colors duration-500 cursor-pointer ${extInView && 'text-zinc-100'}`}
         >Eksteryer
         </h1>
       </div>
-      <div className={`w-1 aspect-square rounded-full bg-neutral-500 transition-colors
-      duration-300 ${(extInView || restInView) && 'bg-zinc-100'}`} />
+      <div className={`w-1 aspect-square rounded-full transition-colors
+      duration-500 ${(extInView || restInView) && 'bg-zinc-100'}`} />
 
       <div
         className="py-4 flex items-center justify-center"
@@ -76,12 +76,12 @@ const RightNav: React.FC<Props> = ({ intInView, extInView, restInView, hotelInVi
           }}
           style={{ writingMode: 'vertical-lr' }}
           className={`text-center text-neutral-500 lg:hover:text-zinc-100
-            rotate-180 transition-colors duration-300 cursor-pointer ${restInView && 'text-zinc-100'}`}
+            rotate-180 transition-colors duration-500 cursor-pointer ${restInView && 'text-zinc-100'}`}
         >Restoran
         </h1>
       </div>
-      <div className={`w-1 aspect-square rounded-full bg-neutral-500 transition-colors
-      duration-300 ${(restInView || hotelInView) && 'bg-zinc-100'}`} />
+      <div className={`w-1 aspect-square rounded-full transition-colors
+      duration-500 ${(restInView || hotelInView) && 'bg-zinc-100'}`} />
 
       <div
         className="py-4 flex items-center justify-center"
@@ -93,12 +93,12 @@ const RightNav: React.FC<Props> = ({ intInView, extInView, restInView, hotelInVi
           }}
           style={{ writingMode: 'vertical-lr' }}
           className={`text-center text-neutral-500 lg:hover:text-zinc-100
-            rotate-180 transition-colors duration-300 cursor-pointer ${hotelInView && 'text-zinc-100'}`}
+            rotate-180 transition-colors duration-500 cursor-pointer ${hotelInView && 'text-zinc-100'}`}
         >Otel
         </h1>
       </div>
-      <div className={`w-1 aspect-square rounded-full bg-neutral-500 transition-colors
-      duration-300 ${(hotelInView || objInView) && 'bg-zinc-100'}`} />
+      <div className={`w-1 aspect-square rounded-full transition-colors
+      duration-500 ${(hotelInView || objInView) && 'bg-zinc-100'}`} />
 
       <div
         className="py-4 flex items-center justify-center"
@@ -110,12 +110,12 @@ const RightNav: React.FC<Props> = ({ intInView, extInView, restInView, hotelInVi
           }}
           style={{ writingMode: 'vertical-lr' }}
           className={`text-center text-neutral-500 lg:hover:text-zinc-100
-            rotate-180 transition-colors duration-300 cursor-pointer ${objInView && 'text-zinc-100'}`}
+            rotate-180 transition-colors duration-500 cursor-pointer ${objInView && 'text-zinc-100'}`}
         >Obyekt
         </h1>
       </div>
-      <div className={`w-1 aspect-square rounded-full bg-neutral-500 transition-colors
-      duration-300 ${(objInView || consInView) && 'bg-zinc-100'}`} />
+      <div className={`w-1 aspect-square rounded-full transition-colors
+      duration-500 ${(objInView || consInView) && 'bg-zinc-100'}`} />
 
       <div
         className="pt-4 flex items-center justify-center"
@@ -127,7 +127,7 @@ const RightNav: React.FC<Props> = ({ intInView, extInView, restInView, hotelInVi
           }}
           style={{ writingMode: 'vertical-lr' }}
           className={`text-center text-neutral-500 lg:hover:text-zinc-100
-            rotate-180 duration-300 cursor-pointer ${consInView && 'text-zinc-100'}`}
+            rotate-180 duration-500 cursor-pointer ${consInView && 'text-zinc-100'}`}
         >
           Təmir/Tikiniti
         </h1>
