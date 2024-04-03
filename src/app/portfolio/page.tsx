@@ -9,7 +9,34 @@ import { useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Footer from "@/components/footer";
 
-const portfolio = () => {
+const Portfolio = () => {
+  const [router, setRouter] = useState('')
+  useEffect(() => {
+    setRouter(window.location.hash.substring(1))
+  }, [])
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (router === 'int') {
+        document.getElementById('interior')?.scrollIntoView({ behavior: 'smooth' })
+      }
+      if (router === 'ext') {
+        document.getElementById('exterior')?.scrollIntoView({ behavior: 'smooth' })
+      }
+      if (router === 'rest') {
+        document.getElementById('restoration')?.scrollIntoView({ behavior: 'smooth' })
+      }
+      if (router === 'hotel') {
+        document.getElementById('hotels')?.scrollIntoView({ behavior: 'smooth' })
+      }
+      if (router === 'obj') {
+        document.getElementById('objects')?.scrollIntoView({ behavior: 'smooth' })
+      }
+      if (router === 'cons') {
+        document.getElementById('constructions')?.scrollIntoView({ behavior: 'smooth' })
+      }
+    }, 200)
+  }, [router])
 
   const [inView, setInView] = useState({
     int: false,
@@ -37,8 +64,6 @@ const portfolio = () => {
 
   const consRef = useRef(null)
   const consInView = useInView(consRef, { margin: '-50% 0% -50% 0%' });
-
-
 
   useEffect(() => {
     setInView({
@@ -70,7 +95,7 @@ const portfolio = () => {
           <div
             ref={intRef}
             id="interior"
-            className="lg:pt-24 sm:pt-16 pt-12 4xl:min-h-[8632px] sm:min-h-[13224px] min-h-[25688px]"
+            className="lg:pt-24 sm:pt-16 pt-12"
           >
 
             <div className="lg:mb-8 mb-4">
@@ -207,7 +232,7 @@ const portfolio = () => {
           <div
             ref={extRef}
             id="exterior"
-            className="lg:pt-24 sm:pt-16 pt-12 4xl:min-h-[3512px] sm:min-h-[4956px] min-h-[9560px]"
+            className="lg:pt-24 sm:pt-16 pt-12"
           >
             <div
               className="lg:mb-24 sm:mb-16 mb-12 lg:ml-8 ml-4"
@@ -267,7 +292,7 @@ const portfolio = () => {
           <div
             ref={restRef}
             id="restaurants"
-            className="lg:pt-24 sm:pt-16 pt-12 4xl:min-h-[2840px] sm:min-h-[4184px] min-h-[7544px]"
+            className="lg:pt-24 sm:pt-16 pt-12"
 
           >
             <div
@@ -319,7 +344,7 @@ const portfolio = () => {
           <div
             ref={hotelRef}
             id="hotel"
-            className="lg:pt-24 sm:pt-16 pt-12 4xl:min-h-[1496px] sm:min-h-[1496px] min-h-[2840px]"
+            className="lg:pt-24 sm:pt-16 pt-12"
           >
             <div
               className="lg:mb-24 sm:mb-16 mb-12 lg:ml-8 ml-4"
@@ -351,7 +376,7 @@ const portfolio = () => {
           <div
             ref={objRef}
             id="objects"
-            className="lg:pt-24 sm:pt-16 pt-12 4xl:min-h-[2840px] sm:min-h-[4184px] min-h-[8216px]"
+            className="lg:pt-24 sm:pt-16 pt-12"
 
           >
             <div
@@ -407,7 +432,7 @@ const portfolio = () => {
           <div
             ref={consRef}
             id="construction"
-            className="lg:pt-24 sm:pt-16 pt-12 4xl:min-h-[1496px] sm:min-h-[2168px] min-h-[4184px]"
+            className="lg:pt-24 sm:pt-16 pt-12"
           >
 
             <div
@@ -446,4 +471,4 @@ const portfolio = () => {
     </main>
   )
 }
-export default portfolio;
+export default Portfolio;

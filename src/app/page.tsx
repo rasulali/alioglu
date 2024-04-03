@@ -8,7 +8,7 @@ import { ArrowLongRightIcon, ChevronDownIcon } from '@heroicons/react/24/outline
 import { MapPinIcon } from '@heroicons/react/24/solid'
 import { motion, useAnimation, useInView, useMotionValueEvent, useScroll } from 'framer-motion'
 import Link from "next/link"
-import { useRef, useEffect, useState, Suspense } from "react"
+import { useRef, useEffect, useState } from "react"
 import Heading from "@/components/heading"
 import LiveDiv from "@/components/liveDiv"
 import hotel from '@/../public/cardImages/hotel.jpg'
@@ -23,7 +23,7 @@ import Loading from "./loading"
 const Home = () => {
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    new Promise(resolve => setTimeout(resolve, 1800)).then(() => {
+    new Promise(resolve => setTimeout(resolve, 1500)).then(() => {
       setLoading(false)
     }
     )
@@ -142,12 +142,12 @@ const Home = () => {
         <div className="max-w-[calc((832px+96px)*3+128px)] lg:py-8 mx-auto flex flex-col lg:flex-row lg:flex-wrap
         items-center justify-center gap-y-8 sm:gap-y-12 lg:gap-x-10 xl:gap-x-16 lg:gap-y-24"
         >
-          <Card delay={0.15} tag="İnteryer" src={interior} href="/portfolio#interior" />
-          <Card delay={0.2} tag="Eksteryer" src={exterior} href="/portfolio#exterior" />
-          <Card delay={0.05} tag="Restoranlar" src={restaurant} href="/portfolio#restaurants" />
+          <Card delay={0.15} tag="İnteryer" src={interior} href="/portfolio#int" />
+          <Card delay={0.2} tag="Eksteryer" src={exterior} href="/portfolio#ext" />
+          <Card delay={0.05} tag="Restoranlar" src={restaurant} href="/portfolio#rest" />
           <Card delay={0} tag="Otellər" src={hotel} href="/portfolio#hotel" />
-          <Card delay={0.1} tag="İaişə Obyektləri" src={object} href="/portfolio#objects" />
-          <Card delay={0.25} tag="Təmir/Tikinti" src={construction} href="/portfolio#construction" />
+          <Card delay={0.1} tag="İaişə Obyektləri" src={object} href="/portfolio#obj" />
+          <Card delay={0.25} tag="Təmir/Tikinti" src={construction} href="/portfolio#cons" />
         </div>
 
       </section>
