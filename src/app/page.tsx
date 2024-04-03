@@ -8,7 +8,7 @@ import { ArrowLongRightIcon, ChevronDownIcon } from '@heroicons/react/24/outline
 import { MapPinIcon } from '@heroicons/react/24/solid'
 import { motion, useAnimation, useInView, useMotionValueEvent, useScroll } from 'framer-motion'
 import Link from "next/link"
-import { useRef, useEffect, useState } from "react"
+import { useRef, useEffect, useState, Suspense } from "react"
 import Heading from "@/components/heading"
 import LiveDiv from "@/components/liveDiv"
 import hotel from '@/../public/cardImages/hotel.jpg'
@@ -21,6 +21,13 @@ import Footer from "@/components/footer"
 import Loading from "./loading"
 
 const Home = () => {
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    new Promise(resolve => setTimeout(resolve, 1800)).then(() => {
+      setLoading(false)
+    }
+    )
+  }, [])
   const [isTextHover, setTextHover] = useState(false)
   const handleMouseEnter = () => {
     setTextHover(true)
@@ -60,8 +67,12 @@ const Home = () => {
   })
   return (
     <main className="relative">
+      {loading &&
+        <div className="fixed z-[999999] w-screen h-screen">
+          <Loading />
+        </div>}
       {/* First Section */}
-      <section className="w-full h-screen bg-grayA">
+      <section className="relative w-full h-screen bg-grayA">
         <Contact scroll={scroll} />
         <Navbar isVideoVisible={videoInView} />
         <video

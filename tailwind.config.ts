@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        '4xl': '2752px',
+      },
       colors: {
         brandColor: '#292D3A',
         grayA: '#303030',

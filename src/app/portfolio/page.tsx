@@ -69,10 +69,9 @@ const portfolio = () => {
 
           <div
             ref={intRef}
+            id="interior"
+            className="lg:pt-24 sm:pt-16 pt-12 4xl:min-h-[8632px] sm:min-h-[13224px] min-h-[25688px]"
           >
-            <div
-              id="interior"
-              className="lg:h-24 sm:h-16 h-12" />
 
             <div className="lg:mb-8 mb-4">
               <Heading
@@ -207,10 +206,9 @@ const portfolio = () => {
 
           <div
             ref={extRef}
+            id="exterior"
+            className="lg:pt-24 sm:pt-16 pt-12 4xl:min-h-[3512px] sm:min-h-[4956px] min-h-[9560px]"
           >
-            <div
-              id="exterior"
-              className="lg:h-24 sm:h-16 h-12" />
             <div
               className="lg:mb-24 sm:mb-16 mb-12 lg:ml-8 ml-4"
             >
@@ -268,11 +266,10 @@ const portfolio = () => {
 
           <div
             ref={restRef}
-          >
-            <div
-              id="restaurants"
-              className="lg:h-24 sm:h-16 h-12" />
+            id="restaurants"
+            className="lg:pt-24 sm:pt-16 pt-12 4xl:min-h-[2840px] sm:min-h-[4184px] min-h-[7544px]"
 
+          >
             <div
               className="lg:mb-24 sm:mb-16 mb-12 lg:ml-8 ml-4"
             >
@@ -321,10 +318,9 @@ const portfolio = () => {
 
           <div
             ref={hotelRef}
+            id="hotel"
+            className="lg:pt-24 sm:pt-16 pt-12 4xl:min-h-[1496px] sm:min-h-[1496px] min-h-[2840px]"
           >
-            <div
-              id="hotel"
-              className="lg:h-24 sm:h-16 h-12" />
             <div
               className="lg:mb-24 sm:mb-16 mb-12 lg:ml-8 ml-4"
             >
@@ -354,11 +350,10 @@ const portfolio = () => {
 
           <div
             ref={objRef}
-          >
-            <div
-              id="objects"
-              className="lg:h-24 sm:h-16 h-12" />
+            id="objects"
+            className="lg:pt-24 sm:pt-16 pt-12 4xl:min-h-[2840px] sm:min-h-[4184px] min-h-[8216px]"
 
+          >
             <div
               className="lg:mb-24 sm:mb-16 mb-12 lg:ml-8 ml-4"
             >
@@ -411,10 +406,9 @@ const portfolio = () => {
 
           <div
             ref={consRef}
+            id="construction"
+            className="lg:pt-24 sm:pt-16 pt-12 4xl:min-h-[1496px] sm:min-h-[2168px] min-h-[4184px]"
           >
-            <div
-              id="construction"
-              className="lg:h-24 sm:h-16 h-12" />
 
             <div
               className="lg:mb-24 sm:mb-16 mb-12 lg:ml-8 ml-4"
