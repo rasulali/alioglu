@@ -8,34 +8,38 @@ import BackNav from "@/components/backNav";
 import { useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Footer from "@/components/footer";
+import Loading from "../loading";
 
 const Portfolio = () => {
   const [router, setRouter] = useState('')
+  const [loading, setLoading] = useState(true)
   useEffect(() => {
     setRouter(window.location.hash.substring(1))
   }, [])
 
   useEffect(() => {
-    setTimeout(() => {
-      if (router === 'int') {
-        document.getElementById('interior')?.scrollIntoView({ behavior: 'smooth' })
-      }
-      if (router === 'ext') {
-        document.getElementById('exterior')?.scrollIntoView({ behavior: 'smooth' })
-      }
-      if (router === 'rest') {
-        document.getElementById('restoration')?.scrollIntoView({ behavior: 'smooth' })
-      }
-      if (router === 'hotel') {
-        document.getElementById('hotels')?.scrollIntoView({ behavior: 'smooth' })
-      }
-      if (router === 'obj') {
-        document.getElementById('objects')?.scrollIntoView({ behavior: 'smooth' })
-      }
-      if (router === 'cons') {
-        document.getElementById('constructions')?.scrollIntoView({ behavior: 'smooth' })
-      }
-    }, 200)
+    if (router === 'int') {
+      document.getElementById('interior')?.scrollIntoView()
+    }
+    if (router === 'ext') {
+      document.getElementById('exterior')?.scrollIntoView()
+    }
+    if (router === 'rest') {
+      document.getElementById('restoration')?.scrollIntoView()
+    }
+    if (router === 'hotel') {
+      document.getElementById('hotels')?.scrollIntoView()
+    }
+    if (router === 'obj') {
+      document.getElementById('objects')?.scrollIntoView()
+    }
+    if (router === 'cons') {
+      document.getElementById('constructions')?.scrollIntoView()
+    }
+    new Promise(resolve => setTimeout(resolve, 200)).then(() => {
+      setLoading(false)
+    }
+    )
   }, [router])
 
   const [inView, setInView] = useState({
@@ -79,6 +83,10 @@ const Portfolio = () => {
   return (
     <main
       className="w-screen relative bg-grayA">
+      {loading &&
+        <div className="fixed z-[999999] w-screen h-screen">
+          <Loading />
+        </div>}
       {/* sening sections in view state as props to right navigation */}
       <RightNav intInView={inView.int} extInView={inView.ext} restInView={inView.rest}
         hotelInView={inView.hotel} objInView={inView.obj} consInView={inView.cons} />

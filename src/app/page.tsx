@@ -87,13 +87,12 @@ const Home = () => {
         </video>
         {videoInView && <span
           className="absolute flex items-center justify-center
-          bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2
+          bottom-0 left-1/2 -translate-x-1/2 -translate-y-full
           ">
           <ChevronDownIcon
-            className="opacity-0 lg:w-12 text-zinc-100/60 animate-down"
+            className="opacity-0 sm:w-12 w-8 text-zinc-100/60 animate-down"
           />
-        </span>
-        }
+        </span>}
       </section>
       {/* Second Section */}
       <section className="min-h-screen p-4 sm:p-8 lg:p-16 bg-grayA">
