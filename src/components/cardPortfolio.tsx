@@ -80,6 +80,7 @@ const Card: React.FC<CardProps> = ({ src, alt = "Layihə Fotosu", name, link, an
       >
         <Image
           quality={70}
+          priority={true}
           width={1080} height={0}
           src={src} alt={alt} className="w-full h-full object-cover" />
 

@@ -42,12 +42,12 @@ const Heading: React.FC<HeadingProps> = ({ text, animate, variant }) => {
         className="flex items-center justify-center relative w-fit">
         {variant === 'h1' ?
           <h1
-            className="lg:text-9xl sm:text-5xl text-4xl text-zinc-100 text-nowrap">
+            className="lg:text-9xl sm:text-7xl text-5xl text-zinc-100 text-nowrap">
             {text}
           </h1>
           :
           <h2
-            className="lg:text-7xl sm:text-3xl text-xl text-zinc-100 text-nowrap">
+            className="lg:text-7xl sm:text-5xl text-3xl text-zinc-100 text-nowrap">
             {text}
           </h2>
         }

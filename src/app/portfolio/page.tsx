@@ -8,39 +8,8 @@ import BackNav from "@/components/backNav";
 import { useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Footer from "@/components/footer";
-import Loading from "../loading";
 
 const Portfolio = () => {
-  const [router, setRouter] = useState('')
-  const [loading, setLoading] = useState(true)
-  useEffect(() => {
-    setRouter(window.location.hash.substring(1))
-  }, [])
-
-  useEffect(() => {
-    if (router === 'int') {
-      document.getElementById('interior')?.scrollIntoView()
-    }
-    if (router === 'ext') {
-      document.getElementById('exterior')?.scrollIntoView()
-    }
-    if (router === 'rest') {
-      document.getElementById('restoration')?.scrollIntoView()
-    }
-    if (router === 'hotel') {
-      document.getElementById('hotels')?.scrollIntoView()
-    }
-    if (router === 'obj') {
-      document.getElementById('objects')?.scrollIntoView()
-    }
-    if (router === 'cons') {
-      document.getElementById('constructions')?.scrollIntoView()
-    }
-    new Promise(resolve => setTimeout(resolve, 200)).then(() => {
-      setLoading(false)
-    }
-    )
-  }, [router])
 
   const [inView, setInView] = useState({
     int: false,
@@ -83,10 +52,6 @@ const Portfolio = () => {
   return (
     <main
       className="w-screen relative bg-grayA">
-      {loading &&
-        <div className="fixed z-[999999] w-screen h-screen">
-          <Loading />
-        </div>}
       {/* sening sections in view state as props to right navigation */}
       <RightNav intInView={inView.int} extInView={inView.ext} restInView={inView.rest}
         hotelInView={inView.hotel} objInView={inView.obj} consInView={inView.cons} />
@@ -100,13 +65,11 @@ const Portfolio = () => {
             <Heading animate={{ from: -50, to: 0, dir: 'y' }} variant="h1" text="Portfolio" />
           </span>
 
-          <div
-            ref={intRef}
-            id="interior"
-            className="lg:pt-24 sm:pt-16 pt-12"
-          >
-
-            <div className="lg:mb-8 mb-4">
+          <div ref={intRef}>
+            <div
+              id="interior"
+              className="lg:pb-8 pb-4 lg:pt-24 pt-16"
+            >
               <Heading
                 animate={{ from: -25, to: 0, dir: 'x' }}
                 variant="h2" text="İnteryer" />
@@ -237,13 +200,10 @@ const Portfolio = () => {
 
           </div>
 
-          <div
-            ref={extRef}
-            id="exterior"
-            className="lg:pt-24 sm:pt-16 pt-12"
-          >
+          <div ref={extRef}>
             <div
-              className="lg:mb-24 sm:mb-16 mb-12 lg:ml-8 ml-4"
+              id="exterior"
+              className="lg:pb-8 pb-4 lg:pt-24 pt-16"
             >
               <Heading animate={{ from: -25, to: 0, dir: 'x' }}
                 variant="h2" text="Eksteryer" />
@@ -297,14 +257,10 @@ const Portfolio = () => {
             </div>
           </div>
 
-          <div
-            ref={restRef}
-            id="restaurants"
-            className="lg:pt-24 sm:pt-16 pt-12"
-
-          >
+          <div ref={restRef}>
             <div
-              className="lg:mb-24 sm:mb-16 mb-12 lg:ml-8 ml-4"
+              id="restaurants"
+              className="lg:pb-8 pb-4 lg:pt-24 pt-16"
             >
               <Heading animate={{ from: -25, to: 0, dir: 'x' }}
                 variant="h2" text="Restoranlar" />
@@ -349,13 +305,10 @@ const Portfolio = () => {
             </div>
           </div>
 
-          <div
-            ref={hotelRef}
-            id="hotel"
-            className="lg:pt-24 sm:pt-16 pt-12"
-          >
+          <div ref={hotelRef}>
             <div
-              className="lg:mb-24 sm:mb-16 mb-12 lg:ml-8 ml-4"
+              id="hotel"
+              className="lg:pb-8 pb-4 lg:pt-24 pt-16"
             >
               <Heading animate={{ from: -25, to: 0, dir: 'x' }}
                 variant="h2" text="Otellər" />
@@ -381,14 +334,10 @@ const Portfolio = () => {
           </div>
 
 
-          <div
-            ref={objRef}
-            id="objects"
-            className="lg:pt-24 sm:pt-16 pt-12"
-
-          >
+          <div ref={objRef}>
             <div
-              className="lg:mb-24 sm:mb-16 mb-12 lg:ml-8 ml-4"
+              id="objects"
+              className="lg:pb-8 pb-4 lg:pt-24 pt-16"
             >
               <Heading animate={{ from: -25, to: 0, dir: 'x' }}
                 variant="h2" text="İaişə Obyektləri" />
@@ -437,14 +386,11 @@ const Portfolio = () => {
           </div>
 
 
-          <div
-            ref={consRef}
-            id="construction"
-            className="lg:pt-24 sm:pt-16 pt-12"
-          >
+          <div ref={consRef}>
 
             <div
-              className="lg:mb-24 sm:mb-16 mb-12 lg:ml-8 ml-4"
+              id="construction"
+              className="lg:pb-8 pb-4 lg:pt-24 pt-16"
             >
               <Heading animate={{ from: -25, to: 0, dir: 'x' }}
                 variant="h2" text="Təmir/Tikiniti" />
