@@ -29,7 +29,7 @@ const Card: React.FC<CardProps> = ({ delay, tag, src, href = "" }) => {
   }, [cardsInview])
 
   return (
-    <a href={href}>
+    <Link href={href} prefetch={true}>
       <motion.div
         ref={cardsRef}
         variants={cardsVariants}
@@ -53,6 +53,7 @@ const Card: React.FC<CardProps> = ({ delay, tag, src, href = "" }) => {
         <div className="lg:rounded-xl sm:rounded-lg rounded-md overflow-hidden
           aspect-[4/3] w-[90vw] lg:max-w-[832px] lg:w-[832px]">
           <Image
+            priority={true}
             quality={70}
             className="object-cover w-full h-full"
             src={src} alt="Layihə Fotosu" width={1080} height={0} />
@@ -70,7 +71,7 @@ const Card: React.FC<CardProps> = ({ delay, tag, src, href = "" }) => {
           </h1>
         </div>
       </motion.div>
-    </a>
+    </Link>
   )
 }
 export default Card

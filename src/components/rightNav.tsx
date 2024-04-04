@@ -15,7 +15,7 @@ const RightNav: React.FC<Props> = ({ intInView, extInView, restInView, hotelInVi
   return (
     <div
       className={`fixed h-fit lg:w-16 sm:w-8 w-4 right-0 top-1/2 z-50
-        -translate-y-1/2 flex flex-col items-center
+        -translate-y-1/2 flex flex-col items-center drop-shadow-xl
         bg-grayA px-4 py-4 sm:bg-transparent sm:p-0
         lg:text-2xl sm:text-xl text-lg transition duration-100
         ${!isDrawerOpen && 'translate-x-full'}
