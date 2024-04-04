@@ -23,7 +23,7 @@ import Loading from "./loading"
 const Home = () => {
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    new Promise(resolve => setTimeout(resolve, 0)).then(() => {
+    new Promise(resolve => setTimeout(resolve, 1200)).then(() => {
       setLoading(false)
     })
   }, [])
