@@ -26,7 +26,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
           XİDMƏTLƏRİMİZ
         </Link>
         <Link
-          href="#" className="text-md sm:text-lg text-zinc-100 uppercase
+          href="/academy" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
           underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           w-fit lg:ml-0 ml-auto z-10">

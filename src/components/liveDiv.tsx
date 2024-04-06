@@ -24,10 +24,9 @@ const LiveDiv: React.FC<LiveDivProps> = ({ children, animate }) => {
     visible: { opacity: 1, y: animate.to, transition: { duration: 0.5, delay: animate.delay } },
   }
   const variantZ = {
-    hidden: { opacity: 0, scale: animate.from },
-    visible: { opacity: 1, scale: animate.to, transition: { duration: 0.5, delay: animate.delay } },
+    hidden: { opacity: 0, scale: animate.from, transformOrigin: "center" },
+    visible: { opacity: 1, scale: animate.to, transition: { duration: 0.5, delay: animate.delay }, transformOrigin: "center" },
   }
-
   const divControls = useAnimation()
 
   useEffect(() => {

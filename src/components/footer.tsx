@@ -24,7 +24,7 @@ const Footer = () => {
             className="flex"
           >
             <FontAwesomeIcon icon={faInstagram}
-              className="w-4 sm:w-6 -translate-x-[1px] mr-2" />
+              className="sm:w-6 w-4 h-auto -translate-x-[1px] mr-2" />
             alioglu.group
           </Link>
         </span>
@@ -34,7 +34,7 @@ const Footer = () => {
             className="flex"
           >
             <FontAwesomeIcon icon={faWhatsapp}
-              className="w-4 sm:w-6 -translate-x-[1px] mr-2" />
+              className="sm:w-6 w-4 h-auto -translate-x-[1px] mr-2" />
             050 298 99 99
           </Link>
         </span>
