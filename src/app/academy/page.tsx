@@ -1,7 +1,6 @@
 'use client'
-
+import Scene from "@/components/3dModel";
 import Footer from "@/components/footer";
-import Heading from "@/components/heading";
 import LiveDiv from "@/components/liveDiv";
 import Image from "next/image";
 
@@ -26,7 +25,7 @@ const Academy = () => {
                 3ds Max
               </h1>
               <h1 className="lg:text-5xl sm:text-3xl text-base text-zinc-100
-                lg:translate-y-1 font-semibold lg:mt-0 mt-2 min-w-full">
+                lg:translate-y-1 font-semibold lg:my-4 my-2 min-w-full">
                 is a best in class 3D modelling software
               </h1>
             </div>
@@ -37,8 +36,8 @@ const Academy = () => {
           <div className="lg:w-1/2 w-full lg:aspect-[4/3] aspect-square overflow-y-scroll">
             <h1 className="text-center align-middle h-full flex items-center text-5xl font-semibold justify-center text-grayALight">Cards goes here</h1>
           </div>
-          <div className="lg:w-1/2 w-full lg:aspect-[4/3] aspect-square">
-            <h1 className="text-center align-middle h-full flex items-center text-5xl font-semibold justify-center text-grayALight">3D models goes here</h1>
+          <div className="lg:w-1/2 w-full lg:aspect-[4/3] aspect-square border-grayALight border">
+            <Scene />
           </div>
         </div>
       </div>
@@ -61,7 +60,7 @@ const Academy = () => {
                 Autocad
               </h1>
               <h1 className="lg:text-5xl sm:text-3xl text-base text-zinc-100
-                lg:translate-y-1 font-semibold lg:mt-0 mt-2 min-w-full">
+                lg:translate-y-1 font-semibold lg:my-4 my-2 min-w-full">
                 is a
                 <span
                   className="relative pl-3"
@@ -82,11 +81,8 @@ const Academy = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row">
-          <div className="lg:w-1/2 w-full lg:aspect-[4/3] aspect-square overflow-y-scroll">
+          <div className="w-full lg:aspect-[4/3] aspect-square overflow-y-scroll">
             <h1 className="text-center align-middle h-full flex items-center text-5xl font-semibold justify-center text-grayALight">Cards goes here</h1>
-          </div>
-          <div className="lg:w-1/2 w-full lg:aspect-[4/3] aspect-square">
-            <h1 className="text-center align-middle h-full flex items-center text-5xl font-semibold justify-center text-grayALight">3D models goes here</h1>
           </div>
         </div>
       </div>
@@ -109,7 +105,7 @@ const Academy = () => {
                 Photoshop
               </h1>
               <h1 className="lg:text-5xl sm:text-3xl text-base text-zinc-100
-                lg:translate-y-1 font-semibold lg:mt-0 mt-2 min-w-full">
+                lg:translate-y-1 font-semibold lg:my-4 my-2 min-w-full">
                 is a Adobe's image editing software for professionals.
               </h1>
             </div>
@@ -117,11 +113,8 @@ const Academy = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row">
-          <div className="lg:w-1/2 w-full lg:aspect-[4/3] aspect-square overflow-y-scroll">
+          <div className="w-full lg:aspect-[4/3] aspect-square overflow-y-scroll">
             <h1 className="text-center align-middle h-full flex items-center text-5xl font-semibold justify-center text-grayALight">Cards goes here</h1>
-          </div>
-          <div className="lg:w-1/2 w-full lg:aspect-[4/3] aspect-square">
-            <h1 className="text-center align-middle h-full flex items-center text-5xl font-semibold justify-center text-grayALight">3D models goes here</h1>
           </div>
         </div>
       </div>
