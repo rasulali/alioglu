@@ -10,7 +10,6 @@ import { motion, useAnimation, useInView, useMotionValueEvent, useScroll } from 
 import Link from "next/link"
 import { useRef, useEffect, useState } from "react"
 import Heading from "@/components/heading"
-import LiveDiv from "@/components/liveDiv"
 import hotel from '@/../public/cardImages/hotel.jpg'
 import restaurant from '@/../public/cardImages/restourant.jpg'
 import interior from '@/../public/cardImages/interior.jpg'
@@ -86,7 +85,7 @@ const Home = () => {
         </video>
         {videoInView && <span
           className="absolute flex items-center justify-center
-          bottom-0 left-1/2 -translate-x-1/2 -translate-y-full
+          bottom-[5%] left-1/2 -translate-x-1/2
           ">
           <ChevronDownIcon
             className="opacity-0 sm:w-12 w-8 text-zinc-100/60 animate-down"
@@ -144,7 +143,7 @@ const Home = () => {
           <Card delay={0.2} tag="Eksteryer" src={exterior} href="/portfolio/exteriors" />
           <Card delay={0.05} tag="Restoranlar" src={restaurant} href="/portfolio/restaurants" />
           <Card delay={0} tag="Otellər" src={hotel} href="/portfolio/hotels" />
-          <Card delay={0.1} tag="İaişə Obyektləri" src={object} href="/portfolio/objects" />
+          <Card delay={0.1} tag="İaşə Obyektləri" src={object} href="/portfolio/objects" />
           <Card delay={0.25} tag="Təmir/Tikinti" src={construction} href="/portfolio/constructions" />
         </div>
 

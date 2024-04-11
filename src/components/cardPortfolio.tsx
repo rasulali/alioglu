@@ -75,23 +75,22 @@ const Card: React.FC<CardProps> = ({ src, alt = "Layihə Fotosu", name, link, an
         }
         initial="hidden"
         animate={divControls}
-        className="relative lg:max-w-[832px] lg:w-[832px] w-auto aspect-[4/3] bg-neutral-500
+        className="relative lg:max-w-[832px] lg:w-[832px] w-full aspect-[4/3] bg-neutral-500
       lg:rounded-xl sm:rounded-lg rounded-md overflow-hidden"
       >
         <Image
           quality={70}
           priority={true}
           width={1080} height={0}
-          src={src} alt={alt} className="w-full h-full object-cover" />
+          src={src} alt={alt} className="h-full object-cover" />
 
 
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t
-      from-[#1d1d1d] via-transparent to-transparent transition-transform duration-100 flex
-      flex-row" >
+          from-[#1d1d1d] via-transparent to-transparent transition-transform duration-100
+          flex flex-row">
           <h1
             className="text-zinc-100 font-semibold lg:text-3xl text-lg mt-auto
-            lg:mb-6 lg:ml-4 mb-2 ml-2"
-          >
+            lg:mb-6 lg:ml-4 mb-2 ml-2">
             {name}
           </h1>
           <h2
@@ -99,7 +98,7 @@ const Card: React.FC<CardProps> = ({ src, alt = "Layihə Fotosu", name, link, an
             lg:mb-6 ml-auto lg:mr-4 mb-2 mr-2"
           >{text}</h2>
         </div>
-      </motion.div >
+      </motion.div>
     </Link >
   )
 }

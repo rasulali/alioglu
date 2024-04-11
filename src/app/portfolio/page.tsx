@@ -52,17 +52,13 @@ const Portfolio = () => {
   return (
     <main
       className="w-screen relative bg-grayA">
-      {/* sening sections in view state as props to right navigation */}
       <RightNav intInView={inView.int} extInView={inView.ext} restInView={inView.rest}
         hotelInView={inView.hotel} objInView={inView.obj} consInView={inView.cons} />
-      {/* sening sections in view state as props to right navigation */}
-
-      <BackNav href="/" />
       <section
         className="w-full lg:pt-24 pt-12 lg:px-16 sm:px-8 px-4">
         <div className="w-full relative">
           <span className="w-full flex justify-center">
-            <Heading animate={{ from: -50, to: 0, dir: 'y' }} variant="h1" text="Portfolio" />
+            <Heading animate={{ from: -20, to: 0, dir: 'y' }} variant="h1" text="Portfolio" />
           </span>
 
           <div ref={intRef}>
@@ -340,7 +336,7 @@ const Portfolio = () => {
               className="lg:pb-8 pb-4 lg:pt-24 pt-16"
             >
               <Heading animate={{ from: -25, to: 0, dir: 'x' }}
-                variant="h2" text="İaişə Obyektləri" />
+                variant="h2" text="İaşə Obyektləri" />
             </div>
             <div
               className="flex flex-wrap max-w-[calc(832px*3.5)] lg:gap-x-8

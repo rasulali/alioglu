@@ -19,23 +19,20 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
       gap-8 text-nowrap
       ">
         <Link
-          href="#" className="text-md sm:text-lg text-zinc-100 uppercase
+          href="/services" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
-          underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           w-fit lg:ml-0 ml-auto z-10">
           XİDMƏTLƏRİMİZ
         </Link>
         <Link
           href="/academy" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
-          underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           w-fit lg:ml-0 ml-auto z-10">
           AKADEMİYA
         </Link>
         <Link
           href="/portfolio" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
-          underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           w-fit lg:ml-0 ml-auto z-10">
           PORTFOLİO
         </Link>
@@ -49,14 +46,12 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
         <Link
           href="#" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
-          underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           w-fit lg:ml-0 ml-auto z-10">
           MEDİYA VƏ BLOQ
         </Link>
         <Link
           href="#" className="text-md sm:text-lg text-zinc-100 uppercase
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
-          underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           w-fit lg:ml-0 ml-auto z-10">
           HAQQIMIZDA
         </Link>
@@ -67,7 +62,6 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
           }}
           className="text-md sm:text-lg text-zinc-100 uppercase cursor-pointer
           font-medium lg:hover:text-neutral-500 transition-colors duration-500
-          underline underline-offset-2 sm:underline-offset-4 lg:no-underline
           w-fit lg:ml-0 ml-auto z-10">
           Əlaqə
         </a>

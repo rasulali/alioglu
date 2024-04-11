@@ -14,7 +14,7 @@ const Exteriors = () => {
       <section
         className="w-full lg:pt-24 pt-12 lg:px-16 sm:px-8 px-4">
         <div className="flex justify-center lg:mb-8 mb-4">
-          <Heading animate={{ from: -50, to: 0, dir: 'y' }} variant="h2" text="Eksteryer Layihələri" />
+          <Heading animate={{ from: -20, to: 0, dir: 'y' }} variant="h2" text="Eksteryer Layihələri" />
         </div>
         <div
           className="flex flex-wrap max-w-[calc(832px*3.5)] lg:gap-x-8

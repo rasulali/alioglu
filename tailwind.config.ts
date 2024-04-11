@@ -25,6 +25,7 @@ const config: Config = {
         down: 'down 2s linear 2s infinite',
         right: 'right 2s linear 2s infinite',
         left: 'left 2s linear 2s infinite',
+        'spin-once': 'spin 1s ease-in-out forwards',
       },
       keyframes: {
         rotateY: {

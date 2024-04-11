@@ -3,13 +3,32 @@ import Scene from "@/components/3dModel";
 import Footer from "@/components/footer";
 import LiveDiv from "@/components/liveDiv";
 import Image from "next/image";
-
+import { useState } from "react";
+import { motion } from 'framer-motion'
+import Heading from "@/components/heading";
 const Academy = () => {
+  const [cadClick, setCadClick] = useState(false)
+  const [cadHover, setCadHover] = useState(false)
   return (
     <main className="lg:pt-24 pt-12">
+      <div className="w-full h-screen lg:px-12 px-4">
+        <div className="flex justify-center lg:my-6 my-2">
+          <Heading text="Akademiya" animate={{ from: -20, to: 0, dir: 'y' }} variant="h1" />
+        </div>
+        {/* Content */}
+        <div className="w-full flex flex-col lg:flex-row
+        lg:h-[calc(100vh-128px-96px-48px-48px)] h-[calc(100vh-48px-48px-16px-16px)]">
+          <div className="lg:w-1/2 w-full lg:h-full h-1/2">
+            <h1 className="text-center align-middle h-full flex items-center text-5xl font-semibold justify-center text-grayALight">Info goes here</h1>
+          </div>
+          <div className="lg:w-1/2 w-full lg:h-full h-1/2 bg-neutral-400">
+            <h1 className="text-center align-middle h-full flex items-center text-5xl font-semibold justify-center text-grayALight">Image goes here</h1>
+          </div>
+        </div>
+      </div>
       {/* 3ds max wrapper */}
-      <div className="lg:w-full lg:px-12 px-4">
-        <div className="w-full mt-6">
+      <div className="lg:w-full lg:px-12 px-4 ">
+        <div className="w-full lg:my-6 my-4">
           <LiveDiv animate={{ from: -20, to: 0, dir: 'x', delay: 0.1 }}>
             <div className="flex items-end flex-wrap">
               <Image
@@ -26,7 +45,11 @@ const Academy = () => {
               </h1>
               <h1 className="lg:text-5xl sm:text-3xl text-base text-zinc-100
                 lg:translate-y-1 font-semibold lg:my-4 my-2 min-w-full">
-                is a best in class 3D modelling software
+                Dünya standartı olaraq qəbul edilən,
+                <span
+                  className="lg:px-3 px-1 text-nowrap"
+                >üç ölçülü</span>
+                modelləmə programıdır
               </h1>
             </div>
           </LiveDiv>
@@ -36,15 +59,16 @@ const Academy = () => {
           <div className="lg:w-1/2 w-full lg:aspect-[4/3] aspect-square overflow-y-scroll">
             <h1 className="text-center align-middle h-full flex items-center text-5xl font-semibold justify-center text-grayALight">Cards goes here</h1>
           </div>
-          <div className="lg:w-1/2 w-full lg:aspect-[4/3] aspect-square border-grayALight border">
+          <div className="lg:w-1/2 w-full lg:aspect-[4/3] aspect-square
+          border-grayALight border">
             <Scene />
           </div>
         </div>
       </div>
 
       {/* Autocad Wrapper */}
-      <div className="lg:w-full lg:px-12 px-4">
-        <div className="w-full mt-6">
+      <div className="lg:w-full lg:px-12 px-4 lg:mt-24 mt-8">
+        <div className="w-full lg:my-6 my-4">
           <LiveDiv animate={{ from: -20, to: 0, dir: 'x', delay: 0.1 }}>
             <div className="flex items-end flex-wrap">
               <Image
@@ -61,20 +85,30 @@ const Academy = () => {
               </h1>
               <h1 className="lg:text-5xl sm:text-3xl text-base text-zinc-100
                 lg:translate-y-1 font-semibold lg:my-4 my-2 min-w-full">
-                is a
+                Dəqiq, iki və üç ölçülü çertyojlama üçün
                 <span
-                  className="relative pl-3"
+                  className="relative lg:no-underline underline"
+                  onClick={() => {
+                    if (window.innerWidth < 640) setCadClick(!cadClick)
+                  }}
                 >
-                  <span className="lg:text-lg font-bold text-neutral-400 absolute
-            cursor-default group top-0 -right-4">&#9432;
-                    <span className="hidden absolute bg-grayALight text-base lg:px-2
-                    lg:py-1 lg:rounded-xl text-nowrap group-hover:inline-block bottom-4">
-                      Computer-Aided Design
-                    </span>
+                  <span
+                    className={`${(cadClick || cadHover) ? 'inline-block' : 'hidden'} absolute bg-grayALight lg:text-base lg:px-2
+                    py-1 lg:rounded-xl px-1.5 rounded-xl text-xs text-nowrap
+                    top-0 -translate-y-full -right-full translate-x-1/2
+                    lg:left-full lg:translate-x-0 w-fit
+                    `}>
+                    Computer-Aided Design
                   </span>
-                  CAD
-                </span> software used for creating precise 2D and 3D drawings and models.
-
+                  <motion.span
+                    onHoverStart={() => setCadHover(true)}
+                    onHoverEnd={() => setCadHover(false)}
+                    className="lg:text-lg hidden lg:inline-block font-bold text-neutral-400 absolute
+                    cursor-default group right-0 top-0">&#9432;
+                  </motion.span>
+                  <span className="lg:px-3 px-1 cursor-default">CAD</span>
+                </span>
+                programıdır
               </h1>
             </div>
           </LiveDiv>
@@ -85,11 +119,11 @@ const Academy = () => {
             <h1 className="text-center align-middle h-full flex items-center text-5xl font-semibold justify-center text-grayALight">Cards goes here</h1>
           </div>
         </div>
-      </div>
+      </div >
 
       {/* Photoshop Wrapper */}
-      <div className="lg:w-full lg:px-12 px-4">
-        <div className="w-full mt-6">
+      < div className="lg:w-full lg:px-12 px-4 lg:mt-24 mt-8" >
+        <div className="w-full lg:my-6 my-4">
           <LiveDiv animate={{ from: -20, to: 0, dir: 'x', delay: 0.1 }}>
             <div className="flex items-end flex-wrap">
               <Image
@@ -106,7 +140,7 @@ const Academy = () => {
               </h1>
               <h1 className="lg:text-5xl sm:text-3xl text-base text-zinc-100
                 lg:translate-y-1 font-semibold lg:my-4 my-2 min-w-full">
-                is a Adobe's image editing software for professionals.
+                Adobe-in professional şəkil redaktə etmə programıdır
               </h1>
             </div>
           </LiveDiv>
@@ -117,7 +151,7 @@ const Academy = () => {
             <h1 className="text-center align-middle h-full flex items-center text-5xl font-semibold justify-center text-grayALight">Cards goes here</h1>
           </div>
         </div>
-      </div>
+      </div >
       <Footer />
     </main >
   )

@@ -55,7 +55,7 @@ const Card: React.FC<CardProps> = ({ delay, tag, src, href = "" }) => {
           <Image
             priority={true}
             quality={70}
-            className="object-cover w-full h-full"
+            className="object-cover h-full"
             src={src} alt="Layihə Fotosu" width={1080} height={0} />
         </div>
         <div
