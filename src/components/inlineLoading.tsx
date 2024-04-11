@@ -10,7 +10,7 @@ const InlineLoading = ({ progress }: { progress: number }) => {
 
         style={{ scaleX: progress / 100, originX: 0 }}
         className="w-4/5 h-2 bg-zinc-100 rounded-full" />
-      <h1 className="text-zinc-100 text-2xl">{progress}%</h1>
+      <h1 className="text-zinc-100 lg:text-2xl text-lg">{progress}%</h1>
     </div>
   )
 }

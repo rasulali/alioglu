@@ -10,7 +10,7 @@ const Constructions = () => {
   return (
     <main
       className="w-screen relative bg-grayA">
-      <BackNav href="/" />
+      <BackNav />
       <section
         className="w-full lg:pt-24 pt-12 lg:px-16 sm:px-8 px-4">
         <div className="flex justify-center lg:mb-8 mb-4">
