@@ -3,7 +3,6 @@
 import Heading from "@/components/heading";
 import RightNav from "@/components/rightNav";
 import Card from "@/components/cardPortfolio"
-import BackNav from "@/components/backNav";
 
 import { useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
@@ -64,7 +63,7 @@ const Portfolio = () => {
           <div ref={intRef}>
             <div
               id="interior"
-              className="lg:pb-8 pb-4 lg:pt-24 pt-16"
+              className="lg:pb-8 pb-4 lg:pt-6 pt-3"
             >
               <Heading
                 animate={{ from: -25, to: 0, dir: 'x' }}

@@ -40,16 +40,31 @@ const Heading: React.FC<HeadingProps> = ({ text, animate, variant }) => {
         initial="hidden"
         animate={textControls}
         className="flex items-center justify-center relative w-fit">
-        {variant === 'h1' ?
-          <h1
-            className="lg:text-9xl sm:text-7xl text-5xl text-zinc-100 text-nowrap">
-            {text}
-          </h1>
-          :
-          <h2
-            className="lg:text-7xl sm:text-5xl text-3xl text-zinc-100 text-nowrap">
-            {text}
-          </h2>
+        {
+          (() => {
+            switch (variant) {
+              case 'h1':
+                return (
+                  <h1
+                    className="lg:text-9xl sm:text-7xl text-5xl text-zinc-100 text-nowrap">
+                    {text}
+                  </h1>
+                )
+              case 'h2':
+                return (
+                  <h2
+                    className="lg:text-7xl sm:text-5xl text-3xl text-zinc-100 text-nowrap">
+                    {text}
+                  </h2>
+                )
+              case 'h3':
+                return (
+                  <h1
+                    className="lg:text-5xl sm:text-3xl text-xl text-zinc-100 text-nowrap"
+                  >{text}</h1>
+                )
+            }
+          })()
         }
       </motion.div>
     </div>

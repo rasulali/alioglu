@@ -119,10 +119,10 @@ const Exterior = ({ params }: { params: { id: number } }) => {
     <main className="bg-grayA">
       <div className="px-8 lg:pt-24 pt-12 lg:pb-12">
         <div className="w-full lg:mb-8 mb-2 flex items-end">
-          <Heading animate={{ from: -20, to: 0, dir: 'x' }} variant="h2"
+          <Heading animate={{ from: -20, to: 0, dir: 'x' }} variant="h3"
             text={info.name} />
           <LiveDiv animate={{ from: -20, to: 0, dir: 'x', delay: 0.1 }}>
-            <p className="lg:text-xl ml-auto w-fit text-neutral-400">{info.description}</p>
+            <p className="lg:text-xl text-sm ml-auto w-fit text-neutral-400">{info.description}</p>
           </LiveDiv>
         </div>
         <Lightbox

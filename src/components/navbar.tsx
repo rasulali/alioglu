@@ -16,23 +16,23 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
     return (
       <div className="w-full flex flex-col lg:flex-row px-4 py-4
       lg:justify-evenly lg:h-full lg:items-center text-right lg:text-center
-      gap-8 text-nowrap
-      ">
+      gap-8 text-nowrap"
+      >
         <Link
           href="/services" className="text-md sm:text-lg text-zinc-100 uppercase
-          font-medium lg:hover:text-neutral-500 transition-colors duration-500
+           lg:hover:text-neutral-500 transition-colors duration-500
           w-fit lg:ml-0 ml-auto z-10">
           XİDMƏTLƏRİMİZ
         </Link>
         <Link
           href="/academy" className="text-md sm:text-lg text-zinc-100 uppercase
-          font-medium lg:hover:text-neutral-500 transition-colors duration-500
+           lg:hover:text-neutral-500 transition-colors duration-500
           w-fit lg:ml-0 ml-auto z-10">
           AKADEMİYA
         </Link>
         <Link
           href="/portfolio" className="text-md sm:text-lg text-zinc-100 uppercase
-          font-medium lg:hover:text-neutral-500 transition-colors duration-500
+           lg:hover:text-neutral-500 transition-colors duration-500
           w-fit lg:ml-0 ml-auto z-10">
           PORTFOLİO
         </Link>
@@ -45,13 +45,13 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
         {/* reServe space for logo on wide screens */}
         <Link
           href="#" className="text-md sm:text-lg text-zinc-100 uppercase
-          font-medium lg:hover:text-neutral-500 transition-colors duration-500
+           lg:hover:text-neutral-500 transition-colors duration-500
           w-fit lg:ml-0 ml-auto z-10">
           MEDİYA VƏ BLOQ
         </Link>
         <Link
           href="#" className="text-md sm:text-lg text-zinc-100 uppercase
-          font-medium lg:hover:text-neutral-500 transition-colors duration-500
+           lg:hover:text-neutral-500 transition-colors duration-500
           w-fit lg:ml-0 ml-auto z-10">
           HAQQIMIZDA
         </Link>
@@ -61,7 +61,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
             setMenuState(false)
           }}
           className="text-md sm:text-lg text-zinc-100 uppercase cursor-pointer
-          font-medium lg:hover:text-neutral-500 transition-colors duration-500
+           lg:hover:text-neutral-500 transition-colors duration-500
           w-fit lg:ml-0 ml-auto z-10">
           Əlaqə
         </a>
