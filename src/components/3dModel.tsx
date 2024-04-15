@@ -100,7 +100,7 @@ const Scene = () => {
           }
           <NightLamp showIndicator={!isOverlayShown} position={[-1.227, -1.14, -2.74]} color='#561496' />
           <NightLamp showIndicator={!isOverlayShown} position={[1.227, -1.14, -2.74]} color='#561496' />
-          <Gltf src='/model.glb' castShadow receiveShadow deep
+          <Gltf src='/academy/model.glb' castShadow receiveShadow deep
           />
           <Grid position={[0, -2, 0]} scale={[1, 0, 1]} infiniteGrid receiveShadow
             sectionColor='#525252' cellColor='#525252' />
