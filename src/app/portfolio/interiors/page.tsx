@@ -31,229 +31,229 @@ const Interiors = () => {
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.2 }}
             src="/interiors/2/images/hero.jpg"
-            name="Layihə"
+            name="Zest Layihəsi"
             link="/portfolio/interiors/2"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.3 }}
             src="/interiors/3/images/hero.jpg"
-            name="Layihə"
+            name="Slate Layihəsi"
             link="/portfolio/interiors/3"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.4 }}
             src="/interiors/4/images/hero.jpg"
-            name="Layihə"
+            name="Spark Layihəsi"
             link="/portfolio/interiors/4"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.5 }}
             src="/interiors/5/images/hero.jpg"
-            name="Layihə"
+            name="Quill Layihəsi"
             link="/portfolio/interiors/5"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.6 }}
             src="/interiors/6/images/hero.jpg"
-            name="Layihə"
+            name="Swift Layihəsi"
             link="/portfolio/interiors/6"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.1 }}
             src="/interiors/7/images/hero.jpg"
-            name="Layihə"
+            name="Prism Layihəsi"
             link="/portfolio/interiors/7"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.2 }}
             src="/interiors/8/images/hero.jpg"
-            name="Layihə"
+            name="Pivot Layihəsi"
             link="/portfolio/interiors/8"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.3 }}
             src="/interiors/9/images/hero.jpg"
-            name="Layihə"
+            name="Wisp Layihəsi"
             link="/portfolio/interiors/9"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.4 }}
             src="/interiors/10/images/hero.jpg"
-            name="Layihə"
+            name="Lumo Layihəsi"
             link="/portfolio/interiors/10"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.5 }}
             src="/interiors/11/images/hero.jpg"
-            name="Layihə"
+            name="Pinnacle Layihəsi"
             link="/portfolio/interiors/11"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.6 }}
             src="/interiors/12/images/hero.jpg"
-            name="Layihə"
+            name="Odyssey Layihəsi"
             link="/portfolio/interiors/12"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.1 }}
             src="/interiors/13/images/hero.jpg"
-            name="Layihə"
+            name="Evolve Layihəsi"
             link="/portfolio/interiors/13"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.2 }}
             src="/interiors/14/images/hero.jpg"
-            name="Layihə"
+            name="Mirage Layihəsi"
             link="/portfolio/interiors/14"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.3 }}
             src="/interiors/15/images/hero.jpg"
-            name="Layihə"
+            name="Sable Layihəsi"
             link="/portfolio/interiors/15"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.4 }}
             src="/interiors/16/images/hero.jpg"
-            name="Layihə"
+            name="Helix Layihəsi"
             link="/portfolio/interiors/16"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.5 }}
             src="/interiors/17/images/hero.jpg"
-            name="Layihə"
+            name="Peak Layihəsi"
             link="/portfolio/interiors/17"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.6 }}
             src="/interiors/18/images/hero.jpg"
-            name="Layihə"
+            name="Gleam Layihəsi"
             link="/portfolio/interiors/18"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.1 }}
             src="/interiors/19/images/hero.jpg"
-            name="Layihə"
+            name="Iris Layihəsi"
             link="/portfolio/interiors/19"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.2 }}
             src="/interiors/20/images/hero.jpg"
-            name="Layihə"
+            name="Crest Layihəsi"
             link="/portfolio/interiors/20"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.3 }}
             src="/interiors/21/images/hero.jpg"
-            name="Layihə"
+            name="Sway Layihəsi"
             link="/portfolio/interiors/21"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.4 }}
             src="/interiors/22/images/hero.jpg"
-            name="Layihə"
+            name="Axis Layihəsi"
             link="/portfolio/interiors/22"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.5 }}
             src="/interiors/23/images/hero.jpg"
-            name="Layihə"
+            name="Zephyr Layihəsi"
             link="/portfolio/interiors/23"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.6 }}
             src="/interiors/24/images/hero.jpg"
-            name="Layihə"
+            name="Nove Layihəsi"
             link="/portfolio/interiors/24"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.1 }}
             src="/interiors/25/images/hero.jpg"
-            name="Layihə"
+            name="Dusk Layihəsi"
             link="/portfolio/interiors/25"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.2 }}
             src="/interiors/26/images/hero.jpg"
-            name="Layihə"
+            name="Echo Layihəsi"
             link="/portfolio/interiors/26"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.3 }}
             src="/interiors/27/images/hero.jpg"
-            name="Layihə"
+            name="Grove Layihəsi"
             link="/portfolio/interiors/27"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.4 }}
             src="/interiors/28/images/hero.jpg"
-            name="Layihə"
+            name="Haven Layihəsi"
             link="/portfolio/interiors/28"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.5 }}
             src="/interiors/29/images/hero.jpg"
-            name="Layihə"
+            name="Vista Layihəsi"
             link="/portfolio/interiors/29"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.6 }}
             src="/interiors/30/images/hero.jpg"
-            name="Layihə"
+            name="Urban Layihəsi"
             link="/portfolio/interiors/30"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.1 }}
             src="/interiors/31/images/hero.jpg"
-            name="Layihə"
+            name="Flume Layihəsi"
             link="/portfolio/interiors/31"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.2 }}
             src="/interiors/32/images/hero.jpg"
-            name="Layihə"
+            name="Terre Layihəsi"
             link="/portfolio/interiors/32"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.3 }}
             src="/interiors/33/images/hero.jpg"
-            name="Layihə"
+            name="Luna Layihəsi"
             link="/portfolio/interiors/33"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.4 }}
             src="/interiors/34/images/hero.jpg"
-            name="Layihə"
+            name="Oasis Layihəsi"
             link="/portfolio/interiors/34"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.5 }}
             src="/interiors/35/images/hero.jpg"
-            name="Layihə"
+            name="Nest Layihəsi"
             link="/portfolio/interiors/35"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.6 }}
             src="/interiors/36/images/hero.jpg"
-            name="Layihə"
+            name="Bliss Layihəsi"
             link="/portfolio/interiors/36"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.1 }}
             src="/interiors/37/images/hero.jpg"
-            name="Layihə"
+            name="Aura Layihəsi"
             link="/portfolio/interiors/37"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.2 }}
             src="/interiors/38/images/hero.jpg"
-            name="Layihə"
+            name="Forge Layihəsi"
             link="/portfolio/interiors/38"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.3 }}
             src="/interiors/39/images/hero.jpg"
-            name="Layihə"
+            name="Serene Layihəsi"
             link="/portfolio/interiors/39"
           />
         </div>

@@ -24,85 +24,85 @@ const Exteriors = () => {
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.1 }}
             src="/exteriors/1/images/hero.jpg"
-            name="Layihə"
+            name="Pinnacle Layihəsi"
             link="/portfolio/exteriors/1"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.2 }}
             src="/exteriors/2/images/hero.jpg"
-            name="Layihə"
+            name="Terra Layihəsi"
             link="/portfolio/exteriors/2"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.3 }}
             src="/exteriors/3/images/hero.jpg"
-            name="Layihə"
+            name="Zenith Layihəsi"
             link="/portfolio/exteriors/3"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.4 }}
             src="/exteriors/4/images/hero.jpg"
-            name="Layihə"
+            name="Nebula Layihəsi"
             link="/portfolio/exteriors/4"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.5 }}
             src="/exteriors/5/images/hero.jpg"
-            name="Layihə"
+            name="Skyreach Layihəsi"
             link="/portfolio/exteriors/5"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.6 }}
             src="/exteriors/6/images/hero.jpg"
-            name="Layihə"
+            name="Quartz Layihəsi"
             link="/portfolio/exteriors/6"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.1 }}
             src="/exteriors/7/images/hero.jpg"
-            name="Layihə"
+            name="Summit Layihəsi"
             link="/portfolio/exteriors/7"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.2 }}
             src="/exteriors/8/images/hero.jpg"
-            name="Layihə"
+            name="Harbor Layihəsi"
             link="/portfolio/exteriors/8"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.3 }}
             src="/exteriors/9/images/hero.jpg"
-            name="Layihə"
+            name="Aspect Layihəsi"
             link="/portfolio/exteriors/9"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.4 }}
             src="/exteriors/10/images/hero.jpg"
-            name="Layihə"
+            name="Mosaic Layihəsi"
             link="/portfolio/exteriors/10"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.5 }}
             src="/exteriors/11/images/hero.jpg"
-            name="Layihə"
+            name="Vertex Layihəsi"
             link="/portfolio/exteriors/11"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.6 }}
             src="/exteriors/12/images/hero.jpg"
-            name="Layihə"
+            name="Horizon Layihəsi"
             link="/portfolio/exteriors/12"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.1 }}
             src="/exteriors/13/images/hero.jpg"
-            name="Layihə"
+            name="Cascade Layihəsi"
             link="/portfolio/exteriors/13"
           />
           <Card
             animate={{ from: 20, to: 0, dir: "x", delay: 0.2 }}
             src="/exteriors/14/images/hero.jpg"
-            name="Layihə"
+            name="Serenity Layihəsi"
             link="/portfolio/exteriors/14"
           />
         </div>
