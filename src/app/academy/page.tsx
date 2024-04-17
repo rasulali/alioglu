@@ -231,7 +231,7 @@ const Academy = () => {
             </span>
             <LiveDiv animate={{ from: 20, to: 0, dir: 'x', delay: 0 }}>
               <div className="lg:rounded-xl w-full h-full rounded-lg
-              overflow-hidden bg-gray drop-shadow border-2 border-neutral-700">
+              overflow-hidden bg-[#383838] drop-shadow">
                 <Scene />
               </div>
             </LiveDiv>
