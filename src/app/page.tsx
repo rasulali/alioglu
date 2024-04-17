@@ -1,96 +1,109 @@
-'use client'
+"use client";
 
-import Card from "@/components/card"
-import Contact from "@/components/quickContact"
-import AzeMap from "@/components/map"
-import Navbar from "@/components/navbar"
-import { ArrowLongRightIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
-import { MapPinIcon } from '@heroicons/react/24/solid'
-import { motion, useAnimation, useInView, useMotionValueEvent, useScroll } from 'framer-motion'
-import Link from "next/link"
-import { useRef, useEffect, useState } from "react"
-import Heading from "@/components/heading"
-import hotel from '@/../public/cardImages/hotel.jpg'
-import restaurant from '@/../public/cardImages/restourant.jpg'
-import interior from '@/../public/cardImages/interior.jpg'
-import exterior from '@/../public/cardImages/exterior.jpg'
-import object from '@/../public/cardImages/object.jpg'
-import construction from '@/../public/cardImages/construction.jpg'
-import Footer from "@/components/footer"
-import Loading from "./loading"
+import Card from "@/components/card";
+import Contact from "@/components/quickContact";
+import AzeMap from "@/components/map";
+import Navbar from "@/components/navbar";
+import {
+  ArrowLongRightIcon,
+  ChevronDownIcon,
+} from "@heroicons/react/24/outline";
+import { MapPinIcon } from "@heroicons/react/24/solid";
+import {
+  motion,
+  useAnimation,
+  useInView,
+  useMotionValueEvent,
+  useScroll,
+} from "framer-motion";
+import Link from "next/link";
+import { useRef, useEffect, useState } from "react";
+import Heading from "@/components/heading";
+import hotel from "@/../public/cardImages/hotel.jpg";
+import restaurant from "@/../public/cardImages/restourant.jpg";
+import interior from "@/../public/cardImages/interior.jpg";
+import exterior from "@/../public/cardImages/exterior.jpg";
+import object from "@/../public/cardImages/object.jpg";
+import construction from "@/../public/cardImages/construction.jpg";
+import Footer from "@/components/footer";
+import Loading from "./loading";
 
 const Home = () => {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    new Promise(resolve => setTimeout(resolve, 1200)).then(() => {
-      setLoading(false)
-    })
-  }, [])
-  const [isTextHover, setTextHover] = useState(false)
+    new Promise((resolve) => setTimeout(resolve, 1200)).then(() => {
+      setLoading(false);
+    });
+  }, []);
+  const [isTextHover, setTextHover] = useState(false);
   const handleMouseEnter = () => {
-    setTextHover(true)
-  }
+    setTextHover(true);
+  };
   const handleMouseLeave = () => {
-    setTextHover(false)
-  }
+    setTextHover(false);
+  };
 
   const videoRef = useRef<HTMLVideoElement>(null);
-  const videoInView = useInView(videoRef, { once: false })
+  const videoInView = useInView(videoRef, { once: false });
 
-  const textRef = useRef(null)
-  const textInView = useInView(textRef, { once: true })
+  const textRef = useRef(null);
+  const textInView = useInView(textRef, { once: true });
 
   const textVariants = {
     hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.5, } },
-  }
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+  };
 
   const arrowVariants = {
     hidden: { opacity: 0, x: -128 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.1, } },
-  }
-  const textControls = useAnimation()
+    visible: { opacity: 1, x: 0, transition: { duration: 0.1 } },
+  };
+  const textControls = useAnimation();
 
   useEffect(() => {
     if (textInView) {
-      textControls.start("visible")
+      textControls.start("visible");
     }
-  }, [textInView])
+  }, [textInView]);
 
-  const [scroll, setScroll] = useState(0)
-  const { scrollYProgress } = useScroll()
+  const [scroll, setScroll] = useState(0);
+  const { scrollYProgress } = useScroll();
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    setScroll(latest)
-  })
+    setScroll(latest);
+  });
   return (
     <main className="relative">
-      {loading &&
+      {loading && (
         <div className="fixed z-[999999] w-screen h-screen">
           <Loading />
-        </div>}
+        </div>
+      )}
       {/* First Section */}
       <section className="relative w-full h-screen bg-grayA">
         <Contact scroll={scroll} />
         <Navbar isVideoVisible={videoInView} />
         <video
           ref={videoRef}
-          autoPlay muted playsInline loop preload="auto"
+          autoPlay
+          muted
+          playsInline
+          loop
+          preload="auto"
           className="w-full h-full object-cover"
         >
-          <source src='/background.webm'
-            type="video/webm" />
-          <source src='/background.mp4'
-            type="video/mp4" />
+          <source src="/background.webm" type="video/webm" />
+          <source src="/background.mp4" type="video/mp4" />
         </video>
-        {videoInView && <span
-          className="absolute flex items-center justify-center
+        {videoInView && (
+          <span
+            className="absolute flex items-center justify-center
           bottom-[5%] left-1/2 -translate-x-1/2
-          ">
-          <ChevronDownIcon
-            className="opacity-0 sm:w-12 w-8 text-zinc-100/60 animate-down"
-          />
-        </span>}
+          "
+          >
+            <ChevronDownIcon className="opacity-0 sm:w-12 w-8 text-zinc-100/60 animate-down" />
+          </span>
+        )}
       </section>
       {/* Second Section */}
       <section className="min-h-screen p-4 sm:p-8 lg:p-16 bg-grayA">
@@ -100,10 +113,12 @@ const Home = () => {
           variants={textVariants}
           initial="hidden"
           className="lg:mb-16 mb-4 sm:mb-8"
-          animate={textControls}>
+          animate={textControls}
+        >
           <Link
             className="flex items-center justify-center relative w-fit"
-            href="/portfolio">
+            href="/portfolio"
+          >
             <motion.div
               onHoverStart={handleMouseEnter}
               onHoverEnd={handleMouseLeave}
@@ -112,7 +127,8 @@ const Home = () => {
             <h1
               className={`text-4xl sm:text-5xl lg:text-9xl transition-colors z-10
                   duration-100 delay-75
-                  ${isTextHover ? "text-grayA" : "text-zinc-100"}`}>
+                  ${isTextHover ? "text-grayA" : "text-zinc-100"}`}
+            >
               Layihələrimiz
             </h1>
             <motion.span
@@ -121,53 +137,72 @@ const Home = () => {
               initial="hidden"
               animate={textControls}
               className="lg:pt-4 pl-4 z-10"
-            ><ArrowLongRightIcon
+            >
+              <ArrowLongRightIcon
                 className={`lg:w-32 sm:w-16 w-12 duration-75 delay-0
-              ${isTextHover ? "text-grayA" : "text-zinc-100"}`} />
+              ${isTextHover ? "text-grayA" : "text-zinc-100"}`}
+              />
             </motion.span>
             <motion.div
               className={`absolute top-1/2 left-1/2 bg-zinc-100 w-[104%] h-[112%]
             pointer-events-none -skew-x-12 delay-100
             transform transition duration-300 origin-left -translate-x-1/2 -translate-y-1/2
-            ${isTextHover ? 'scale-x-1' : 'scale-x-0'}
+            ${isTextHover ? "scale-x-1" : "scale-x-0"}
             `}
             />
           </Link>
         </motion.div>
 
         {/* Cards Section */}
-        <div className="max-w-[calc((832px+96px)*3+128px)] lg:py-8 mx-auto flex flex-col lg:flex-row lg:flex-wrap
+        <div
+          className="max-w-[calc((832px+96px)*3+128px)] lg:py-8 mx-auto flex flex-col lg:flex-row lg:flex-wrap
         items-center justify-center gap-y-8 sm:gap-y-12 lg:gap-x-10 xl:gap-x-16 lg:gap-y-24"
         >
-          <Card delay={0.15} tag="İnteryer" src={interior} href="/portfolio/interiors" />
-          <Card delay={0.2} tag="Eksteryer" src={exterior} href="/portfolio/exteriors" />
-          <Card delay={0.05} tag="Restoranlar" src={restaurant} href="/portfolio/restaurants" />
+          <Card
+            delay={0.15}
+            tag="İnteryer"
+            src={interior}
+            href="/portfolio/interiors"
+          />
+          <Card
+            delay={0.2}
+            tag="Eksteryer"
+            src={exterior}
+            href="/portfolio/exteriors"
+          />
+          <Card
+            delay={0.05}
+            tag="Restoranlar"
+            src={restaurant}
+            href="/portfolio/restaurants"
+          />
           <Card delay={0} tag="Otellər" src={hotel} href="/portfolio/hotels" />
-          <Card delay={0.1} tag="İaşə Obyektləri" src={object} href="/portfolio/objects" />
-          <Card delay={0.25} tag="Təmir/Tikinti" src={construction} href="/portfolio/constructions" />
+          <Card
+            delay={0.1}
+            tag="İaşə Obyektləri"
+            src={object}
+            href="/portfolio/objects"
+          />
+          <Card
+            delay={0.25}
+            tag="Təmir/Tikinti"
+            src={construction}
+            href="/portfolio/constructions"
+          />
         </div>
-
       </section>
       {/* Third Section */}
       <section className="relative bg-grayA lg:p-16 sm:p-8 p-4">
-        {/* Partners */}
-
         {/* Who are we */}
-        <div
-          className="hidden h-screen"
-        >
+        <div className="hidden h-screen">
           <span className="pointer-events-none">
-            <Heading animate={{ from: -50, to: 0, dir: 'x' }} variant="h1" text="Biz Kimik?" />
+            <Heading
+              animate={{ from: -50, to: 0, dir: "x" }}
+              variant="h1"
+              text="Biz Kimik?"
+            />
           </span>
-          <div
-            className="w-1/2"
-          >
-            <svg fill="none" viewBox="0 0 812 412">
-              <path stroke="#000" strokeLinecap="round" strokeWidth="12" d="M6 6h794c3.314 0 6 1.34315 6 3v397" />
-            </svg>
-          </div>
         </div>
-
 
         {/* Location */}
         <div className="bg-grayA sm:my-40 my-16">
@@ -180,9 +215,11 @@ const Home = () => {
               <span
                 className="sm:border-l-8 border-l-4 border-red-400 sm:pl-2 pl-1
                 pt-1
-                leading-[1.2]">
+                leading-[1.2]"
+              >
                 <span>İçəri Şəhər</span>
-                <span className="flex">Bakı
+                <span className="flex">
+                  Bakı
                   <MapPinIcon className="pl-1 sm:w-8 w-5 text-red-400" />
                 </span>
               </span>
@@ -192,7 +229,7 @@ const Home = () => {
         </div>
       </section>
       <Footer />
-    </main >
-  )
-}
-export default Home
+    </main>
+  );
+};
+export default Home;

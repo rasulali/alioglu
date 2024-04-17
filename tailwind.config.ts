@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import plugin from 'tailwindcss/plugin'
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -10,117 +10,117 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        '4xl': '2752px',
+        "4xl": "2752px",
       },
       colors: {
-        brandColor: '#292D3A',
-        grayA: '#303030',
-        grayALight: '#4A4A4A',
-        accentColor: '#41372e',
+        brandColor: "#292D3A",
+        grayA: "#303030",
+        grayALight: "#4A4A4A",
+        accentColor: "#41372e",
       },
       animation: {
-        rotateY: 'rotateY 2s linear infinite',
-        rotateYEnds: 'rotateY 2s forwards ',
-        appear: 'appear 2s ease-in-out forwards',
-        down: 'down 2s linear 2s infinite',
-        right: 'right 2s linear 2s infinite',
-        left: 'left 2s linear 2s infinite',
-        'spin-once': 'spin 1s ease-in-out forwards',
+        rotateY: "rotateY 2s linear infinite",
+        rotateYEnds: "rotateY 2s forwards ",
+        appear: "appear 2s ease-in-out forwards",
+        down: "down 2s linear 2s infinite",
+        right: "right 2s linear 2s infinite",
+        left: "left 2s linear 2s infinite",
+        "spin-once": "spin 1s ease-in-out forwards",
       },
       keyframes: {
         rotateY: {
           from: {
-            transform: 'rotateY(0deg)'
+            transform: "rotateY(0deg)",
           },
           to: {
-            transform: 'rotateY(360deg)'
-          }
+            transform: "rotateY(360deg)",
+          },
         },
         appear: {
-          from: { opacity: '0' },
-          to: { opacity: '1' },
+          from: { opacity: "0" },
+          to: { opacity: "1" },
         },
         down: {
-          '0%': {
-            transform: 'translate3d(0px, 0px, 0px)',
-            opacity: '0'
+          "0%": {
+            transform: "translate3d(0px, 0px, 0px)",
+            opacity: "0",
           },
-          '33%': {
-            opacity: '1'
+          "33%": {
+            opacity: "1",
           },
-          '66%': {
-            opacity: '1'
+          "66%": {
+            opacity: "1",
           },
-          '100%': {
-            transform: 'translate3d(0px, 30px, 0px)',
-            opacity: '0'
+          "100%": {
+            transform: "translate3d(0px, 30px, 0px)",
+            opacity: "0",
           },
         },
         right: {
-          '0%': {
-            transform: 'translate3d(0px, 0px, 0px)',
-            opacity: '0'
+          "0%": {
+            transform: "translate3d(0px, 0px, 0px)",
+            opacity: "0",
           },
-          '33%': {
-            opacity: '1'
+          "33%": {
+            opacity: "1",
           },
-          '66%': {
-            opacity: '1'
+          "66%": {
+            opacity: "1",
           },
-          '100%': {
-            transform: 'translate3d(15px, 0px, 0px)',
-            opacity: '0'
+          "100%": {
+            transform: "translate3d(15px, 0px, 0px)",
+            opacity: "0",
           },
         },
         left: {
-          '0%': {
-            transform: 'translate3d(0px, 0px, 0px)',
-            opacity: '0'
+          "0%": {
+            transform: "translate3d(0px, 0px, 0px)",
+            opacity: "0",
           },
-          '33%': {
-            opacity: '1'
+          "33%": {
+            opacity: "1",
           },
-          '66%': {
-            opacity: '1'
+          "66%": {
+            opacity: "1",
           },
-          '100%': {
-            transform: 'translate3d(-15px, 0px, 0px)',
-            opacity: '0'
+          "100%": {
+            transform: "translate3d(-15px, 0px, 0px)",
+            opacity: "0",
           },
         },
       },
     },
   },
   plugins: [
-    plugin(function({ matchUtilities, theme }: any) {
+    plugin(function ({ matchUtilities, theme }: any) {
       matchUtilities(
         {
-          'animate-duration': (value: number) => ({
+          "animate-duration": (value: number) => ({
             animationDuration: value,
           }),
         },
-        { values: theme('transitionDuration') }
-      )
+        { values: theme("transitionDuration") },
+      );
     }),
-    plugin(function({ matchUtilities, theme }) {
+    plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
         {
-          'animate-delay': (value) => ({
+          "animate-delay": (value) => ({
             animationDelay: value,
           }),
         },
-        { values: theme('transitionDelay') }
-      )
+        { values: theme("transitionDelay") },
+      );
     }),
-    plugin(function({ matchUtilities, theme }) {
+    plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
         {
-          'animate-ease': (value) => ({
+          "animate-ease": (value) => ({
             animationTimingFunction: value,
           }),
         },
-        { values: theme('transitionTimingFunction') }
-      )
+        { values: theme("transitionTimingFunction") },
+      );
     }),
   ],
 };

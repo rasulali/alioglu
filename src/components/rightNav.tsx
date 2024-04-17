@@ -1,16 +1,23 @@
-'use client'
-import { ChevronLeftIcon } from '@heroicons/react/24/solid'
-import { useState } from 'react'
+"use client";
+import { ChevronLeftIcon } from "@heroicons/react/24/solid";
+import { useState } from "react";
 interface Props {
-  intInView: boolean
-  extInView: boolean
-  restInView: boolean
-  hotelInView: boolean
-  objInView: boolean
-  consInView: boolean
+  intInView: boolean;
+  extInView: boolean;
+  restInView: boolean;
+  hotelInView: boolean;
+  objInView: boolean;
+  consInView: boolean;
 }
-const RightNav: React.FC<Props> = ({ intInView, extInView, restInView, hotelInView, objInView, consInView }) => {
-  const [isDrawerOpen, setDrawer] = useState(false)
+const RightNav: React.FC<Props> = ({
+  intInView,
+  extInView,
+  restInView,
+  hotelInView,
+  objInView,
+  consInView,
+}) => {
+  const [isDrawerOpen, setDrawer] = useState(false);
 
   return (
     <div
@@ -18,122 +25,137 @@ const RightNav: React.FC<Props> = ({ intInView, extInView, restInView, hotelInVi
         -translate-y-1/2 flex flex-col items-center drop-shadow-xl
         bg-grayA px-4 py-4 sm:bg-transparent sm:p-0
         lg:text-2xl sm:text-xl text-lg transition duration-100
-        ${!isDrawerOpen && 'translate-x-full'}
+        ${!isDrawerOpen && "translate-x-full"}
         sm:translate-x-0`}
     >
       <div
-        onClick={() => { setDrawer(!isDrawerOpen) }}
+        onClick={() => {
+          setDrawer(!isDrawerOpen);
+        }}
         className="w-6 h-10 absolute top-1/2 left-0 z-50
       -translate-x-full sm:hidden bg-grayA rounded-l-xl
       flex items-center
-      ">
-        <ChevronLeftIcon className="text-zinc-100"
-        />
+      "
+      >
+        <ChevronLeftIcon className="text-zinc-100" />
       </div>
 
-      <div
-        className="pb-4 flex items-center justify-center"
-      >
+      <div className="pb-4 flex items-center justify-center">
         <h1
           onClick={() => {
-
-            document.getElementById('interior')?.scrollIntoView({ behavior: 'smooth' })
-            setDrawer(false)
+            document
+              .getElementById("interior")
+              ?.scrollIntoView({ behavior: "smooth" });
+            setDrawer(false);
           }}
-          style={{ writingMode: 'vertical-lr' }}
+          style={{ writingMode: "vertical-lr" }}
           className={`text-center text-neutral-500 lg:hover:text-zinc-100 group
-            rotate-180 transition-colors duration-500 cursor-pointer ${intInView && 'text-zinc-100'}`}
-        >İnteryer
+            rotate-180 transition-colors duration-500 cursor-pointer ${intInView && "text-zinc-100"}`}
+        >
+          İnteryer
         </h1>
       </div>
-      <div className={`w-1 aspect-square rounded-full transition-colors
-      duration-500 ${(intInView || extInView) && 'bg-zinc-100'}`} />
-
       <div
-        className="py-4 flex items-center justify-center"
-      >
+        className={`w-1 aspect-square rounded-full transition-colors
+      duration-500 ${(intInView || extInView) && "bg-zinc-100"}`}
+      />
+
+      <div className="py-4 flex items-center justify-center">
         <h1
           onClick={() => {
-            document.getElementById('exterior')?.scrollIntoView({ behavior: 'smooth' })
-            setDrawer(false)
+            document
+              .getElementById("exterior")
+              ?.scrollIntoView({ behavior: "smooth" });
+            setDrawer(false);
           }}
-          style={{ writingMode: 'vertical-lr' }}
+          style={{ writingMode: "vertical-lr" }}
           className={`text-center text-neutral-500 lg:hover:text-zinc-100
-            rotate-180 transition-colors duration-500 cursor-pointer ${extInView && 'text-zinc-100'}`}
-        >Eksteryer
+            rotate-180 transition-colors duration-500 cursor-pointer ${extInView && "text-zinc-100"}`}
+        >
+          Eksteryer
         </h1>
       </div>
-      <div className={`w-1 aspect-square rounded-full transition-colors
-      duration-500 ${(extInView || restInView) && 'bg-zinc-100'}`} />
-
       <div
-        className="py-4 flex items-center justify-center"
-      >
+        className={`w-1 aspect-square rounded-full transition-colors
+      duration-500 ${(extInView || restInView) && "bg-zinc-100"}`}
+      />
+
+      <div className="py-4 flex items-center justify-center">
         <h1
           onClick={() => {
-            document.getElementById('restaurants')?.scrollIntoView({ behavior: 'smooth' })
-            setDrawer(false)
+            document
+              .getElementById("restaurants")
+              ?.scrollIntoView({ behavior: "smooth" });
+            setDrawer(false);
           }}
-          style={{ writingMode: 'vertical-lr' }}
+          style={{ writingMode: "vertical-lr" }}
           className={`text-center text-neutral-500 lg:hover:text-zinc-100
-            rotate-180 transition-colors duration-500 cursor-pointer ${restInView && 'text-zinc-100'}`}
-        >Restoran
+            rotate-180 transition-colors duration-500 cursor-pointer ${restInView && "text-zinc-100"}`}
+        >
+          Restoran
         </h1>
       </div>
-      <div className={`w-1 aspect-square rounded-full transition-colors
-      duration-500 ${(restInView || hotelInView) && 'bg-zinc-100'}`} />
-
       <div
-        className="py-4 flex items-center justify-center"
-      >
+        className={`w-1 aspect-square rounded-full transition-colors
+      duration-500 ${(restInView || hotelInView) && "bg-zinc-100"}`}
+      />
+
+      <div className="py-4 flex items-center justify-center">
         <h1
           onClick={() => {
-            document.getElementById('hotel')?.scrollIntoView({ behavior: 'smooth' })
-            setDrawer(false)
+            document
+              .getElementById("hotel")
+              ?.scrollIntoView({ behavior: "smooth" });
+            setDrawer(false);
           }}
-          style={{ writingMode: 'vertical-lr' }}
+          style={{ writingMode: "vertical-lr" }}
           className={`text-center text-neutral-500 lg:hover:text-zinc-100
-            rotate-180 transition-colors duration-500 cursor-pointer ${hotelInView && 'text-zinc-100'}`}
-        >Otel
+            rotate-180 transition-colors duration-500 cursor-pointer ${hotelInView && "text-zinc-100"}`}
+        >
+          Otel
         </h1>
       </div>
-      <div className={`w-1 aspect-square rounded-full transition-colors
-      duration-500 ${(hotelInView || objInView) && 'bg-zinc-100'}`} />
-
       <div
-        className="py-4 flex items-center justify-center"
-      >
+        className={`w-1 aspect-square rounded-full transition-colors
+      duration-500 ${(hotelInView || objInView) && "bg-zinc-100"}`}
+      />
+
+      <div className="py-4 flex items-center justify-center">
         <h1
           onClick={() => {
-            document.getElementById('objects')?.scrollIntoView({ behavior: 'smooth' })
-            setDrawer(false)
+            document
+              .getElementById("objects")
+              ?.scrollIntoView({ behavior: "smooth" });
+            setDrawer(false);
           }}
-          style={{ writingMode: 'vertical-lr' }}
+          style={{ writingMode: "vertical-lr" }}
           className={`text-center text-neutral-500 lg:hover:text-zinc-100
-            rotate-180 transition-colors duration-500 cursor-pointer ${objInView && 'text-zinc-100'}`}
-        >Obyekt
+            rotate-180 transition-colors duration-500 cursor-pointer ${objInView && "text-zinc-100"}`}
+        >
+          Obyekt
         </h1>
       </div>
-      <div className={`w-1 aspect-square rounded-full transition-colors
-      duration-500 ${(objInView || consInView) && 'bg-zinc-100'}`} />
-
       <div
-        className="pt-4 flex items-center justify-center"
-      >
+        className={`w-1 aspect-square rounded-full transition-colors
+      duration-500 ${(objInView || consInView) && "bg-zinc-100"}`}
+      />
+
+      <div className="pt-4 flex items-center justify-center">
         <h1
           onClick={() => {
-            document.getElementById('construction')?.scrollIntoView({ behavior: 'smooth' })
-            setDrawer(false)
+            document
+              .getElementById("construction")
+              ?.scrollIntoView({ behavior: "smooth" });
+            setDrawer(false);
           }}
-          style={{ writingMode: 'vertical-lr' }}
+          style={{ writingMode: "vertical-lr" }}
           className={`text-center text-neutral-500 lg:hover:text-zinc-100
-            rotate-180 duration-500 cursor-pointer ${consInView && 'text-zinc-100'}`}
+            rotate-180 duration-500 cursor-pointer ${consInView && "text-zinc-100"}`}
         >
           Təmir/Tikiniti
         </h1>
       </div>
-
     </div>
-  )
-}
-export default RightNav
+  );
+};
+export default RightNav;

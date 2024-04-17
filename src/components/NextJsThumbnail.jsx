@@ -5,14 +5,13 @@ import {
   useLightboxState,
 } from "yet-another-react-lightbox";
 
-
 const isNextJsImage = (slide) => {
   return (
     isImageSlide(slide) &&
     typeof slide.width === "number" &&
     typeof slide.height === "number"
   );
-}
+};
 
 const NextJsImage = ({ slide, offset, rect }) => {
   const {
@@ -20,7 +19,6 @@ const NextJsImage = ({ slide, offset, rect }) => {
   } = useLightboxProps();
 
   const { currentIndex } = useLightboxState();
-
 
   if (!isNextJsImage(slide)) return undefined;
 
@@ -46,5 +44,5 @@ const NextJsImage = ({ slide, offset, rect }) => {
       />
     </div>
   );
-}
-export default NextJsImage
+};
+export default NextJsImage;

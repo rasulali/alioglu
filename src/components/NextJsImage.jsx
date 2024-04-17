@@ -6,7 +6,6 @@ import {
   useLightboxState,
 } from "yet-another-react-lightbox";
 
-
 function isNextJsImage(slide) {
   return (
     isImageSlide(slide) &&
@@ -29,14 +28,14 @@ const NextJsImage = ({ slide, offset, rect }) => {
 
   const width = !cover
     ? Math.round(
-      Math.min(rect.width, (rect.height / slide.height) * slide.width),
-    )
+        Math.min(rect.width, (rect.height / slide.height) * slide.width),
+      )
     : rect.width;
 
   const height = !cover
     ? Math.round(
-      Math.min(rect.height, (rect.width / slide.width) * slide.height),
-    )
+        Math.min(rect.height, (rect.width / slide.width) * slide.height),
+      )
     : rect.height;
 
   return (
@@ -60,5 +59,5 @@ const NextJsImage = ({ slide, offset, rect }) => {
       />
     </div>
   );
-}
-export default NextJsImage
+};
+export default NextJsImage;

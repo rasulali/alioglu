@@ -5,5 +5,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
     <main>
       <BackNav />
       {children}
-    </main>)
+    </main>
+  );
 }
