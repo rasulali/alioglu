@@ -62,7 +62,8 @@ const Card: React.FC<CardProps> = ({ delay, tag, src, href = "" }) => {
           className="absolute lg:w-1/2 w-full lg:h-32 h-1/5 bg-accentColor/50 backdrop-blur
             left-0 bottom-0 lg:-translate-x-8 lg:translate-y-1/2 flex items-center
             lg:justify-start justify-center lg:rounded-xl sm:rounded-b-lg rounded-b-md
-            group-hover:backdrop-blur-xl transition-all duration-200"
+            group-hover:lg:translate-y-[calc(50%-16px)] group-hover:lg:-translate-x-[20px]
+            group-hover:backdrop-blur-xl transition-all duration-200 delay-0"
         >
           <h1
             className="lg:text-4xl sm:text-3xl text-2xl text-zinc-100 lg:pl-8"

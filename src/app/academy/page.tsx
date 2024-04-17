@@ -4,7 +4,7 @@ import Footer from "@/components/footer";
 import LiveDiv from "@/components/liveDiv";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { motion } from 'framer-motion'
+import { motion, useMotionValue, useMotionValueEvent, useScroll, useSpring } from 'framer-motion'
 import Heading from "@/components/heading";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import Loading from "../loading";
@@ -12,12 +12,6 @@ const Academy = () => {
   const [cadClick, setCadClick] = useState(false)
   const [cadHover, setCadHover] = useState(false)
   const [loading, setLoading] = useState(true)
-  useEffect(() => {
-    new Promise(resolve => setTimeout(resolve, 200)).then(() => {
-      setLoading(false)
-    })
-  }, [])
-
   const [windowDimensions, setWindowDimensions] = useState<{ width: number; height: number }>({
     width: 0,
     height: 0
@@ -25,26 +19,68 @@ const Academy = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-      if (width < height) {
-        setWindowDimensions({ width: 1080, height: 1920 });
-      }
-      else {
-        setWindowDimensions({ width: 1920, height: 1080 });
-      }
+      setWindowDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight
+      })
     }
   }, [typeof window !== "undefined" && window.innerWidth]);
+  useEffect(() => {
+    new Promise(resolve => setTimeout(resolve, 200)).then(() => {
+      setLoading(false)
+    })
+  }, [])
+
+  const mousePos = {
+    x: useMotionValue(0),
+    y: useMotionValue(0)
+  }
+
+  const cursorPos = {
+    x: useSpring(mousePos.x, { stiffness: 200, damping: 50 }),
+    y: useSpring(mousePos.y, { stiffness: 200, damping: 50 })
+  }
+
+  const handleMousePos = (e: MouseEvent) => {
+    mousePos.x.set(e.clientX - 40)
+    mousePos.y.set(e.clientY - 80)
+  }
+
+  useEffect(() => {
+    window.addEventListener('mousemove', handleMousePos)
+    return () => {
+      window.removeEventListener('mousemove', handleMousePos)
+    }
+  })
+  const [color, setColor] = useState('')
+  const [scroll, setScroll] = useState(0)
+  const { scrollYProgress } = useScroll();
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    setScroll(latest)
+  })
+  useEffect(() => {
+    const hue = Math.round(scroll * (50 - 40) + 30);
+    setColor(`hsl(${hue}, 90%, 55%)`)
+    if (window.innerWidth < 640) {
+      cursorPos.x.set(windowDimensions.width / 2 - 40)
+      cursorPos.y.set(windowDimensions.height / 2 - 80)
+    }
+  }, [scroll])
   return (
     <main className="relative">
-      <div className="absolute top-0 w-full h-full">
-      </div>
+      <motion.div
+        animate={{ rotate: 120, scale: [1, 1.1, 1] }}
+        transition={{ duration: 6, repeat: Infinity, repeatType: 'reverse', ease: 'linear' }}
+        style={{ translateX: cursorPos.x, translateY: cursorPos.y, backgroundColor: color }}
+        className="fixed -z-50 w-[80px] blur-[20px] opacity-80
+        aspect-square rounded-full">
+      </motion.div>
       {loading &&
         <div className="fixed z-[999999] w-screen h-screen top-0">
           <Loading />
         </div>}
       <div className="w-full">
-        <div className="flex flex-col items-center lg:mt-12 mt-12 lg:mb-8 mb-8">
+        <div className="flex flex-col lg:gap-y-4 items-center lg:mt-12 mt-12 lg:mb-4 mb-2">
           <Heading text="Akademiya" animate={{ from: -20, to: 0, dir: 'y' }} variant="h1" />
           <LiveDiv animate={{ from: -20, to: 0, dir: 'y', delay: 0.1 }}>
             <h1 className="lg:text-4xl sm:text-3xl text-xl text-zinc-100 w-full text-center">
@@ -122,7 +158,7 @@ const Academy = () => {
               </LiveDiv>
             </div>
 
-            <LiveDiv animate={{ from: -20, to: 0, dir: 'x', delay: 0.2 }}>
+            <LiveDiv animate={{ from: -20, to: 0, dir: 'x', delay: 0 }}>
               <div className="bg-neutral-700/50 backdrop-blur lg:p-6 p-4 lg:col-span-1
               lg:h-full flex items-center
             lg:rounded-xl rounded-lg drop-shadow-lg">
@@ -144,7 +180,7 @@ const Academy = () => {
       </div>
       {/* 3ds max wrapper */}
       <div id="3dsmax" className="lg:w-full lg:px-12 px-4 ">
-        <div className="w-full lg:my-6 my-4">
+        <div className="w-full lg:mt-6 mt-4">
           <LiveDiv animate={{ from: -20, to: 0, dir: 'x', delay: 0.1 }}>
             <div className="flex items-end flex-wrap">
               <Image
@@ -159,12 +195,12 @@ const Academy = () => {
                 lg:translate-y-4 translate-y-2 text-nowrap mr-4 ">
                 3ds Max
               </h1>
-              <h1 className="lg:text-5xl sm:text-3xl text-base text-zinc-100
+              <h1 className="lg:text-3xl sm:text-xl text-sm text-zinc-100
                 lg:translate-y-1 font-semibold lg:my-4 my-2 min-w-full">
                 Dünya standartı olaraq qəbul edilən,
                 <span
                   className="text-nowrap"
-                >üç ölçülü</span>
+                > üç ölçülü </span>
                 modelləmə programıdır
               </h1>
             </div>
@@ -179,13 +215,21 @@ const Academy = () => {
                 <Image src="/academy/3dsmaxui.jpg" className="mb-2" alt="" width={windowDimensions.width} height={0} quality={70} />
                 <p className="w-full lg:text-2xl sm:text-xl text-lg
                 text-zinc-100 leading-snug">
-                  Magnis consectetur id praesent pulvinar nibh, enim consectetur amet adipiscing eget proin nulla praesent bibendum faucibus dolor diam neque congue.
+                  Geniş və detallı 3ds Max dərslərimiz ilə yaradıcı potensialınızın kilidini açacaqsınız.
+                  <span>
+                    Sektorun ekspertlərindən öyrənin və ideyaları gerçəyə çevirmək üçün
+                    texnikalara yiyələnin.
+                  </span>
                 </p>
               </div>
             </LiveDiv>
           </div>
-          <div className="lg:w-1/2 w-full lg:aspect-[4/3] aspect-square">
-            <LiveDiv animate={{ from: 20, to: 0, dir: 'x', delay: 0.1 }}>
+          <div className="lg:w-1/2 w-full lg:aspect-[4/3] aspect-square relative">
+            <span className="absolute text-zinc-100 lg:text-base text-[8px] z-20
+            bottom-0 lg:left-1 left-0.5">
+              <span className="font-bold">&#9432; </span>Gördüyünüz simulasiya sadələşdirilmişdir və gerçək təcrübəni əks etdirmir
+            </span>
+            <LiveDiv animate={{ from: 20, to: 0, dir: 'x', delay: 0 }}>
               <div className="lg:rounded-xl w-full h-full rounded-lg
               overflow-hidden bg-grayA">
                 <Scene />
@@ -197,7 +241,7 @@ const Academy = () => {
 
       {/* Autocad Wrapper */}
       <div id="autocad" className="lg:w-full lg:px-12 px-4 lg:mt-24 mt-8">
-        <div className="w-full lg:my-6 my-4">
+        <div className="w-full lg:mt-6 mt-4">
           <LiveDiv animate={{ from: -20, to: 0, dir: 'x', delay: 0.1 }}>
             <div className="flex items-end flex-wrap">
               <Image
@@ -212,7 +256,7 @@ const Academy = () => {
                 lg:translate-y-4 translate-y-2 text-nowrap mr-4 ">
                 Autocad
               </h1>
-              <h1 className="lg:text-5xl sm:text-3xl text-base text-zinc-100
+              <h1 className="lg:text-3xl sm:text-xl text-sm text-zinc-100
                 lg:translate-y-1 font-semibold lg:my-4 my-2 min-w-full">
                 Dəqiq, iki və üç ölçülü çertyojlama üçün
                 <span
@@ -224,16 +268,16 @@ const Academy = () => {
                   <span
                     className={`${(cadClick || cadHover) ? 'inline-block' : 'hidden'} absolute bg-grayALight lg:text-base lg:px-2
                     py-1 lg:rounded-xl px-1.5 rounded-xl text-xs text-nowrap
-                    top-0 -translate-y-full -right-full translate-x-1/2
-                    lg:left-full lg:translate-x-0 w-fit
+                    top-0 left-full origin-right -translate-y-full drop-shadow-lg
+                    -translate-x-2 w-fit
                     `}>
                     Computer-Aided Design
                   </span>
                   <motion.span
                     onHoverStart={() => setCadHover(true)}
                     onHoverEnd={() => setCadHover(false)}
-                    className="lg:text-lg hidden lg:inline-block font-bold text-neutral-400 absolute
-                    cursor-default group right-0 top-0">&#9432;
+                    className="lg:text-sm hidden lg:inline-block font-bold text-neutral-400 absolute
+                    cursor-default group right-0 top-0 -translate-y-2">&#9432;
                   </motion.span>
                   <span className="lg:px-3 px-1 cursor-default">CAD</span>
                 </span>
@@ -243,16 +287,17 @@ const Academy = () => {
           </LiveDiv>
         </div>
 
-        <div className="flex flex-col lg:flex-row">
-          <div className="w-full lg:aspect-[4/3] aspect-square overflow-y-scroll">
-            <h1 className="text-center align-middle h-full flex items-center text-5xl font-semibold justify-center text-grayALight">Cards goes here</h1>
+        <div className="flex lg:flex-row flex-col
+        lg:h-[calc(100vh-220px-32px)] h-[calc(100vh-112px-16px)]">
+          <div className="lg:w-1/2 lg:h-full w-full h-1/2 bg-neutral-700/50
+         drop-shadow-lg backdrop-blur lg:rounded-xl rounded-lg">
           </div>
         </div>
       </div >
 
       {/* Photoshop Wrapper */}
       <div id="photoshop" className="lg:w-full lg:px-12 px-4 lg:mt-24 mt-8" >
-        <div className="w-full lg:my-6 my-4">
+        <div className="w-full lg:mt-6 mt-4">
           <LiveDiv animate={{ from: -20, to: 0, dir: 'x', delay: 0.1 }}>
             <div className="flex items-end flex-wrap">
               <Image
@@ -267,7 +312,7 @@ const Academy = () => {
                 lg:translate-y-4 translate-y-2 text-nowrap mr-4 ">
                 Photoshop
               </h1>
-              <h1 className="lg:text-5xl sm:text-3xl text-base text-zinc-100
+              <h1 className="lg:text-3xl sm:text-xl text-sm text-zinc-100
                 lg:translate-y-1 font-semibold lg:my-4 my-2 min-w-full">
                 Adobe-in professional şəkil redaktə etmə programıdır
               </h1>

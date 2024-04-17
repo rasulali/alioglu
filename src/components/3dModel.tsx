@@ -89,7 +89,7 @@ const Scene = () => {
               onClick={() => { setSunShining(!isSunShining) }}
               className="flex gap-x-2 lg:text-lg text-sm items-center
             bg-grayA/50 backdrop-blur lg:px-4 px-2 lg:py-2 py-1 rounded-full
-            hover:brightness-110 transition-all duration-100">
+            hover:brightness-110 transition-all duration-100 border-2 border-grayALight/50">
               <SunIcon className={`lg:w-8 w-6
               ${isSunShining ? 'text-amber-200' : 'text-neutral-400'}
               ${isSunShining && 'animate-spin-once'}`} />
