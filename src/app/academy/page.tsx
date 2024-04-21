@@ -13,11 +13,10 @@ import {
 } from "framer-motion";
 import Heading from "@/components/heading";
 import { MapPinIcon } from "@heroicons/react/24/outline";
-import Loading from "../loading";
+import AutoCAD from "@/components/autocad";
 const Academy = () => {
   const [cadClick, setCadClick] = useState(false);
   const [cadHover, setCadHover] = useState(false);
-  const [loading, setLoading] = useState(true);
   const [windowDimensions, setWindowDimensions] = useState<{
     width: number;
     height: number;
@@ -35,11 +34,6 @@ const Academy = () => {
       });
     }
   }, [typeof window !== "undefined" && window.innerWidth]);
-  useEffect(() => {
-    new Promise((resolve) => setTimeout(resolve, 200)).then(() => {
-      setLoading(false);
-    });
-  }, []);
 
   const mousePos = {
     x: useMotionValue(0),
@@ -74,20 +68,20 @@ const Academy = () => {
   }, [scroll]);
 
   useEffect(() => {
-    cursorPos.x.set(windowDimensions.width / 2 - 80);
-    cursorPos.y.set(windowDimensions.height / 2 - 80);
+    cursorPos.x.set(windowDimensions.width / 2 - 60);
+    cursorPos.y.set(windowDimensions.height / 2 - 60);
     setTimeout(() => {
       if (heatRef.current) {
         heatRef.current.style.opacity = "0.8";
       }
-    }, 2000);
+    }, 1000);
   }, [windowDimensions.width, windowDimensions.height]);
   return (
-    <main className="relative">
+    <main className="relative overflow-hidden">
       <motion.div
         ref={heatRef}
         animate={{
-          scale: [1, 1.1, 1],
+          scale: [1, 1.2, 1],
         }}
         transition={{
           duration: 3,
@@ -100,14 +94,9 @@ const Academy = () => {
           translateY: cursorPos.y,
           backgroundColor: color,
         }}
-        className="fixed -z-50 w-[160px] blur-[20px] aspect-square rounded-full
-        opacity-0 transition-opacity duration-1000"
-      ></motion.div>
-      {loading && (
-        <div className="fixed z-[999999] w-screen h-screen top-0">
-          <Loading />
-        </div>
-      )}
+        className="fixed -z-50 w-[120px] blur-[20px] aspect-square rounded-full
+        opacity-0 pointer-events-none transition-opacity duration-1000"
+      />
       <div className="w-full">
         <div className="flex flex-col lg:gap-y-4 items-center lg:mt-12 mt-12 lg:mb-4 mb-2">
           <Heading
@@ -129,119 +118,123 @@ const Academy = () => {
         >
           {/* Text */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:p-4 p-2">
-            <LiveDiv animate={{ from: -20, to: 0, dir: "x", delay: 0 }}>
-              <div
-                className="bg-neutral-700/50 backdrop-blur lg:p-6 p-4 flex items-center
-            lg:h-full lg:rounded-xl rounded-lg drop-shadow-lg lg:col-span-1"
-              >
-                <div>
-                  <h1 className="lg:text-5xl sm:text-3xl text-xl text-zinc-100 font-semibold mb-2">
-                    Nə öyrənəcəksiniz?
-                  </h1>
-                  <p
-                    className="lg:w-4/5 lg:mx-auto lg:mt-2 lg:text-2xl sm:text-xl
-                  text-lg text-zinc-100 leading-snug"
-                  >
-                    <span
-                      onClick={() => {
-                        document
-                          .getElementById("3dsmax")
-                          ?.scrollIntoView({ behavior: "smooth" });
-                      }}
-                      className="bg-clip-text text-transparent text-nowrap cursor-pointer
-                    bg-gradient-to-br from-[#7fc5de] via-[#39a5cc] to-[#36687f]"
-                    >
-                      3ds Max
-                    </span>
-                    <span>, </span>
-                    <span
-                      onClick={() => {
-                        document
-                          .getElementById("autocad")
-                          ?.scrollIntoView({ behavior: "smooth" });
-                      }}
-                      className="bg-clip-text text-transparent text-nowrap cursor-pointer
-                    bg-gradient-to-br from-[#f4548b] via-[#d52654] to-[#b11538]"
-                    >
-                      Autocad
-                    </span>
-                    <span> </span>
-                    və
-                    <span> </span>
-                    <span
-                      onClick={() => {
-                        document
-                          .getElementById("photoshop")
-                          ?.scrollIntoView({ behavior: "smooth" });
-                      }}
-                      className="bg-clip-text text-transparent text-nowrap cursor-pointer
-                    bg-gradient-to-br from-[#31a8ff]  to-[#001e36]"
-                    >
-                      Photoshop
-                    </span>
-                    -u əhatə edən geniş kursumuzla dizayn dünyasına atılın.
-                    Effektiv ünsiyyət sənətində ustalaşarkən digital modelləmə,
-                    renderləmə və post production-da təqdimatların
-                    hazırlanmasını öyrənin. Sahəyə yerində ziyarətlər də daxil
-                    olmaqla, real senariləri{" "}
-                    <span className="text-nowrap">kəşf edin </span>
-                    və müstəqil bir dizayner olaraq inkşaf etmək üçün lazımi
-                    təcrübəni qazanın.
-                  </p>
-                </div>
-              </div>
-            </LiveDiv>
-
-            <div
-              className="w-full aspect-[4/3] lg:aspect-auto lg:h-full
-            drop-shadow-lg relative bg-[#383838]
-            lg:col-span-1 lg:row-span-2 lg:rounded-xl rounded-lg overflow-hidden"
-            >
-              <LiveDiv animate={{ from: 20, to: 0, dir: "x", delay: 0.1 }}>
+            <div className="h-fit w-full self-end">
+              <LiveDiv animate={{ from: -20, to: 0, dir: "x", delay: 0 }}>
                 <div
-                  className="absolute bottom-2 flex lg:py-2 lg:px-4 py-1 px-2
-                bg-gradient-to-r from-grayA via-grayA/60 to-grayA/10
-                "
+                  className="bg-neutral-700/50 backdrop-blur lg:p-6 p-4 flex items-center
+                  lg:rounded-xl rounded-lg drop-shadow-lg lg:col-span-1"
                 >
-                  <MapPinIcon className="lg:w-6 w-4 aspect-square text-neutral-200" />
-                  <h1 className="lg:text-lg text-xs text-neutral-200">
-                    Akademiya, İçəri Şəhər
-                  </h1>
+                  <div>
+                    <h1 className="lg:text-5xl sm:text-3xl text-xl text-zinc-100 font-semibold mb-2">
+                      Nə öyrənəcəksiniz?
+                    </h1>
+                    <p
+                      className="lg:mt-2 lg:text-2xl sm:text-xl
+                  text-lg text-zinc-100 leading-snug"
+                    >
+                      <span
+                        onClick={() => {
+                          document
+                            .getElementById("3dsmax")
+                            ?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                        className="bg-clip-text text-transparent text-nowrap cursor-pointer
+                    bg-gradient-to-br from-[#7fc5de] via-[#39a5cc] to-[#36687f]"
+                      >
+                        3ds Max
+                      </span>
+                      <span>, </span>
+                      <span
+                        onClick={() => {
+                          document
+                            .getElementById("autocad")
+                            ?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                        className="bg-clip-text text-transparent text-nowrap cursor-pointer
+                    bg-gradient-to-br from-[#f4548b] via-[#d52654] to-[#b11538]"
+                      >
+                        Autocad
+                      </span>
+                      <span> </span>
+                      və
+                      <span> </span>
+                      <span
+                        onClick={() => {
+                          document
+                            .getElementById("photoshop")
+                            ?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                        className="bg-clip-text text-transparent text-nowrap cursor-pointer
+                    bg-gradient-to-br from-[#31a8ff]  to-[#001e36]"
+                      >
+                        Photoshop
+                      </span>
+                      -u əhatə edən geniş kursumuzla dizayn dünyasına atılın.
+                      Effektiv ünsiyyət sənətində ustalaşarkən digital
+                      modelləmə, renderləmə və post production-da təqdimatların
+                      hazırlanmasını öyrənin. Sahəyə yerində ziyarətlər də daxil
+                      olmaqla, real senariləri{" "}
+                      <span className="text-nowrap">kəşf edin </span>
+                      və müstəqil bir dizayner olaraq inkşaf etmək üçün lazımi
+                      təcrübəni qazanın.
+                    </p>
+                  </div>
                 </div>
-                <Image
-                  className="w-full h-full object-cover"
-                  quality={70}
-                  src="/academy/academy.webp"
-                  alt=""
-                  width={windowDimensions.width / 2}
-                  height={0}
-                />
               </LiveDiv>
             </div>
 
-            <LiveDiv animate={{ from: -20, to: 0, dir: "x", delay: 0 }}>
-              <div
-                className="bg-neutral-700/50 backdrop-blur lg:p-6 p-4 lg:col-span-1
-              lg:h-full flex items-center
-            lg:rounded-xl rounded-lg drop-shadow-lg"
-              >
-                <div>
-                  <h1 className="lg:text-5xl sm:text-3xl text-xl text-zinc-100 font-semibold mb-2">
-                    Dərslərimiz kimlər üçündür?
-                  </h1>
-                  <p className="lg:w-4/5 lg:mx-auto lg:mt-2 lg:text-2xl sm:text-xl text-lg text-zinc-100 leading-snug">
-                    Dərslərimizdə memarlıq və incəsənət ixtisası üzrə ali təhsil
-                    alan və ya interyer, eksteryer dizayna xüsusi maraqı olan
-                    individual-lar iştirak edə bilər.
-                  </p>
+            <div className="lg:col-span-1 lg:row-span-2 w-full h-fit self-center">
+              <LiveDiv animate={{ from: 20, to: 0, dir: "x", delay: 0.1 }}>
+                <div
+                  className="lg:p-6 p-4 drop-shadow-lg relative bg-[#383838]
+                      lg:rounded-xl rounded-lg overflow-hidden"
+                >
+                  <div
+                    className="absolute lg:bottom-8 bottom-6 flex lg:py-2 lg:px-4 py-1 px-2
+                  bg-gradient-to-r from-grayA via-grayA/60 to-grayA/10
+                "
+                  >
+                    <MapPinIcon className="lg:w-6 w-4 aspect-square text-neutral-200" />
+                    <h1 className="lg:text-lg text-xs text-neutral-200">
+                      Akademiya, İçəri Şəhər
+                    </h1>
+                  </div>
+                  <Image
+                    className="aspect-[16/9] w-full h-full object-cover"
+                    quality={70}
+                    src="/academy/academy.webp"
+                    alt=""
+                    width={1080}
+                    height={0}
+                  />
                 </div>
-              </div>
-            </LiveDiv>
+              </LiveDiv>
+            </div>
+
+            <div className="w-full h-fit lg:mb-auto">
+              <LiveDiv animate={{ from: -20, to: 0, dir: "x", delay: 0 }}>
+                <div
+                  className="bg-neutral-700/50 backdrop-blur lg:p-6 p-4 lg:col-span-1
+                  flex items-center lg:rounded-xl rounded-lg drop-shadow-lg"
+                >
+                  <div>
+                    <h1 className="lg:text-5xl sm:text-3xl text-xl text-zinc-100 font-semibold mb-2">
+                      Dərslərimiz kimlər üçündür?
+                    </h1>
+                    <p className="lg:mt-2 lg:text-2xl sm:text-xl text-lg text-zinc-100 leading-snug">
+                      Dərslərimizdə memarlıq və incəsənət ixtisası üzrə ali
+                      təhsil alan və ya interyer, eksteryer dizayna xüsusi
+                      maraqı olan individual-lar iştirak edə bilər.
+                    </p>
+                  </div>
+                </div>
+              </LiveDiv>
+            </div>
           </div>
         </div>
       </div>
       {/* 3ds max wrapper */}
-      <div id="3dsmax" className="lg:w-full lg:px-12 px-4 ">
+      <div id="3dsmax" className="lg:w-full lg:px-4 px-2">
         <div className="w-full lg:mt-6 mt-4">
           <LiveDiv animate={{ from: -20, to: 0, dir: "x", delay: 0.1 }}>
             <div className="flex items-end flex-wrap">
@@ -264,57 +257,69 @@ const Academy = () => {
                 className="lg:text-3xl sm:text-xl text-sm text-zinc-100
                 lg:translate-y-1 font-semibold lg:my-4 my-2 min-w-full"
               >
-                Dünya standartı olaraq qəbul edilən,
-                <span className="text-nowrap"> üç ölçülü </span>
+                Gerçəyə yaxın visualizasiya üçün
+                <span className="text-nowrap"> 3 ölçülü </span>
                 modelləmə programıdır
               </h1>
             </div>
           </LiveDiv>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-4 relative">
-          <div className="lg:w-1/2 w-full lg:aspect-[4/3]">
+        <div className="flex flex-col lg:flex-row gap-4 relative items-center">
+          <div className="flex flex-col lg:w-1/2 w-full gap-y-4">
+            <LiveDiv animate={{ from: -20, to: 0, dir: "x", delay: 0 }}>
+              <div
+                className="bg-neutral-700/50 backdrop-blur lg:p-6 p-4 aspect-[16/9]
+              lg:rounded-xl rounded-lg drop-shadow-lg w-full lg:h-full h-fit flex flex-col"
+              >
+                <Image
+                  src="/academy/3dsmax.webp"
+                  className="w-full h-full object-fit"
+                  alt=""
+                  width={1920}
+                  height={0}
+                  quality={70}
+                />
+              </div>
+            </LiveDiv>
             <LiveDiv animate={{ from: -20, to: 0, dir: "x", delay: 0 }}>
               <div
                 className="bg-neutral-700/50 backdrop-blur lg:p-6 p-4
               lg:rounded-xl rounded-lg drop-shadow-lg w-full lg:h-full h-fit flex flex-col"
               >
-                <Image
-                  src="/academy/3dsmaxui.jpg"
-                  className="mb-2"
-                  alt=""
-                  width={windowDimensions.width}
-                  height={0}
-                  quality={70}
-                />
                 <p
                   className="w-full lg:text-2xl sm:text-xl text-lg
                 text-zinc-100 leading-snug"
                 >
-                  Geniş və detallı 3ds Max dərslərimiz ilə yaradıcı
-                  potensialınızın kilidini açacaqsınız.
-                  <span>
-                    Sektorun ekspertlərindən öyrənin və ideyaları gerçəyə
-                    çevirmək üçün texnikalara yiyələnin.
-                  </span>
+                  3ds Max, memarlıq, oyun və film sektorunda gözoxşayan
+                  vizualizasiyalar və immersive təcrübələr yaratmaq üçün geniş
+                  şəkildə istifadə olunan üç ölçülü modelləmə programıdır. Bizim
+                  dərslərimiz ilə öz kreativ potentialınızın kilidini açacaq,
+                  sektorun ekspterlərindən birinci əldən texnikalar
+                  öyrənəcəksiniz.
                 </p>
               </div>
             </LiveDiv>
           </div>
-          <div className="lg:w-1/2 w-full lg:aspect-[4/3] aspect-square relative">
-            <span
-              className="absolute text-zinc-100 lg:text-base text-[8px] z-20
-            bottom-0 lg:left-1 left-0.5"
-            >
-              <span className="font-bold">&#9432; </span>Gördüyünüz simulasiya
-              sadələşdirilmişdir və gerçək təcrübəni əks etdirmir
-            </span>
+          <div className="lg:w-1/2 w-full h-fit">
             <LiveDiv animate={{ from: 20, to: 0, dir: "x", delay: 0 }}>
               <div
-                className="lg:rounded-xl w-full h-full rounded-lg
-              overflow-hidden bg-[#383838] drop-shadow-lg filter-none"
+                className="relative w-full h-full bg-neutral-700/50 backdrop-blur
+              lg:p-6 lg:rounded-xl rounded-lg"
               >
-                <Scene />
+                <div
+                  className="lg:rounded-xl w-full h-full rounded-lg aspect-[16/9]
+              overflow-hidden bg-[#383838] drop-shadow-lg filter-none relative"
+                >
+                  <Scene />
+                  <div className="absolute z-50 bottom-1 lg:left-2 left-1">
+                    <h1 className="text-zinc-100 lg:text-base text-[8px]">
+                      <span className="font-bold">&#9432; </span>Gördüyünüz
+                      simulasiya sadələşdirilmişdir və gerçək təcrübəni əks
+                      etdirmir
+                    </h1>
+                  </div>
+                </div>
               </div>
             </LiveDiv>
           </div>
@@ -322,7 +327,7 @@ const Academy = () => {
       </div>
 
       {/* Autocad Wrapper */}
-      <div id="autocad" className="lg:w-full lg:px-12 px-4 lg:mt-24 mt-8">
+      <div id="autocad" className="lg:w-full lg:px-4 px-2 lg:mt-24 mt-8">
         <div className="w-full lg:mt-6 mt-4">
           <LiveDiv animate={{ from: -20, to: 0, dir: "x", delay: 0.1 }}>
             <div className="flex items-end flex-wrap">
@@ -377,19 +382,48 @@ const Academy = () => {
           </LiveDiv>
         </div>
 
-        <div
-          className="flex lg:flex-row flex-col
-        lg:h-[calc(100vh-220px-32px)] h-[calc(100vh-112px-16px)]"
-        >
+        <div className="flex lg:flex-row flex-col gap-4 items-center">
           <div
-            className="lg:w-1/2 lg:h-full w-full h-1/2 bg-neutral-700/50
-         drop-shadow-lg backdrop-blur lg:rounded-xl rounded-lg"
-          ></div>
+            className="lg:w-1/2 h-fit w-full bg-neutral-700/50 lg:p-6 p-4
+             drop-shadow-lg backdrop-blur lg:rounded-xl rounded-lg"
+          >
+            <AutoCAD />
+          </div>
+          <div className="lg:w-1/2 flex flex-col gap-y-4">
+            <div
+              className="aspect-[16/9] bg-neutral-700/30 lg:p-6 p-4
+             drop-shadow-lg backdrop-blur lg:rounded-xl rounded-lg"
+            >
+              <Image
+                src="/academy/autocad.webp"
+                alt=""
+                className="mb-2 w-full h-full object-fill"
+                width={1920}
+                height={0}
+                quality={70}
+              />
+            </div>
+            <div
+              className="w-full bg-neutral-700/30 lg:p-6 p-4
+             drop-shadow-lg backdrop-blur lg:rounded-xl rounded-lg"
+            >
+              <p
+                className="w-full lg:text-2xl sm:text-xl text-lg
+                text-zinc-100 leading-snug"
+              >
+                AutoCAD 2D və 3D dizaynın təməl daşı olaraq dayanır və memarlıq,
+                mühəndislik və istehsalat kimi sənayelərdə əsas vasitə kimi
+                istifadə olunur. Dərslərimiz AutoCAD-i mənimsəmək və rəqəmsal
+                kətan üzərində təxəyyülünüzü üzə çıxarmaqda sizə bələdçilik
+                edəcək.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Photoshop Wrapper */}
-      <div id="photoshop" className="lg:w-full lg:px-12 px-4 lg:mt-24 mt-8">
+      <div id="photoshop" className="lg:w-full lg:px-4 px-2 lg:mt-24 mt-8">
         <div className="w-full lg:mt-6 mt-4">
           <LiveDiv animate={{ from: -20, to: 0, dir: "x", delay: 0.1 }}>
             <div className="flex items-end flex-wrap">
@@ -417,12 +451,28 @@ const Academy = () => {
             </div>
           </LiveDiv>
         </div>
-
-        <div className="flex flex-col lg:flex-row">
-          <div className="w-full lg:aspect-[4/3] aspect-square overflow-y-scroll">
-            <h1 className="text-center align-middle h-full flex items-center text-5xl font-semibold justify-center text-grayALight">
-              Cards goes here
-            </h1>
+        <div className="flex flex-col lg:flex-row gap-4">
+          <div
+            className="lg:w-1/2 aspect-[16/9] w-full bg-neutral-700/50 lg:p-6 p-4
+             drop-shadow-lg backdrop-blur lg:rounded-xl rounded-lg flex items-center"
+          >
+            <p
+              className="w-full lg:text-2xl sm:text-xl text-lg
+                text-zinc-100 leading-snug"
+            ></p>
+          </div>
+          <div
+            className="lg:w-1/2 h-auto w-full bg-neutral-700/50 lg:p-6 p-4
+             drop-shadow-lg backdrop-blur lg:rounded-xl rounded-lg"
+          >
+            <Image
+              src="/academy/photoshop.webp"
+              alt=""
+              className="w-full h-full object-cover"
+              width={1920}
+              height={0}
+              quality={70}
+            />
           </div>
         </div>
       </div>
