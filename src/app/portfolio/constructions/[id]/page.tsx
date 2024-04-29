@@ -169,11 +169,11 @@ const Construction = ({ params }: { params: { id: number } }) => {
       <div className="px-8 lg:pt-24 pt-12 lg:pb-12">
         <div className="w-full lg:mb-8 mb-2 flex items-end">
           <Heading
-            animate={{ from: -20, to: 0, dir: "x" }}
+            animate={{ from: -10, to: 0, dir: "x" }}
             variant="h3"
             text={info.name}
           />
-          <LiveDiv animate={{ from: -20, to: 0, dir: "x", delay: 0.1 }}>
+          <LiveDiv animate={{ from: 10, to: 0, dir: "x", delay: 0.1 }}>
             <p className="lg:text-xl text-sm ml-auto w-fit text-neutral-400">
               {info.description}
             </p>
@@ -225,21 +225,19 @@ const Construction = ({ params }: { params: { id: number } }) => {
         />
         <div className="w-full flex lg:flex-row flex-col">
           <div className="lg:w-1/2 w-full aspect-[4/3]">
-            <LiveDiv animate={{ from: -20, to: 0, dir: "x", delay: 0.2 }}>
-              <Image
-                onClick={() => {
-                  setIndex(0);
-                  setLightboxOpen(true);
-                }}
-                className="object-cover w-full h-full"
-                quality={70}
-                src={`/constructions/${params.id}/images/hero.jpg`}
-                width={windowDimensions.width / 2}
-                height={0}
-                priority
-                alt={imageArray[0].alt}
-              />
-            </LiveDiv>
+            <Image
+              onClick={() => {
+                setIndex(0);
+                setLightboxOpen(true);
+              }}
+              className="object-cover w-full h-full"
+              quality={70}
+              src={`/constructions/${params.id}/images/hero.jpg`}
+              width={1080}
+              height={0}
+              priority
+              alt={imageArray[0].alt}
+            />
           </div>
           <div
             ref={imageContainer}
@@ -254,21 +252,19 @@ const Construction = ({ params }: { params: { id: number } }) => {
                   className="lg:w-[calc(33.3333%-8px)] lg:aspect-auto lg:h-1/2
                       lg:overflow-auto overflow-y-hidden w-1/2 aspect-[4/3]"
                 >
-                  <LiveDiv animate={{ from: 0.9, to: 1, dir: "z", delay: 0.1 }}>
-                    <Image
-                      onClick={() => {
-                        setIndex(index + 1);
-                        setLightboxOpen(true);
-                      }}
-                      priority
-                      className="object-cover w-full h-full"
-                      width={windowDimensions.width / 3}
-                      height={0}
-                      src={`/constructions/${params.id}/images/${image.src}`}
-                      alt={image.alt}
-                      quality={70}
-                    />
-                  </LiveDiv>
+                  <Image
+                    onClick={() => {
+                      setIndex(index + 1);
+                      setLightboxOpen(true);
+                    }}
+                    priority
+                    className="object-cover w-full h-full"
+                    width={720}
+                    height={0}
+                    src={`/constructions/${params.id}/images/${image.src}`}
+                    alt={image.alt}
+                    quality={50}
+                  />
                 </div>
               ))}
             {hasVideos &&

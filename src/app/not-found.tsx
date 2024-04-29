@@ -19,6 +19,7 @@ const NotFound = () => {
           404 | Səhifə tapılmadı
           <span className="relative lg:ml-4">
             <span className="absolute inset-0 w-full h-full bg-grayA/50" />
+            😶‍🌫️
           </span>
         </h1>
         <motion.div

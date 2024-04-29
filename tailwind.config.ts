@@ -26,8 +26,17 @@ const config: Config = {
         right: "right 2s linear 2s infinite",
         left: "left 2s linear 2s infinite",
         "spin-once": "spin 1s ease-in-out forwards",
+        scrollLeft: "scrollLeft 35s linear infinite",
       },
       keyframes: {
+        scrollLeft: {
+          from: {
+            transform: "translateX(0)",
+          },
+          to: {
+            transform: "translateX(-100%)",
+          },
+        },
         rotateY: {
           from: {
             transform: "rotateY(0deg)",
@@ -37,8 +46,8 @@ const config: Config = {
           },
         },
         appear: {
-          from: { opacity: "0" },
-          to: { opacity: "1" },
+          from: { opacity: "0", fill: "#f3f4f6" },
+          to: { opacity: "1", fill: "#111827" },
         },
         down: {
           "0%": {

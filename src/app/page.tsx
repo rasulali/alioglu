@@ -26,13 +26,15 @@ import exterior from "@/../public/cardImages/exterior.jpg";
 import object from "@/../public/cardImages/object.jpg";
 import construction from "@/../public/cardImages/construction.jpg";
 import Footer from "@/components/footer";
-import Loading from "./loading";
+import Splash from "@/components/splash";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    new Promise((resolve) => setTimeout(resolve, 1200)).then(() => {
+    document.body.style.overflow = "hidden";
+    new Promise((resolve) => setTimeout(resolve, 2400)).then(() => {
       setLoading(false);
+      document.body.style.overflow = "visible";
     });
   }, []);
   const [isTextHover, setTextHover] = useState(false);
@@ -76,7 +78,7 @@ const Home = () => {
     <main className="relative">
       {loading && (
         <div className="fixed z-[999999] w-screen h-screen">
-          <Loading />
+          <Splash />
         </div>
       )}
       {/* First Section */}

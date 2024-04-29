@@ -22,37 +22,31 @@ const Constructions = () => {
               lg:gap-y-8 gap-y-4 mx-auto justify-center overflow-hidden lg:p-4"
         >
           <Card
-            animate={{ from: 20, to: 0, dir: "x", delay: 0.1 }}
             src="/constructions/1/images/hero.jpg"
-            name="Layihə"
+            name="Caspian"
             link="/portfolio/constructions/1"
           />
           <Card
-            animate={{ from: 20, to: 0, dir: "x", delay: 0.2 }}
             src="/constructions/2/images/hero.jpg"
-            name="Layihə"
+            name="Thaddeus"
             link="/portfolio/constructions/2"
           />
           <Card
-            animate={{ from: 20, to: 0, dir: "x", delay: 0.3 }}
             src="/constructions/3/images/hero.jpg"
-            name="Layihə"
+            name="Knyazlı Otel"
             link="/portfolio/constructions/3"
           />
           <Card
-            animate={{ from: 20, to: 0, dir: "x", delay: 0.4 }}
             src="/constructions/4/images/hero.jpg"
-            name="Layihə"
+            name="Şanlıurfa Restoranı"
             link="/portfolio/constructions/4"
           />
           <Card
-            animate={{ from: 20, to: 0, dir: "x", delay: 0.5 }}
             src="/constructions/5/images/hero.jpg"
-            name="Layihə"
+            name="Baku City Hospital"
             link="/portfolio/constructions/5"
           />
           <Card
-            animate={{ from: 20, to: 0, dir: "x", delay: 0.6 }}
             src="/constructions/6/images/hero.jpg"
             name="Layihə"
             link="/portfolio/constructions/6"

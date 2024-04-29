@@ -1,7 +1,6 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 interface CardProps {
@@ -10,60 +9,17 @@ interface CardProps {
   name: string;
   text?: string;
   link: string;
-  animate: {
-    dir: "x" | "y" | "z";
-    from: number;
-    to: number;
-    delay?: number;
-  };
 }
 const Card: React.FC<CardProps> = ({
   src,
   alt = "Layihə Fotosu",
   name,
   link,
-  animate,
   text,
 }) => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
-
-  const variantX = {
-    hidden: { opacity: 0, x: animate.from },
-    visible: {
-      opacity: 1,
-      x: animate.to,
-      transition: { duration: 0.5, delay: animate.delay },
-    },
-  };
-  const variantY = {
-    hidden: { opacity: 0, y: animate.from },
-    visible: {
-      opacity: 1,
-      y: animate.to,
-      transition: { duration: 0.5, delay: animate.delay },
-    },
-  };
-  const variantZ = {
-    hidden: { opacity: 0, scale: animate.from },
-    visible: {
-      opacity: 1,
-      scale: animate.to,
-      transition: { duration: 0.5, delay: animate.delay },
-    },
-  };
-
-  const divControls = useAnimation();
-
-  useEffect(() => {
-    if (inView) {
-      divControls.start("visible");
-    }
-  }, [inView]);
   return (
     <Link href={link}>
       <motion.div
-        ref={ref}
         whileHover={{
           scale: 1.02,
           transition: {
@@ -78,20 +34,6 @@ const Card: React.FC<CardProps> = ({
             ease: "easeIn",
           },
         }}
-        variants={(() => {
-          switch (animate.dir) {
-            case "x":
-              return variantX;
-            case "y":
-              return variantY;
-            case "z":
-              return variantZ;
-            default:
-              return {};
-          }
-        })()}
-        initial="hidden"
-        animate={divControls}
         className="relative lg:max-w-[832px] lg:w-[832px] w-full aspect-[4/3] bg-neutral-500
       lg:rounded-xl sm:rounded-lg rounded-md overflow-hidden"
       >

@@ -22,27 +22,23 @@ const Hotels = () => {
               lg:gap-y-8 gap-y-4 mx-auto justify-center overflow-hidden lg:p-4"
         >
           <Card
-            animate={{ from: 20, to: 0, dir: "x", delay: 0.2 }}
             src="/hotels/1/images/hero.jpg"
             name="Knyazlı Otel"
             text="Qəbələ 3000 m²"
             link="/portfolio/hotels/1"
           />
           <Card
-            animate={{ from: 20, to: 0, dir: "x", delay: 0.1 }}
             src="/hotels/2/images/hero.jpg"
             name="Qazaxıstan"
             text="Almatı"
             link="/portfolio/hotels/2"
           />
           <Card
-            animate={{ from: 20, to: 0, dir: "x", delay: 0.3 }}
             src="/hotels/3/images/hero.jpg"
             name="Moskva Brosko Otel"
             link="/portfolio/hotels/3"
           />
           <Card
-            animate={{ from: 20, to: 0, dir: "x", delay: 0.4 }}
             src="/hotels/4/images/hero.jpg"
             name="Moskva Otel"
             text="VIP otaq 200 m²"

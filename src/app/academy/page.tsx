@@ -1,6 +1,5 @@
 "use client";
 import Scene from "@/components/3dModel";
-import Footer from "@/components/footer";
 import LiveDiv from "@/components/liveDiv";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -12,8 +11,16 @@ import {
   useSpring,
 } from "framer-motion";
 import Heading from "@/components/heading";
-import { MapPinIcon } from "@heroicons/react/24/outline";
+import {
+  ChevronDownIcon,
+  EnvelopeIcon,
+  MapPinIcon,
+  PhoneIcon,
+} from "@heroicons/react/24/outline";
 import AutoCAD from "@/components/autocad";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons/faWhatsapp";
+import Link from "next/link";
 const Academy = () => {
   const [cadClick, setCadClick] = useState(false);
   const [cadHover, setCadHover] = useState(false);
@@ -46,8 +53,8 @@ const Academy = () => {
   };
 
   const handleMousePos = (e: MouseEvent) => {
-    mousePos.x.set(e.clientX - 80);
-    mousePos.y.set(e.clientY - 120);
+    mousePos.x.set(e.clientX - 60);
+    mousePos.y.set(e.clientY - 60);
   };
 
   useEffect(() => {
@@ -77,7 +84,15 @@ const Academy = () => {
     }, 1000);
   }, [windowDimensions.width, windowDimensions.height]);
   return (
-    <main className="relative overflow-hidden">
+    <main className="relative overflow-hidden max-w-[1920px] mx-auto">
+      {scroll === 0 && (
+        <span
+          className="fixed flex items-center justify-center
+          bottom-[2%] left-1/2 -translate-x-1/2"
+        >
+          <ChevronDownIcon className="opacity-0 sm:w-12 w-8 text-zinc-100/60 animate-down" />
+        </span>
+      )}
       <motion.div
         ref={heatRef}
         animate={{
@@ -98,15 +113,15 @@ const Academy = () => {
         opacity-0 pointer-events-none transition-opacity duration-1000"
       />
       <div className="w-full">
-        <div className="flex flex-col lg:gap-y-4 items-center lg:mt-12 mt-12 lg:mb-4 mb-2">
+        <div className="flex flex-col lg:gap-y-4 items-center mt-12 lg:mb-4 mb-2">
           <Heading
             text="Akademiya"
             animate={{ from: -20, to: 0, dir: "y" }}
             variant="h1"
           />
           <LiveDiv animate={{ from: -20, to: 0, dir: "y", delay: 0.1 }}>
-            <h1 className="lg:text-4xl sm:text-3xl text-xl text-zinc-100 w-full text-center">
-              Təhsilinizi <span className="font-bold"> 15 illik</span>{" "}
+            <h1 className="lg:text-4xl sm:text-3xl text-xl text-zinc-100 w-full text-center font-light">
+              Təhsilinizi <span className="font-semibold"> 15 illik</span>{" "}
               təcrübədən alın!
             </h1>
           </LiveDiv>
@@ -412,10 +427,10 @@ const Academy = () => {
                 text-zinc-100 leading-snug"
               >
                 AutoCAD 2D və 3D dizaynın təməl daşı olaraq dayanır və memarlıq,
-                mühəndislik və istehsalat kimi sənayelərdə əsas vasitə kimi
-                istifadə olunur. Dərslərimiz AutoCAD-i mənimsəmək və rəqəmsal
-                kətan üzərində təxəyyülünüzü üzə çıxarmaqda sizə bələdçilik
-                edəcək.
+                mühəndislik və istehsalat kimi sənayelərdə dəqiq çertyojlamalar
+                vasitəsi kimi istifadə olunur. Dərslərimiz AutoCAD-i mənimsəmək
+                və rəqəmsal kətan üzərində təxəyyülünüzü üzə çıxarmaqda sizə
+                bələdçilik edəcək.
               </p>
             </div>
           </div>
@@ -423,7 +438,7 @@ const Academy = () => {
       </div>
 
       {/* Photoshop Wrapper */}
-      <div id="photoshop" className="lg:w-full lg:px-4 px-2 lg:mt-24 mt-8">
+      <div id="photoshop" className="lg:px-4 px-2 lg:mt-24 mt-8">
         <div className="w-full lg:mt-6 mt-4">
           <LiveDiv animate={{ from: -20, to: 0, dir: "x", delay: 0.1 }}>
             <div className="flex items-end flex-wrap">
@@ -451,15 +466,43 @@ const Academy = () => {
             </div>
           </LiveDiv>
         </div>
-        <div className="flex flex-col lg:flex-row gap-4">
+        <div className="flex flex-col lg:flex-row gap-4 items-center">
           <div
-            className="lg:w-1/2 aspect-[16/9] w-full bg-neutral-700/50 lg:p-6 p-4
-             drop-shadow-lg backdrop-blur lg:rounded-xl rounded-lg flex items-center"
+            className="lg:w-1/2 w-full h-fit bg-neutral-700/50 lg:p-6 p-4
+             drop-shadow-lg backdrop-blur lg:rounded-xl rounded-lg"
           >
-            <p
+            <div
               className="w-full lg:text-2xl sm:text-xl text-lg
                 text-zinc-100 leading-snug"
-            ></p>
+            >
+              <h1 className="font-light lg:text-3xl sm:text-2xl text-xl lg:mb-4">
+                Həmişə yaşıl bacarıqlarınıza daha bir əlvəmiz isə Adobe
+                Photoshop olacaqdır!
+              </h1>
+              <p className="lg:mb-4">
+                3D Dizaynerlər və Memarlar tərəfindən geniş şəkildə istifadə
+                olunan bu proqram :
+                <ul className="list-disc list-inside">
+                  <li className="font-semibold">post processing</li>
+                  <li className="font-semibold">texture redaktə etmə</li>
+                  <li className="font-semibold">concept art hazırlama</li>
+                  zamanı sizin ən yaxın dostunuzdur.
+                </ul>
+              </p>
+              <p className="lg:mb-4">
+                Geniş alətlər dəsti və intuitiv interfeysi ilə Photoshop,
+                yaradıcılığınızı üzə çıxarmağa imkan yaradacaqdır. İstər 3D
+                modelinizdə incə sazlamalar edin istərsə də növbəti böyük
+                memarlıq əsərinin eskizini tərtib edin, Photoshop canlı və pixel
+                perfect detalları ilə təxəyyülünüzü canlandırmaq üçün müraciət
+                edəcəyiniz vasitədir.
+              </p>
+              <p>
+                Dərslərimizə qoşulun və sabahın vizual mənzərəsini
+                formalaşdırmaqda Adobe Photoshop-un gücünü birinci əldən kəşf
+                edin!
+              </p>
+            </div>
           </div>
           <div
             className="lg:w-1/2 h-auto w-full bg-neutral-700/50 lg:p-6 p-4
@@ -476,7 +519,77 @@ const Academy = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <div className="lg:px-4 px-2 lg:my-12">
+        <LiveDiv animate={{ from: -20, to: 0, dir: "y", delay: 0.5 }}>
+          <div className="flex flex-col items-center lg:gap-y-4 gap-y-2 lg:mb-8 mb-4">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl text-zinc-100">
+              Dərslərimizə qoşulun
+            </h1>
+            <p className="text-zinc-400 lg:text-2xl sm:text-xl">
+              Mütəxəssislərdən öyrənmək və bacarıqlarınızı inkşaf etdirmək üçün
+              bu fürsəti qaçırmayın.
+            </p>
+          </div>
+        </LiveDiv>
+        <div className="flex lg:flex-row flex-col gap-4 lg:mt-8 mt-4 justify-center items-center lg:w-1/2 lg:mx-auto">
+          <div className="w-full lg:px-4 px-2">
+            <Link className="block" href="https://wa.me/994502989999">
+              <div
+                className="flex items-center gap-3 lg:rounded-xl rounded-lg p-4
+              bg-neutral-700/50 backdrop-blur hover:bg-neutral-600/50
+              transition-colors duration-300"
+              >
+                <span className="w-6 aspect-square flex items-center justify-center">
+                  <FontAwesomeIcon
+                    icon={faWhatsapp}
+                    className="w-full h-full text-green-500"
+                  />
+                </span>
+                <div>
+                  <p className="font-medium text-[#f4f4f5]">WhatsApp</p>
+                  <p className="text-sm text-[#b3b3b3] dark:text-[#b3b3b3]">
+                    050 298 99 99
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="w-full lg:px-4 px-2">
+            <Link className="block" href="tel:994502989999">
+              <div
+                className="flex items-center gap-3 lg:rounded-xl rounded-lg p-4
+              bg-neutral-700/50 backdrop-blur hover:bg-neutral-600/50
+              transition-colors duration-300"
+              >
+                <PhoneIcon className="w-6 aspect-square text-blue-500" />
+                <div>
+                  <p className="font-medium text-[#f4f4f5]">Telefon</p>
+                  <p className="text-sm text-[#b3b3b3] dark:text-[#b3b3b3]">
+                    050 298 99 99
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="w-full lg:px-4 px-2">
+            <Link className="block" href="mailto:office@alioglu.az">
+              <div
+                className="flex items-center gap-3 lg:rounded-xl rounded-lg p-4
+              bg-neutral-700/50 backdrop-blur hover:bg-neutral-600/50
+              transition-colors duration-300"
+              >
+                <EnvelopeIcon className="w-6 aspect-square text-red-500" />
+                <div>
+                  <p className="font-medium text-[#f4f4f5]">Elektron poçt</p>
+                  <p className="text-sm text-[#b3b3b3] dark:text-[#b3b3b3]">
+                    office@alioglu.az
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </div>
     </main>
   );
 };

@@ -1,7 +1,7 @@
 import { motion, useAnimation, useInView } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, ReactNode } from "react";
 interface HeadingProps {
-  text: string;
+  text: string | ReactNode;
   variant: string;
   animate: {
     dir: "x" | "y";
@@ -51,21 +51,27 @@ const Heading: React.FC<HeadingProps> = ({ text, animate, variant }) => {
           switch (variant) {
             case "h1":
               return (
-                <h1 className="lg:text-9xl sm:text-7xl text-5xl text-zinc-100 text-nowrap">
+                <span className="lg:text-9xl sm:text-7xl text-5xl text-zinc-100 text-nowrap">
                   {text}
-                </h1>
+                </span>
               );
             case "h2":
               return (
-                <h2 className="lg:text-7xl sm:text-5xl text-3xl text-zinc-100 text-nowrap">
+                <span className="lg:text-7xl sm:text-5xl text-3xl text-zinc-100 text-nowrap">
                   {text}
-                </h2>
+                </span>
               );
             case "h3":
               return (
-                <h1 className="lg:text-5xl sm:text-3xl text-xl text-zinc-100 text-nowrap">
+                <span className="lg:text-5xl sm:text-3xl text-xl text-zinc-100 text-nowrap">
                   {text}
-                </h1>
+                </span>
+              );
+            case "h4":
+              return (
+                <span className="lg:text-3xl sm:text-xl text-lg text-zinc-100 text-nowrap">
+                  {text}
+                </span>
               );
           }
         })()}
