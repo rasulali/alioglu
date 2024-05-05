@@ -29,7 +29,7 @@ const Card = ({ title, description, icon, link }: CardServicesProps) => {
         <h2 className="lg:text-3xl sm:text-xl text-lg text-zinc-100 text-nowrap">
           {title}
         </h2>
-        <span className="lg:w-2/3 text-wrap text-neutral-400 lg:text-xl leading-tight h-24 text-center inline">
+        <span className="lg:w-2/3 text-wrap  h-full text-neutral-400 lg:text-xl leading-tight text-center inline">
           {description}
         </span>
         <Link href={link} className="group">

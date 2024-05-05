@@ -4,11 +4,11 @@ const Splash = () => {
       className="fixed top-0 left-0 z-50 w-screen
     h-screen flex items-center overflow-hidden justify-center cursor-none"
     >
-      <div className="absolute top-0 left-0 w-full h-full backdrop-blur-[100px] bg-grayA/20" />
+      <div className="absolute top-0 left-0 w-full h-full animate-fadingBlur bg-grayA/20" />
 
       <div className="relative lg:mb-96 sm:mb-32 mb-16">
         <svg
-          className="w-[300px] sm:w-[500px] lg:w-[700px] animate-appear"
+          className="w-[300px] sm:w-[500px] lg:w-[700px] fill-zinc-100 animate-appear"
           viewBox="0 0 2000 2000"
           fill="none"
         >
@@ -21,7 +21,7 @@ const Splash = () => {
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
           <svg
             viewBox="0 0 2000 300"
-            className="w-[300px] sm:w-[500px]  lg:w-[1000px]"
+            className="w-[300px] sm:w-[500px]  lg:w-[1000px] fill-zinc-100"
           >
             <g id="A" className="opacity-0 animate-appear animate-delay-100">
               <path d="M267.732 228.199H343.514V225.64C338.756 225.097 335.176 224.477 332.777 223.779C330.417 223.042 328.294 221.995 326.446 220.637C323.85 218.66 321.412 215.751 319.21 211.873C316.968 207.995 313.98 201.557 310.204 192.521L300.318 169.012H274.268L284.012 192.676L285.979 197.447C288.142 202.682 289.204 206.831 289.204 209.934C289.204 215.169 286.805 219.28 282.046 222.227C279.372 223.895 274.575 225.019 267.732 225.64V228.199Z" />

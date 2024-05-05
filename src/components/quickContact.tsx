@@ -203,7 +203,7 @@ const Contact: React.FC<ContactProps> = ({ scroll }) => {
                   </h1>
 
                   <div>
-                    <h1 className="block text-neutral-400 text-lg lg:text-2xl font-thin">
+                    <h1 className="block text-neutral-400 text-lg lg:text-2xl font-light">
                       Baş Ofis
                     </h1>
 
@@ -212,7 +212,7 @@ const Contact: React.FC<ContactProps> = ({ scroll }) => {
                     </h1>
                   </div>
                   <div className="lg:mt-8 mt-4">
-                    <h1 className="block text-neutral-400 text-lg lg:text-2xl font-thin">
+                    <h1 className="block text-neutral-400 text-lg lg:text-2xl font-light">
                       Akademiya
                     </h1>
 

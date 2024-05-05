@@ -519,13 +519,13 @@ const Academy = () => {
           </div>
         </div>
       </div>
-      <div className="lg:px-4 px-2 lg:my-12">
+      <div className="lg:px-4 px-2 lg:my-12 my-6">
         <LiveDiv animate={{ from: -20, to: 0, dir: "y", delay: 0.5 }}>
           <div className="flex flex-col items-center lg:gap-y-4 gap-y-2 lg:mb-8 mb-4">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl text-zinc-100">
+            <h1 className="lg:text-5xl sm:text-3xl  text-2xl font-bold tracking-tighter text-zinc-100">
               Dərslərimizə qoşulun
             </h1>
-            <p className="text-zinc-400 lg:text-2xl sm:text-xl">
+            <p className="text-zinc-400 lg:text-2xl sm:text-xl lg:text-left text-center">
               Mütəxəssislərdən öyrənmək və bacarıqlarınızı inkşaf etdirmək üçün
               bu fürsəti qaçırmayın.
             </p>

@@ -219,7 +219,7 @@ const Home = () => {
                 pt-1
                 leading-[1.2]"
               >
-                <span>İçəri Şəhər</span>
+                <span>Vurğun Residence</span>
                 <span className="flex">
                   Bakı
                   <MapPinIcon className="pl-1 sm:w-8 w-5 text-red-400" />

@@ -27,8 +27,17 @@ const config: Config = {
         left: "left 2s linear 2s infinite",
         "spin-once": "spin 1s ease-in-out forwards",
         scrollLeft: "scrollLeft 35s linear infinite",
+        fadingBlur: "fadingBlur 3s linear forwards",
       },
       keyframes: {
+        fadingBlur: {
+          "0%": {
+            "backdrop-filter": "blur(24px)",
+          },
+          "100%": {
+            "backdrop-filter": "blur(0px)",
+          },
+        },
         scrollLeft: {
           from: {
             transform: "translateX(0)",
@@ -46,8 +55,8 @@ const config: Config = {
           },
         },
         appear: {
-          from: { opacity: "0", fill: "#f3f4f6" },
-          to: { opacity: "1", fill: "#111827" },
+          from: { opacity: "0" },
+          to: { opacity: "1" },
         },
         down: {
           "0%": {
