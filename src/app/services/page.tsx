@@ -211,12 +211,12 @@ const Services = () => {
           opacity-0 sm:w-12 w-8 text-zinc-100/60 animate-down lg:block hidden"
         />
         <div className="w-full h-full flex flex-col lg:gap-y-4 gap-y-2 mt-14 lg:mt-0 justify-end z-30 lg:p-8 pointer-events-none">
-          <div className="lg:w-1/3 w-full flex justify-center lg:justify-normal">
+          <div className="lg:w-1/3 w-full lg:p-0 px-4">
             <Heading
               animate={{ from: -10, to: 0, dir: "x", delay: 0.1 }}
               variant="h3"
               text={
-                <h1 className="font-semibold drop-shadow pointer-events-auto lg:text-left text-center">
+                <h1 className="font-semibold drop-shadow pointer-events-auto">
                   Layihədən tikintiyə
                   <br />
                   Təmirdən aksessuarlara
@@ -224,11 +224,11 @@ const Services = () => {
               }
             />
           </div>
-          <div className="lg:w-1/3 w-full">
+          <div className="lg:w-1/3 w-full lg:p-0 px-4">
             <LiveDiv animate={{ from: -10, to: 0, dir: "x", delay: 0.2 }}>
               <p
                 className="drop-shadow pointer-events-auto lg:text-2xl
-          sm:text-lg text-base text-zinc-100 lg:text-left text-center font-light"
+          sm:text-lg text-base text-zinc-100"
               >
                 Morbi laoreet eu dolor ut dui ac semper vestibulum morbi urna
                 vestibulum at arcu vestibulum in at, dolor nullam eget dui metus
@@ -246,7 +246,7 @@ const Services = () => {
           alt=""
           width={1920}
           height={0}
-          className="lg:w-full lg:h-full  absolute top-0 left-0"
+          className="lg:w-full lg:h-full  absolute top-0 left-0 bg-grayA lg:block hidden"
         />
 
         {/* BUILDING 1 INFO */}
@@ -494,7 +494,7 @@ const Services = () => {
         />
         <div
           className="flex lg:flex-row flex-col gap-4 lg:mt-8 mt-4 justify-center
-        items-center lg:w-1/2 lg:mx-auto lg:mb-24"
+        items-center lg:w-1/2 w-full lg:mx-auto lg:mb-24"
         >
           <div className="w-full lg:px-4 px-2">
             <Link className="block" href="https://wa.me/994502989999">
