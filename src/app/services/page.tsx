@@ -1,8 +1,8 @@
 "use client";
 import Card, { CardServicesProps } from "@/components/cardServices";
+import City from "@/components/city";
 import Heading from "@/components/heading";
 import LiveDiv from "@/components/liveDiv";
-import Pulse from "@/components/pulse";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons/faWhatsapp";
 import { faBath } from "@fortawesome/free-solid-svg-icons/faBath";
 import { faChartSimple } from "@fortawesome/free-solid-svg-icons/faChartSimple";
@@ -180,11 +180,6 @@ const Services = () => {
     }
   }, [autoScroll, scrollX]);
 
-  const [building_1Hover, setBuilding_1Hover] = useState(false);
-  const [building_2Hover, setBuilding_2Hover] = useState(false);
-  const [building_3Hover, setBuilding_3Hover] = useState(false);
-  const [building_4Hover, setBuilding_4Hover] = useState(false);
-
   return (
     <main className="lg:mt-24 mt-12">
       {/* Heading */}
@@ -205,7 +200,7 @@ const Services = () => {
         />
       </div>
 
-      <div className="flex w-full lg:h-[600px] relative lg:mb-24 overflow-hidden">
+      <div className="flex w-full max-w-[1920px] mx-auto lg:h-[600px] relative lg:mb-24 overflow-hidden">
         <ChevronDownIcon
           className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10
           opacity-0 sm:w-12 w-8 text-zinc-100/60 animate-down lg:block hidden"
@@ -241,201 +236,19 @@ const Services = () => {
             </LiveDiv>
           </div>
         </div>
-        <Image
-          src="/services/city.png"
-          alt=""
-          width={1920}
-          height={0}
-          className="lg:w-full lg:h-full  absolute top-0 left-0 bg-grayA lg:block hidden"
-        />
-
-        {/* BUILDING 1 INFO */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: building_1Hover ? 1 : 0 }}
-          transition={{
-            duration: 0.1,
-            type: "easeOut",
-          }}
-          className="absolute w-[382px] h-[256px] top-[129.5px] left-[864px] z-50 pointer-events-none"
-        >
-          <div className="w-[calc(100%-128px)] h-1/2 ml-auto flex flex-col">
-            <p className="text-2xl text-neutral-400">BUILDING I</p>
-          </div>
-          <svg className="fill-blue-500/50" viewBox="0 0 379 126">
-            <path d="M5 122a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" />
-            <path
-              fill-rule="evenodd"
-              d="M9.2 118.2 125.42 2H379V0H125a1 1 0 0 0-.7.3L7.8 116.8c-.02 0-.03.02-.04.03a5 5 0 1 0 1.41 1.41l.04-.03ZM8 121a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </motion.div>
-
-        {/* BUILDING 1 Pulse */}
-        <Pulse
-          dur="2"
-          isHovered={building_1Hover}
-          className="absolute z-50 pointer-events-none w-24 aspect-square
-          top-[331px] left-[821px] hidden lg:block"
-        />
-
-        {/* BUILDING 2 INFO */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: building_2Hover ? 1 : 0 }}
-          transition={{
-            duration: 0.1,
-            type: "easeOut",
-          }}
-          className="absolute w-[382px] h-[256px] top-[189.5px] left-[984px] z-50 pointer-events-none"
-        >
-          <div className="w-[calc(100%-128px)] h-1/2 ml-auto flex flex-col">
-            <p className="text-2xl text-neutral-400">BUILDING II </p>
-          </div>
-          <svg className="fill-blue-500/50" viewBox="0 0 379 126">
-            <path d="M5 122a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" />
-            <path
-              fill-rule="evenodd"
-              d="M9.2 118.2 125.42 2H379V0H125a1 1 0 0 0-.7.3L7.8 116.8c-.02 0-.03.02-.04.03a5 5 0 1 0 1.41 1.41l.04-.03ZM8 121a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </motion.div>
-
-        {/* BUILDING 2 Pulse */}
-        <Pulse
-          dur="2.6"
-          isHovered={building_2Hover}
-          className="absolute z-50 pointer-events-none w-24 aspect-square
-          top-[391px] left-[941px] hidden lg:block"
-        />
-
-        {/* BUILDING 3 INFO */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: building_3Hover ? 1 : 0 }}
-          transition={{
-            duration: 0.1,
-            type: "easeOut",
-          }}
-          className="absolute w-[382px] h-[256px] top-[109px] left-[1170px] z-50 pointer-events-none"
-        >
-          <div className="w-[calc(100%-128px)] h-1/2 ml-auto flex flex-col">
-            <p className="text-2xl text-neutral-400">BUILDING III </p>
-          </div>
-          <svg className="fill-blue-500/50" viewBox="0 0 379 126">
-            <path d="M5 122a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" />
-            <path
-              fill-rule="evenodd"
-              d="M9.2 118.2 125.42 2H379V0H125a1 1 0 0 0-.7.3L7.8 116.8c-.02 0-.03.02-.04.03a5 5 0 1 0 1.41 1.41l.04-.03ZM8 121a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </motion.div>
-
-        {/* BUILDING 3 Pulse */}
-        <Pulse
-          dur="2.4"
-          isHovered={building_3Hover}
-          className="absolute z-50 pointer-events-none w-24 aspect-square
-          top-[311px] left-[1127px] hidden lg:block"
-        />
-
-        {/*BUILDING 4 INFO*/}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: building_4Hover ? 1 : 0 }}
-          transition={{
-            duration: 0.1,
-            type: "easeOut",
-          }}
-          className="absolute w-[382px] h-[256px] top-[209px] left-[1370px] z-50 pointer-events-none"
-        >
-          <div className="w-[calc(100%-128px)] h-1/2 ml-auto flex flex-col">
-            <p className="text-2xl text-neutral-400">BUILDING IV </p>
-          </div>
-          <svg className="fill-blue-500/50" viewBox="0 0 379 126">
-            <path d="M5 122a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" />
-            <path
-              fill-rule="evenodd"
-              d="M9.2 118.2 125.42 2H379V0H125a1 1 0 0 0-.7.3L7.8 116.8c-.02 0-.03.02-.04.03a5 5 0 1 0 1.41 1.41l.04-.03ZM8 121a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </motion.div>
-
-        {/* BUILDING 4 Pulse */}
-        <Pulse
-          dur="2.2"
-          isHovered={building_4Hover}
-          className="absolute z-50 pointer-events-none w-24 aspect-square
-          top-[411px] left-[1327px] hidden lg:block"
-        />
-
-        <div className="absolute top-0 left-0 w-full h-full z-20 hidden lg:block">
-          <svg fill="none" viewBox="0 0 1920 600" className="relative">
-            {/*SELECTOR 1*/}
-            <motion.path
-              //left-1
-              initial={{ opacity: 0 }}
-              whileHover={{ opacity: 1 }}
-              onHoverStart={() => setBuilding_1Hover(true)}
-              onHoverEnd={() => setBuilding_1Hover(false)}
-              transition={{
-                duration: 0.1,
-                type: "easeOut",
-              }}
-              className="stroke-blue-500/70 stroke-2 fill-blue-300/50 relative"
-              d="m648 600 3-332 1-162 59-8V87l23-3v-9l23-4 44 11 29 11v10l106 27v397h32v-9h35v2h9v17h42v63H648Z"
-            />
-            {/*SELECTOR 2*/}
-            <motion.path
-              //left-2
-              onHoverStart={() => setBuilding_2Hover(true)}
-              onHoverEnd={() => setBuilding_2Hover(false)}
-              initial={{ opacity: 0 }}
-              whileHover={{ opacity: 1 }}
-              transition={{
-                duration: 0.1,
-                type: "easeOut",
-              }}
-              className="stroke-blue-500/70 stroke-2 fill-blue-300/50"
-              d="m946 361 2 1v5h-12v160h32v-9h35v2h9v17h42V392l-9 1v-16h-15v-4l-3-1v-8l-2-2h-10v-9l-1-2h-42l-2 3h-24v7Z"
-            />
-            {/*SELECTOR 3*/}
-            <motion.path
-              // left-3
-              onHoverStart={() => setBuilding_3Hover(true)}
-              onHoverEnd={() => setBuilding_3Hover(false)}
-              initial={{ opacity: 0 }}
-              whileHover={{ opacity: 1 }}
-              transition={{
-                duration: 0.1,
-                type: "easeOut",
-              }}
-              className="stroke-blue-500/70 stroke-2 fill-blue-300/50"
-              d="m1084 170 25-12 30-2 86 3 15 3v36l10 4 1 52 6 2v55l7 3v35h3v19l4 1v7h-16v224h-201V370h7v-55l6-2v-52l8-1v-50h9v-40Z"
-            />
-            {/*SELECTOR 4*/}
-            <motion.path
-              //left-4
-              onHoverStart={() => setBuilding_4Hover(true)}
-              onHoverEnd={() => setBuilding_4Hover(false)}
-              initial={{ opacity: 0 }}
-              whileHover={{ opacity: 1 }}
-              transition={{
-                duration: 0.1,
-                type: "easeOut",
-              }}
-              className="stroke-blue-500/70 stroke-2 fill-blue-300/50"
-              d="m1469 368-214 8v224h291l-1-219-71-13h-5Z"
-            />
-          </svg>
+        <div className="w-full h-full absolute top-0 left-0 bg-grayA lg:flex hidden items-center justify-center">
+          <City className="absolute" />
+          <div className="w-full h-full absolute bg-gradient-to-r from-grayA via-grayA/50 to-grayA/10 pointer-events-none" />
+          <div className="w-1/2 h-full absolute right-0 bg-gradient-to-l from-grayA via-transparent to-transparent pointer-events-none" />
+          <Image
+            src="/services/city.png"
+            alt=""
+            width={1920}
+            height={0}
+            className="object-contain"
+          />
         </div>
         {/* shadows */}
-        <div className="w-full h-full absolute bg-gradient-to-r from-grayA via-grayA/50 to-grayA/10" />
-        <div className="w-1/2 h-full absolute right-0 bg-gradient-to-l from-grayA via-transparent to-transparent" />
         {/* shadows */}
       </div>
       {/* Cards */}
@@ -486,7 +299,7 @@ const Services = () => {
           ))}
         </div>
       </div>
-      <div className="w-full lg:px-8 flex flex-col items-center">
+      <div className="w-full max-w-[1920px] mx-auto lg:px-8 flex flex-col items-center">
         <Heading
           animate={{ from: -10, to: 0, dir: "x" }}
           text={<h1>Bizimlə Əlaqə Saxlayın</h1>}
