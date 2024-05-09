@@ -81,10 +81,7 @@ const Footer = () => {
       </div>
 
       {/* Location */}
-      <div
-        className="border-l-2 lg:border-0 border-zinc-400 px-4 lg:py-4
-      lg:border-x-4 lg:border-grayALight"
-      >
+      <div className="border-l-2 lg:border-0 border-zinc-400 px-4 lg:py-4">
         <h1
           className="text-zinc-100 lg:mb-4 mb-2 text-lg sm:text-2xl
             font-semibold pl-0.5"

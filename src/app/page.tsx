@@ -32,7 +32,7 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     document.body.style.overflow = "hidden";
-    new Promise((resolve) => setTimeout(resolve, 2400)).then(() => {
+    new Promise((resolve) => setTimeout(resolve, 1400)).then(() => {
       setLoading(false);
       document.body.style.overflow = "visible";
     });
@@ -75,7 +75,7 @@ const Home = () => {
     setScroll(latest);
   });
   return (
-    <main className="relative">
+    <main className={`relative ${loading ? "overflow-hidden" : ""}`}>
       {loading && (
         <div className="fixed z-[999999] w-screen h-screen">
           <Splash />

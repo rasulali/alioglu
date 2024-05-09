@@ -2,8 +2,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-
 import Logo from "./logo";
+import { motion } from "framer-motion";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 interface NavbarProps {
   isVideoVisible: boolean;
@@ -11,7 +12,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
   const [menuState, setMenuState] = useState(false);
-
+  const [subMenuState, setSubMenuState] = useState(false);
   const Menu = () => {
     return (
       <div
@@ -19,14 +20,81 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
       lg:justify-evenly lg:h-full lg:items-center text-right lg:text-center
       gap-8 text-nowrap"
       >
-        <Link
-          href="/services"
-          className="text-md sm:text-lg text-zinc-100 uppercase
-           lg:hover:text-neutral-500 transition-colors duration-500
-          w-fit lg:ml-0 ml-auto z-10"
+        <motion.div
+          onHoverStart={() => setSubMenuState(true)}
+          onHoverEnd={() => setSubMenuState(false)}
+          className="flex flex-col z-10 relative"
         >
-          XİDMƏTLƏRİMİZ
-        </Link>
+          <motion.div className="flex gap-x-2">
+            <Link
+              href="/services"
+              className="text-base sm:text-lg text-zinc-100 uppercase
+           lg:hover:text-neutral-500 transition-colors duration-500
+          w-fit lg:ml-0 ml-auto"
+            >
+              XİDMƏTLƏRİMİZ
+            </Link>
+            <div
+              className="w-6 aspect-square"
+              onClick={() => {
+                setSubMenuState(!subMenuState);
+              }}
+            >
+              <ChevronDownIcon
+                className={`w-full h-full text-zinc-100 ${subMenuState ? "rotate-180" : "rotate-0"}`}
+              />
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ height: 0 }}
+            animate={{ height: subMenuState ? "auto" : 0 }}
+            transition={{ duration: 0.3 }}
+            className="sm:absolute sm:top-7 sm:-translate-x-4 w-max flex flex-col
+            gap-y-2 overflow-hidden sm:px-4 relative"
+          >
+            <div
+              className={`flex flex-col gap-y-2 pt-4 sm:pt-0 pb-2 sm:pb-4
+              sm:px-4 sm:rounded-lg sm:-translate-x-4 sm:drop-shadow
+            ${isVideoVisible ? "sm:bg-grayA/50 sm:backdrop-blur-lg" : "sm:bg-grayA"}`}
+            >
+              <Link
+                className="text-base sm:text-lg text-zinc-100
+              hover:text-neutral-500 transition-colors duration-500 sm:text-left"
+                href="/portfolio"
+              >
+                Layihə Xidmətləri
+              </Link>
+              <Link
+                className="text-base sm:text-lg text-zinc-100
+              hover:text-neutral-500 transition-colors duration-500 sm:text-left"
+                href="/portfolio/constructions"
+              >
+                Təmir/Tikinti Xidmətləri
+              </Link>
+              <Link
+                className="text-base sm:text-lg text-zinc-100
+              hover:text-neutral-500 transition-colors duration-500 sm:text-left"
+                href=""
+              >
+                Aksessuarlar
+              </Link>
+              <Link
+                className="text-base sm:text-lg text-zinc-100
+              hover:text-neutral-500 transition-colors duration-500 sm:text-left"
+                href=""
+              >
+                Usta Xidmətləri
+              </Link>
+              <Link
+                className="text-base sm:text-lg text-zinc-100
+              hover:text-neutral-500 transition-colors duration-500 sm:text-left"
+                href=""
+              >
+                Biznes Plan Tərtibi Metodikası
+              </Link>
+            </div>
+          </motion.div>
+        </motion.div>
         <Link
           href="/academy"
           className="text-md sm:text-lg text-zinc-100 uppercase
