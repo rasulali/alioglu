@@ -53,41 +53,36 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
             gap-y-2 overflow-hidden sm:px-4 relative"
           >
             <div
-              className={`flex flex-col gap-y-2 pt-4 sm:pt-0 pb-2 sm:pb-4
-              sm:px-4 sm:rounded-lg sm:-translate-x-4 sm:drop-shadow
+              className={`flex flex-col gap-y-2 sm:py-4 pt-2 text-zinc-100 sm:text-left
+            text-base sm:text-lg  sm:px-4 sm:rounded-lg sm:-translate-x-4 sm:drop-shadow
             ${isVideoVisible ? "sm:bg-grayA/50 sm:backdrop-blur-lg" : "sm:bg-grayA"}`}
             >
               <Link
-                className="text-base sm:text-lg text-zinc-100
-              hover:text-neutral-500 transition-colors duration-500 sm:text-left"
+                className="hover:text-neutral-500 transition-colors duration-500"
                 href="/portfolio"
               >
                 Layihə Xidmətləri
               </Link>
               <Link
-                className="text-base sm:text-lg text-zinc-100
-              hover:text-neutral-500 transition-colors duration-500 sm:text-left"
+                className="hover:text-neutral-500 transition-colors duration-500"
                 href="/portfolio/constructions"
               >
                 Təmir/Tikinti Xidmətləri
               </Link>
               <Link
-                className="text-base sm:text-lg text-zinc-100
-              hover:text-neutral-500 transition-colors duration-500 sm:text-left"
+                className="hover:text-neutral-500 transition-colors duration-500"
                 href=""
               >
                 Aksessuarlar
               </Link>
               <Link
-                className="text-base sm:text-lg text-zinc-100
-              hover:text-neutral-500 transition-colors duration-500 sm:text-left"
+                className="hover:text-neutral-500 transition-colors duration-500"
                 href=""
               >
                 Usta Xidmətləri
               </Link>
               <Link
-                className="text-base sm:text-lg text-zinc-100
-              hover:text-neutral-500 transition-colors duration-500 sm:text-left"
+                className="hover:text-neutral-500 transition-colors duration-500"
                 href=""
               >
                 Biznes Plan Tərtibi Metodikası
