@@ -222,7 +222,7 @@ const Home = () => {
                 <span>Vurğun Residence</span>
                 <span className="flex">
                   Bakı
-                  <MapPinIcon className="pl-1 sm:w-8 w-5 text-red-400" />
+                  <MapPinIcon className="ml-1 sm:w-8 w-5 text-red-400" />
                 </span>
               </span>
             </h1>

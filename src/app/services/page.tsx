@@ -17,7 +17,7 @@ import {
   PhoneIcon,
 } from "@heroicons/react/24/outline";
 import { ArrowLeftIcon } from "@heroicons/react/24/solid";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -180,6 +180,10 @@ const Services = () => {
     }
   }, [autoScroll, scrollX]);
 
+  const carouselInView = useInView(carouselWrapperRef, {
+    once: true,
+  });
+
   return (
     <main className="lg:mt-24 mt-12">
       {/* Heading */}
@@ -201,10 +205,12 @@ const Services = () => {
       </div>
 
       <div className="flex w-full max-w-[1920px] mx-auto lg:h-[600px] relative lg:mb-24 overflow-hidden">
-        <ChevronDownIcon
-          className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10
+        {!carouselInView && (
+          <ChevronDownIcon
+            className="fixed bottom-5 left-1/2 -translate-x-1/2 z-10
           opacity-0 sm:w-12 w-8 text-zinc-100/60 animate-down lg:block hidden"
-        />
+          />
+        )}
         <div className="w-full h-full flex flex-col lg:gap-y-4 gap-y-2 mt-14 lg:mt-0 justify-end z-30 lg:p-8 pointer-events-none">
           <div className="lg:w-1/3 w-full lg:p-0 px-4">
             <Heading
@@ -277,7 +283,7 @@ const Services = () => {
           <ArrowRightIcon className="w-full h-full p-2 text-zinc-100 group-hover:text-neutral-900 transition-colors duration-200" />
         </button>
 
-        <div className="overflow-x-hidden whitespace-nowrap w-full ">
+        <div className="overflow-x-hidden whitespace-nowrap w-full">
           {doubleCarousel.map((item, index) => (
             <motion.div
               ref={carouselRef}
@@ -301,7 +307,7 @@ const Services = () => {
       </div>
       <div className="w-full max-w-[1920px] mx-auto lg:px-8 flex flex-col items-center">
         <Heading
-          animate={{ from: -10, to: 0, dir: "x" }}
+          animate={{ from: -10, to: 0, dir: "y" }}
           text={<h1>Bizimlə Əlaqə Saxlayın</h1>}
           variant="h2"
         />
