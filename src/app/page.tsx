@@ -216,8 +216,7 @@ const Home = () => {
             >
               <span
                 className="sm:border-l-8 border-l-4 border-red-400 sm:pl-2 pl-1
-                pt-1
-                leading-[1.2]"
+                pt-1 leading-[1.2]"
               >
                 <span>Vurğun Residence</span>
                 <span className="flex">
