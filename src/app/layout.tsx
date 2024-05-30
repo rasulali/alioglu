@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html lang="az">
       <body style={poppins.style} className="bg-grayA">
         {children}
         <SpeedInsights />

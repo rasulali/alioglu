@@ -156,7 +156,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
           className="mr-auto lg:absolute lg:lg:left-1/2 z-10
         lg:-translate-x-1/2 lg:top-[calc(50%+16px)] lg:-translate-y-1/2"
         >
-          <Link href="/">
+          <Link href="/" aria-label="Ana səhifə">
             <Logo />
           </Link>
         </span>
