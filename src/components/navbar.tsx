@@ -108,7 +108,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
         </Link>
         {/* reServe space for logo on wide screens */}
         <div
-          className={`hidden relative lg:block w-[136px] mx-8 mt-28
+          className={`relative lg:block w-[136px] mx-8 mt-28
         translate-y-1/2 -translate-x-[19px]
         ${isVideoVisible ? "bg-grayA/50 backdrop-blur-lg" : "bg-grayA"}
         transition-colors duration-500 h-5 -z-10 rounded-b-lg
@@ -160,7 +160,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVideoVisible }) => {
             <Logo />
           </Link>
         </span>
-        <div className="hidden lg:flex w-full">
+        <div className="lg:flex w-full">
           <Menu />
         </div>
         <Bars3Icon
