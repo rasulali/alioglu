@@ -11,7 +11,7 @@ interface ContactProps {
   scroll: number;
 }
 const Contact: React.FC<ContactProps> = ({ scroll }) => {
-  const [menuState, setMenuState] = useState(false);
+  const [menuState, setMenuState] = useState(true);
   // disable scroll when menu is open
   useEffect(() => {
     if (menuState) {
@@ -35,7 +35,7 @@ const Contact: React.FC<ContactProps> = ({ scroll }) => {
   return (
     <>
       {menuState && (
-        <div className="fixed bg-black/50 w-screen h-screen top-0 left-0 z-50" />
+        <div className="fixed bg-black/50 w-dvw h-dvh top-0 left-0 z-50" />
       )}
       {!menuState && (
         <AnimatePresence>
@@ -46,13 +46,13 @@ const Contact: React.FC<ContactProps> = ({ scroll }) => {
             animate={
               scroll < 0.1 || scroll > 0.9
                 ? {
-                    opacity: 0,
-                    display: "none",
-                  }
+                  opacity: 0,
+                  display: "none",
+                }
                 : {
-                    display: "block",
-                    opacity: 1,
-                  }
+                  display: "block",
+                  opacity: 1,
+                }
             }
             exit={{
               opacity: 0,
@@ -86,18 +86,18 @@ const Contact: React.FC<ContactProps> = ({ scroll }) => {
               duration: 0.2,
               ease: "easeInOut",
             }}
-            className="fixed w-screen h-screen z-50 flex items-end"
+            className="fixed w-dvw h-[calc(100dvh-80px)] bottom-0 z-50 flex items-end"
           >
             <div
               className="w-full lg:h-auto lg:w-1/2 lg:pb-12 lg:mx-auto
-            justify-center py-4 lg:py-0 lg:justify-start bg-grayA flex flex-col "
+            justify-center py-4 lg:py-0 lg:justify-start bg-grayA flex flex-col"
             >
               {/* Heading and Close button */}
               <div
                 className="flex items-center justify-between px-6 lg:mt-12 lg:mb-6
                  mb-2 lg:px-12"
               >
-                <h1 className="text-4xl lg:text-7xl text-zinc-100">
+                <h1 className="text-2xl lg:text-7xl text-zinc-100">
                   Bizimlə Əlaqə
                 </h1>
                 <div
@@ -116,25 +116,25 @@ const Contact: React.FC<ContactProps> = ({ scroll }) => {
                 </div>
               </div>
               {/* Content */}
-              <div className="flex flex-col lg:flex-row gap-y-4">
+              <div className="flex flex-col lg:flex-row sm:gap-y-4 gap-y-2">
                 <div
-                  className="px-6 lg:px-12 w-full h-full flex flex-col gap-y-6
-                lg:w-1/2 lg:border-r-4 border-grayALight"
+                  className="px-6 lg:px-12 w-full h-full flex flex-col sm:gap-y-6
+                gap-y-3 lg:w-1/2 lg:border-r-4 border-grayALight"
                 >
                   <div className="border-b-2 border-grayALight pb-2 lg:border-0 lg:pb-0">
-                    <h1 className="block text-neutral-400 text-2xl mb-1 lg:mb-2 lg:text-4xl">
+                    <h1 className="block text-neutral-400 text-lg mb-1 lg:mb-2 lg:text-4xl">
                       Telefonlar
                     </h1>
                     <Link
                       href="tel:994502989999"
-                      className="block text-zinc-100 text-xl lg:text-3xl
+                      className="block text-zinc-100 lg:text-3xl
                     cursor-pointer hover:text-neutral-400 transition-colors duration-200"
                     >
                       050 298 99 99
                     </Link>
                     <Link
                       href="tel:994124921346"
-                      className="block text-zinc-100 text-xl lg:text-3xl
+                      className="block text-zinc-100 lg:text-3xl
                     cursor-pointer hover:text-neutral-400 transition-colors duration-200"
                     >
                       012 492 13 46
@@ -142,12 +142,12 @@ const Contact: React.FC<ContactProps> = ({ scroll }) => {
                   </div>
 
                   <div className="border-b-2 border-grayALight pb-2 lg:border-0 lg:pb-0">
-                    <h1 className="block text-neutral-400 text-2xl mb-1 lg:mb-2 lg:text-4xl">
+                    <h1 className="block text-neutral-400 text-lg mb-1 lg:mb-2 lg:text-4xl">
                       Email
                     </h1>
                     <Link
                       href="mailto:office@alioglu.az"
-                      className="block text-zinc-100 text-xl lg:text-3xl
+                      className="block text-zinc-100 lg:text-3xl
                     cursor-pointer hover:text-neutral-400 transition-colors duration-200"
                     >
                       office@alioglu.az
@@ -155,39 +155,39 @@ const Contact: React.FC<ContactProps> = ({ scroll }) => {
                   </div>
 
                   <div className="border-b-2 border-grayALight pb-2 lg:border-0 lg:pb-0">
-                    <h1 className="block text-neutral-400 text-2xl mb-1 lg:mb-2 lg:text-4xl">
+                    <h1 className="block text-neutral-400 text-lg mb-0.5 lg:mb-2 lg:text-4xl">
                       Instagram
                     </h1>
                     <Link
                       href="https://www.instagram.com/alioglu.group/"
                       target="_blank"
-                      className="block text-xl lg:text-3xl text-zinc-100 hover:text-neutral-400 transition-colors duration-200"
+                      className="block lg:text-3xl text-zinc-100 hover:text-neutral-400 transition-colors duration-200"
                     >
                       alioglu.group
                     </Link>
                   </div>
 
                   <div className="border-b-2 border-grayALight pb-2 lg:border-0 lg:pb-0">
-                    <h1 className="block text-neutral-400 text-2xl mb-1 lg:mb-2 lg:text-4xl">
+                    <h1 className="block text-neutral-400 text-lg mb-0.5 lg:mb-2 lg:text-4xl">
                       Facebook
                     </h1>
                     <Link
                       href="https://www.facebook.com/profile.php?id=61556943345997"
                       target="_blank"
-                      className="block text-xl lg:text-3xl text-zinc-100 hover:text-neutral-400 transition-colors duration-200"
+                      className="block lg:text-3xl text-zinc-100 hover:text-neutral-400 transition-colors duration-200"
                     >
                       alioglu
                     </Link>
                   </div>
 
                   <div className="border-b-2 border-grayALight pb-2 lg:border-0 lg:pb-0">
-                    <h1 className="block text-neutral-400 text-2xl mb-1 lg:mb-2 lg:text-4xl">
+                    <h1 className="block text-neutral-400 text-lg mb-0.5 lg:mb-2 lg:text-4xl">
                       Whatsapp
                     </h1>
                     <Link
                       href="https://wa.me/994502989999"
                       target="_blank"
-                      className="block text-xl lg:text-3xl text-zinc-100 hover:text-neutral-400 transition-colors duration-200"
+                      className="block lg:text-3xl text-zinc-100 hover:text-neutral-400 transition-colors duration-200"
                     >
                       050 298 99 99
                     </Link>
@@ -198,25 +198,25 @@ const Contact: React.FC<ContactProps> = ({ scroll }) => {
                   className="px-6 lg:px-12 w-full h-full flex flex-col
                  lg:w-1/2 "
                 >
-                  <h1 className="block text-neutral-400 text-2xl mb-1 lg:mb-2 lg:text-4xl">
+                  <h1 className="block text-neutral-400 text-lg mb-0.5 lg:mb-2 lg:text-4xl">
                     Ünvanlarımız
                   </h1>
 
                   <div>
-                    <h1 className="block text-neutral-400 text-lg lg:text-2xl font-light">
+                    <h1 className="block text-neutral-400  lg:text-2xl font-light">
                       Baş Ofis
                     </h1>
 
-                    <h1 className="block text-zinc-100 text-xl lg:text-3xl">
+                    <h1 className="block text-zinc-100 text-sm lg:text-3xl">
                       Vurgun Residence, 2-ci mərtəbə
                     </h1>
                   </div>
-                  <div className="lg:mt-8 mt-4">
-                    <h1 className="block text-neutral-400 text-lg lg:text-2xl font-light">
+                  <div className="lg:mt-8 mt-1">
+                    <h1 className="block text-neutral-400 text-sm lg:text-2xl font-light">
                       Akademiya
                     </h1>
 
-                    <h1 className="block text-zinc-100 text-xl lg:text-3xl">
+                    <h1 className="block text-zinc-100 lg:text-3xl">
                       23 Leopold və Mstislav Rostropoviçlər
                     </h1>
                   </div>
