@@ -76,7 +76,7 @@ const Home = () => {
   });
   return (
     <main className={`relative ${loading ? "overflow-hidden" : ""}`}>
-      {false && (
+      {loading && (
         <div className="fixed z-[999999] w-screen h-screen">
           <Splash />
         </div>
