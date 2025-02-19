@@ -11,7 +11,7 @@ interface ContactProps {
   scroll: number;
 }
 const Contact: React.FC<ContactProps> = ({ scroll }) => {
-  const [menuState, setMenuState] = useState(true);
+  const [menuState, setMenuState] = useState(false);
   // disable scroll when menu is open
   useEffect(() => {
     if (menuState) {
